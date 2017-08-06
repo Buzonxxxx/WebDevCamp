@@ -1,0 +1,22 @@
+h1 {
+	text-align: center;
+	font-family: vibur, cursive;
+}
+td{
+	
+	width: 50px;
+	height: 50px;
+}
+
+td.vertical{
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+td.horizontal{
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	
+}
+table{
+	margin: auto;
+}
