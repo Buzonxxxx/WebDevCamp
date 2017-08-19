@@ -1,13 +1,4 @@
-function printReverse(array){
-//forEach + unshift()
-	var reverse = [];
-	array.forEach(function(x){
-		reverse.unshift(x);
-	});
-	reverse.forEach(function(num){
-		console.log(num);
-	});
-}
+
 
 function isUniform(array){
 //forEach then compare each element with array[0]	
