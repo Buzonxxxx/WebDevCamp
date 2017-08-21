@@ -1,5 +1,5 @@
-isEven()
-function isEven(num){
+
+ const isEven = function(num){
 	if (num%2 === 0){
 		return true;
 	}
@@ -7,8 +7,8 @@ function isEven(num){
 }
 console.log(isEven(333));
 
-factorial()
-function factorial(num){
+
+const factorial = function(num){
 	var sum = 1;
 	for (var i = 1; i <=num; i++) {
 		sum=sum*i;
@@ -17,8 +17,8 @@ function factorial(num){
 }
 console.log(factorial(10));
 
-KebabToSnake()
-function KebabToSnake(str){
+
+const KebabToSnake = function(str){
 	var res = str.replace("-","_");
 	return res;
 }
