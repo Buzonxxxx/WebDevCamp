@@ -1,4 +1,5 @@
 //Two types to declare function
+
 // 1. Function declaration (better)
 function capitalize1(str){
 	return str.charAt(0).toUpperCase() + str.slice(1)
