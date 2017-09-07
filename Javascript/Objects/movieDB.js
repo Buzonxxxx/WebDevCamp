@@ -1,4 +1,4 @@
-var movie = [
+const movie = [
 	{
 		title: "In Bruges",
 		rating: 5,
@@ -21,7 +21,7 @@ var movie = [
 	}
 	];
 
-movie.forEach(function(index){
+movie.forEach(index => {
 	if (index.hasWatched === true){
 console.log("You have watched \"" + index.title + "\" - "+index.rating+" stars");
 	}
