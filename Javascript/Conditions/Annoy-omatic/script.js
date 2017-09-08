@@ -3,7 +3,7 @@
 //Then, alert "Yay, we finally made it!"
 
 
-var ans = prompt("Are we there yet?")
+const ans = prompt("Are we there yet?")
 while (ans !== "yes" && ans !== "yeah"){
 	ans = prompt("Are we there yet?")
 }

@@ -1,4 +1,4 @@
-var guessNumber = Number(prompt("Guess a number"));
+const guessNumber = Number(prompt("Guess a number"));
 if (guessNumber > 7){
 	alert("Too high. Try again");
 }
