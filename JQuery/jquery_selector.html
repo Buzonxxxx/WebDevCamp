@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery Demo</title>
+	<script type="text/javascript" src="lib/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+
+
+<h1>JQuery Demo!</h1>
+<ul>
+	<li id="handsome">Louis</li>
+	<li>Sam <a href="www.google.com">Go Google it</a></li>
+	<li>Aaron</li>
+</ul>
+<a href="www.yahoo.com">Go Yahoo!</a>
+
+
+</body>
+</html>
+
+<!--
+1. JQuery selector
+
+$("a")  
+$("li a")
+$("ui li a")
+$("#handsome")
+-->
+
+<!-- 
+2. Change css value
+
+$("h1").css("color", "yellow")  === document.querySelector("h1").style.color = "orange"
+$("li").css("color", "blue")
+$("li:first-of-type").css("color", "red")
+-->
+
+<!--  
+3. Apply multiple css values
+
+1)
+const styles = {
+	color: "red",
+	background: "pink",
+	border: "2px solid blue"
+}
+
+$("h1").css(styles)
+
+2)
+$("li").css({
+	color: "yellow",
+	background: "pink",
+	fontSize: "20px"
+})
+-->
+
