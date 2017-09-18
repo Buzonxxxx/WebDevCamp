@@ -3,6 +3,23 @@
 <head>
 	<title>JQuery Methods</title>
 	<script type="text/javascript" src="lib/jquery-3.2.1.min.js"></script>
+
+	<style type="text/css">
+		.correct{
+			color: green;
+		}
+
+		.wrong{
+			color: red;
+			background: pink;
+		}
+
+		.done{
+			color: gray;
+			text-decoration: line-through;
+		}
+	</style>
+
 </head>
 <body>
 <h1>JQuery Methods</h1>
@@ -55,8 +72,13 @@ $("img:nth-of-type(2)").css("width", "200px")
 $("img").last().attr("src")
 
 addClass()
+$("h1").addClass("correct")
 
 removeClass()
+$("h1").removeClass("correct")
 
 toggleClass()
- -->
+$("h1").removeClass("correct")
+$("li").first().toggleClass("wrong")
+
+-->
