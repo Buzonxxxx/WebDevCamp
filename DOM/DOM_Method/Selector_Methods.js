@@ -42,8 +42,9 @@ p.innerHTML
 const ul = document.querySelector("ul")
 ul.innerHTML
 
-
+//get and set attribute
+const link = document.querySelector("a")
 link.getAttribute("href");
-link.setAttribute("href", "www.dogs.com"); 
+link.setAttribute("href", "www.yahoo.com")
 
 
