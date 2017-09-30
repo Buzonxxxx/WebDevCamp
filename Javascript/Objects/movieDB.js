@@ -19,14 +19,14 @@ const movie = [
 		rating: 3.5,
 		hasWatched: false
 	}
-	];
+];
 
 movie.forEach(index => {
-	if (index.hasWatched === true){
-console.log("You have watched \"" + index.title + "\" - "+index.rating+" stars");
+	if (index.hasWatched === true) {
+		console.log("You have watched \"" + index.title + "\" - " + index.rating + " stars");
 	}
 	else
-console.log("You have not seen \"" + index.title + "\" - "+index.rating+" stars");
+		console.log("You have not seen \"" + index.title + "\" - " + index.rating + " stars");
 });
 
 console.log("USE YOUR OWN MOVIES!");

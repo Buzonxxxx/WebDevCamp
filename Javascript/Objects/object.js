@@ -21,19 +21,8 @@ person3.city = "taipei";
 //Retrive data from obj
 console.log(person1.name)
 console.log(person3["name"])
-
-//Object can hold all sort of data
-const myobject = {
-	age: 34,
-	isHandsome: true,
-	skill: ["ruby", "java", "javescript"],
-	pet: {
-		name: "Rusty",
-		age: 2
-	}
-}
-
-console.log(myobject)
+const xxx = "city"
+console.log(person3[xxx])
 
 //Nested array and objet
 const someObject = {
@@ -49,3 +38,23 @@ const someObject = {
 //retrive "Malfoy"
 console.log(someObject.friends[0].name);
 
+//method in object
+const obj = {
+	name: "Louis",
+	yearOfBirth: 1983,
+	isHansome: true,
+	sport: ["basketball", "Cycling"],
+	calculateAge: function() {
+		 this.age = 2017 - this.yearOfBirth
+		} 
+}
+obj.calculateAge()
+console.log(obj)
+
+//namespacing
+const dogspace = {};
+const catspace = {};
+dogspace.speak = () => console.log("WOOF!")
+catspace.speak = () => console.log("MEOW!")
+dogspace.speak();
+catspace.speak();
