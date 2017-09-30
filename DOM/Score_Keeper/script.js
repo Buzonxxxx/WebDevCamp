@@ -53,3 +53,4 @@ numInput.addEventListener("change", () => {
 
 //轉num型態用Number()
 //取element值用.value
+// MDN events https://developer.mozilla.org/en-US/docs/Web/Events
