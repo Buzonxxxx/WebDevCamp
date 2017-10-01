@@ -1,6 +1,6 @@
 //Two types to declare function
 
-// 1. Function declaration (better)
+// 1. Function statement (better)
 function capitalize1(str){
 	return str.charAt(0).toUpperCase() + str.slice(1)
 }
@@ -8,6 +8,8 @@ function capitalize1(str){
 const capitalize2 = function(str){
 	return str.charAt(0).toUpperCase() + str.slice(1)
 }
+
+console.log(capitalize1("louisliao"))
 
 //is even?
 function isEven(num){
