@@ -45,8 +45,11 @@ const obj = {
 	isHansome: true,
 	sport: ["basketball", "Cycling"],
 	calculateAge: function() {
-		 this.age = 2017 - this.yearOfBirth
+    this.age = 2017 - this.yearOfBirth
+		 console.log(this);
+		 console.log(this.isHansome)
 		} 
+		
 }
 obj.calculateAge()
 console.log(obj)
