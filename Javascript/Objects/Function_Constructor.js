@@ -9,12 +9,6 @@ This continues until the method is found: prototype chain
 
 */
 
-const John = {
-  name: 'John',
-  yearOfBirth: 1990,
-  job: 'teacher'
-}
-
 //Function constructor example 1
 const Person = function (name, yearOfBirth, job) {
   this.name = name
@@ -27,6 +21,8 @@ Person.prototype.calculateAge = function () {
 }
 
 Person.prototype.lastName = 'Smith'
+
+//new operator is used to create empty object
 
 const Louis = new Person('Louis', 1983, 'Engineer')
 const Jane = new Person('Jane', 1969, 'Designer')
