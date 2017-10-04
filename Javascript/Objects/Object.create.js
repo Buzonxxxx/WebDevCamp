@@ -19,3 +19,4 @@ const Jane = Object.create(personProto,
 
 console.log(John)
 console.log(Jane.yearOfBirth)
+console.log(John.calculateAge())
