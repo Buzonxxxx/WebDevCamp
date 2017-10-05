@@ -1,28 +1,35 @@
-//class裡面不用逗點
-class Car {
-  constructor({title}){
-    this.title = title
+//ES5
+const Person5 = function(name, yearOfBirth, job){
+  this.name = name
+  this.yearOfBirth = yearOfBirth
+  this.job = job
+}
+Person5.prototype.calculateAge = function(){
+  let age = new Date().getFullYear() - this.yearOfBirth
+  console.log(age)
+}
+const john5 = new Person5('John', 1990, 'teacher')
+
+console.log(john5)
+john5.calculateAge()
+
+//ES6
+class Person6 {
+  constructor (name, yearOfBirth, job){
+    this.name = name
+    this.yearOfBirth = yearOfBirth
+    this.job = job
   }
-  drive(){
-    return 'vroom'
+  calculateAge(){
+    let age = new Date().getFullYear() - this.yearOfBirth
+    console.log(age)
+  }
+
+  static greeting(){
+    console.log("Hey there!")
   }
 }
-
-// const car = new Car({title: 'Toyota'})
-// console.log(car.drive())
-// console.log(car)
-
-class Toyota extends Car{
-  constructor(options){
-    super(options) //Car.constructor()
-    this.color = options.color
-  }
-  honk(){
-    return 'beep'
-  }
-}
-const toyota = new Toyota({color: 'red', title: 'daily driver'})
-console.log(toyota.honk())
-console.log(toyota.drive())
-console.log(toyota)
-
+const john6 = new Person6('John', 1990, 'teacher')
+console.log(john6)
+john6.calculateAge()
+Person6.greeting()
