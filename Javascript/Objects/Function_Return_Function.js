@@ -11,7 +11,7 @@ function interviewQuestion(job){
     }
   }else {
     return function(name){
-      console.log('Hello, '+name+', what od you do?')
+      console.log('Hello, '+name+', what do you do?')
     }
   }
 }

@@ -33,10 +33,6 @@ class Car {
     }
   }
   
-  // const car = new Car({title: 'Toyota'})
-  // console.log(car.drive())
-  // console.log(car)
-  
   class Toyota extends Car{
     constructor(options){
       super(options) //Car.constructor()

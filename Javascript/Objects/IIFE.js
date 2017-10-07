@@ -20,7 +20,7 @@
 //IIFE with argument
 (function (num) {
   let score = Math.random()*10
-  if (score >=5 - num){
+  if (score >= 5 - num){
     console.log(score)
   }
 })(5)
