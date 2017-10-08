@@ -42,8 +42,8 @@ emilyFormal('afternoon')
 const years = [1990, 1965, 1937, 2005, 1998]
 function arrayCalc(arr, fn) {
   let arrRes = []
-  arr.forEach(function (x) {
-    arrRes.push(fn(x))
+  arr.forEach(function (yearOrAge) {
+    arrRes.push(fn(yearOrAge))
   })
   return arrRes
 }
