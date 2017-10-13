@@ -1,4 +1,5 @@
 //Passing function as an argument #ToPractice
+//Higher order function
 const years = [1990, 1965, 1937, 2005, 1998]
 function arrayCalc(arr, fn) {
   let arrRes = []
