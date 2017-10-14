@@ -31,3 +31,4 @@ numbers.map(function(number){
 })
 // Arrow function
 numbers.map(number => number * 2 )
+
