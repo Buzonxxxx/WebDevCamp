@@ -1,12 +1,8 @@
-//ToReview
-
 function myforEach(arr,func){
-	//loop through array
-	for (var i = 0; i < arr.length; i++) {
-		//call func for each item in array
-		func(arr[i]);
+	// for .. of
+	for (const i of arr){
+		func(i)
 	}
-
 }
 
 var numbers = [1,2,3,4,5];

@@ -8,13 +8,8 @@ var users = [
   {name: 'Alex'}
 ]
 
-var find = users.find(function(user){
-  return user.name === 'Alex'
-})
-console.log(find)
+console.log(users.find(user => user.name === 'Alex'))
+console.log(users.findIndex(user => user.name === 'Alex'))
+console.log(users.filter(user => user.name === 'Alex'))
 
-var filter = users.filter(function(user){
-  return user.name === 'Alex'
-})
-console.log(filter)
 
