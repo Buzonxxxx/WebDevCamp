@@ -5,9 +5,8 @@ function calcAge(yearOfBirth){
   return new Date().getFullYear() - yearOfBirth
 }
 //ES5
-console.log('This is ' + firstName + ' ' + lastName +
- '. Today, he is ' + calcAge(yearOfBirth) + ' years old.')
-
+// console.log('This is ' + firstName + ' ' + lastName +
+//  '. Today, he is ' + calcAge(yearOfBirth) + ' years old.')
 
 //ES6
 console.log(`This is ${firstName} ${lastName}. Today, he is ${calcAge(yearOfBirth)} years old.`)

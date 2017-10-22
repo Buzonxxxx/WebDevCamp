@@ -5,26 +5,19 @@
 //sample1
 var numbers = [1,2,3]
 var doubleNumbers = []
-var doubled = numbers.map(function(number){
-  return number*2
-})
+var doubled = numbers.map(number => number*2)
 console.log(doubled)
 //sample2
 var car = [
   {model: 'Buick', price: 'cheap'},
   {model: 'Carmaro', price: 'expensive'} 
 ]
-
-var prices = car.map(function(car){
-  return car.price
-})
+var prices = car.map(car => car.price)
 console.log(prices)
 
 //sample3
 function pluck(array, property) {
-  return array.map(function(array){
-      return array[property];
-  });   
+  return array.map(array => array[property]);   
  }
 var paints = [ 
   { color: 'red' }, 
@@ -32,3 +25,4 @@ var paints = [
   { color: 'yellow' }
 ];
 console.log(pluck(paints, 'color'));
+
