@@ -10,52 +10,63 @@ This continues until the method is found: prototype chain
 */
 
 //Function constructor example 1
-const Person = function (name, yearOfBirth, job) {
-  this.name = name
-  this.yearOfBirth = yearOfBirth
-  this.job = job
+//ES5
+// const Person = function (name, yearOfBirth, job) {
+//   this.name = name
+//   this.yearOfBirth = yearOfBirth
+//   this.job = job
+// }
+// Person.prototype.lastName = 'Smith'
+
+// Person.prototype.calculateAge = function () {
+//   console.log(2017 - this.yearOfBirth)
+// }
+
+// ES6
+class Person {
+  constructor(name, yearOfBirth, job){
+    this.name = name
+    this.yearOfBirth = yearOfBirth
+    this.job = job
+    this.lastName = 'Smith'
+  }
+  calculateAge(){
+    return 2017 - this.yearOfBirth
+  }
 }
-
-Person.prototype.calculateAge = function () {
-  console.log(2017 - this.yearOfBirth)
-}
-
-Person.prototype.lastName = 'Smith'
-
 //new operator is used to create empty object
-
 const Louis = new Person('Louis', 1983, 'Engineer')
-const Jane = new Person('Jane', 1969, 'Designer')
-const Mark = new Person('Mark', 1948, 'Project Manager')
-
-Louis.calculateAge()
-Jane.calculateAge()
-Mark.calculateAge()
-
-console.log(Louis.lastName)
-console.log(Jane.lastName)
-console.log(Mark.lastName)
-
+console.log(`${Louis.name} is ${Louis.calculateAge()} years old`)
+console.log(`Louis' last name is ${Louis.lastName}`)
 console.log(Louis)
-console.log(Jane)
-console.log(Mark)
 
 //function constructor example 2
-function User(firstName, lastName, gender, age) {
-  this.firstName = firstName
-  this.lastName = lastName
-  this.gender = gender
-  this.age = age
-}
+//ES5
+// function User(firstName, lastName, gender, age) {
+//   this.firstName = firstName
+//   this.lastName = lastName
+//   this.gender = gender
+//   this.age = age
+// }
 
-var user1 = new User('John', 'Smith', 'male', 26)
-console.log(user1)
+// User.prototype.emailDomain = '@facebook.com'
+// User.prototype.getEmailAddress = function () {
+//   return this.firstName + this.lastName + this.emailDomain
+// }
 
-User.prototype.emailDomain = '@facebook.com'
-User.prototype.getEmailAddress = function () {
-  return this.firstName + this.lastName + this.emailDomain
+//ES6
+class User {
+  constructor(firstName, lastName, gender, age){
+    this.firstName = firstName
+    this.lastName = lastName
+    this.gender = gender
+    this.age = age
+    this.emailDomain = '@facebook.com'
+  }
+  getEmailAddress() {
+    return `${this.firstName}${this.lastName}${this.emailDomain}`
+  }
 }
-var user200 = new User('Jill', 'Robinson', 'female', 25)
-console.log(user200)
-console.log(user200.emailDomain)
-console.log(user200.getEmailAddress())
+const user = new User('Jill', 'Robinson', 'female', 25)
+console.log(user)
+console.log(user.getEmailAddress())

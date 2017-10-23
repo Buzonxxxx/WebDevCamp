@@ -7,6 +7,7 @@ var numbers = [1,2,3]
 var doubleNumbers = []
 var doubled = numbers.map(number => number*2)
 console.log(doubled)
+
 //sample2
 var car = [
   {model: 'Buick', price: 'cheap'},

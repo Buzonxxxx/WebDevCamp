@@ -4,9 +4,7 @@
 //sample 1
 var numbers = [10, 20, 30]
 var sum = 0
-var result = numbers.reduce(function(sum, number){
-  return sum + number
-}, 0)
+var result = numbers.reduce( (sum, number) => sum + number, 0)
 console.log(result)
 
 //sample 2
@@ -15,7 +13,7 @@ var primaryColors = [
   {color: 'blue'},
   {color: 'yellow'}
 ]
-var result = primaryColors.reduce(function(previous, primaryColor){
+var result = primaryColors.reduce( (previous, primaryColor) => {
   previous.push(primaryColor.color)
   return previous
 }, [])

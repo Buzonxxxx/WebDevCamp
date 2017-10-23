@@ -91,6 +91,7 @@ jusr do this with the tools you feel more comfortable at this point.)
  */
 
 (function () {
+  //refactor
   function Question(question, answer, correct) {
     this.question = question
     this.answer = answer
