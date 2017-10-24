@@ -36,7 +36,7 @@ class Park extends Element{
 }
 
 class Street extends Element{
-  constructor(name, buildYear, length, size){
+  constructor(name, buildYear, length, size = 3){
     super(name. buildYear)
     this.length = length
     this.size = size
@@ -48,6 +48,8 @@ class Street extends Element{
     classification.set(3, 'normal')
     classification.set(4, 'big')
     classification.set(5, 'huge')
+    console.log(`${this.name}, build in ${this.buildYear}, is a
+     ${classification.get(this.size)} street.`)
   }
 
 }
