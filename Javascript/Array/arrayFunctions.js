@@ -37,8 +37,8 @@ const ages = [11, 22, 33, 44, 55, 66]
     console.log(ages.slice(1,3))
     
 // splice: 抓出要刪除的元素並替換新的元素
-// array.splice(index,n,替換元素1，替換元素2…)
-    console.log(ages.splice(4, 2, 77, 88))
+// array.splice(index,n,(替換元素1)，(替換元素2)…)
+    console.log(ages.splice(4, 2, 'xd', 'kk'))
     console.log(ages)
 
 

@@ -3,24 +3,23 @@
   他會透過函式內所回傳的值組合成一個陣列。
 */
 //sample1
-var numbers = [1,2,3]
-var doubleNumbers = []
-var doubled = numbers.map(number => number*2)
+const numbers = [1,2,3]
+const doubleNumbers = []
+const doubled = numbers.map(number => number*2)
 console.log(doubled)
 
 //sample2
-var car = [
+const car = [
   {model: 'Buick', price: 'cheap'},
   {model: 'Carmaro', price: 'expensive'} 
 ]
-var prices = car.map(car => car.price)
+const prices = car.map(car => car.price)
 console.log(prices)
 
 //sample3
-function pluck(array, property) {
-  return array.map(array => array[property]);   
- }
-var paints = [ 
+const pluck = (array, index) => array.map(array => array.index)  
+ 
+const paints = [ 
   { color: 'red' }, 
   { color: 'blue' }, 
   { color: 'yellow' }
