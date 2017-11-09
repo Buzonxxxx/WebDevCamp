@@ -1,5 +1,6 @@
 /*  
-John and a friend invented a simple game where the player with the highest value of his height (in centimeters) 
+John and a friend invented a simple game where the 
+player with the highest value of his height (in centimeters) 
 plus five times his age wins 
 
 1. Create variables for the heights and ages of two friends and assign them some values
@@ -20,9 +21,9 @@ const score1 = calculate(h1, age1)
 const score2 = calculate(h2, age2)
 const score3 = calculate(h3, age3)
 
-console.log("friend 1's score is: " + score1)
-console.log("friend 2's score is: " + score2)
-console.log("friend 3's score is: " + score3)
+console.log(`friend 1's score is: ${score1}`)
+console.log(`friend 2's score is: ${score2}`)
+console.log(`friend 3's score is: ${score3}`)
 
 if(score1 > score2 && score1 > score3){
   console.log("friend 1 wins")

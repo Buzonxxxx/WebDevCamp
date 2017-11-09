@@ -18,10 +18,10 @@ const printFullAge = birthYear => {
   birthYear.forEach(birthYear => age.push(2017 - birthYear))
   age.forEach(age => {
     if (age >= 18) {
-      console.log("person is " + age + " years old, and is of full age.")
+      console.log(`person is ${age} years old, and is of full age.`)
       fullAges.push(true)
     } else {
-      console.log("person is " + age + " years old, and is NOT of full age.")
+      console.log(`person is ${age} years old, and is NOT of full age.`)
       fullAges.push(false)
     }
   })
