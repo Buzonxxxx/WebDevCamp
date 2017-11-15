@@ -15,15 +15,19 @@ const images = [
 let areas = [];
 images.forEach(image => areas.push(image.height * image.width))
 console.log(areas)
+areas.pop()
+console.log(areas)
 
 // unshift: add to the in front of an array
 // shift:   remove the first item of an array
-let reverse = [];
-function printReverse(array) {
-  array.forEach(num1 => reverse.unshift(num1))
-  console.log(reverse)
+let reverseArray = [];
+const printReverse = array => {
+  array.forEach(num => reverseArray.unshift(num))
 }
 printReverse([1, 2, 3, 4, 5])
+console.log(reverseArray)
+reverseArray.shift()
+console.log(reverseArray)
 
 //indexOf: find the index of an item in an 
 //not result return -1
@@ -31,14 +35,18 @@ console.log(names.indexOf('xxx'))
 console.log(names.indexOf('John'))
 
 const ages = [11, 22, 33, 44, 55, 66]
-// slice: 从起点开始，到终点'之前'之间所有元素的新数组
-// array.slice(start, end)
-    console.log(ages.slice())
-    console.log(ages.slice(1,3))
-    
-// splice: 抓出要刪除的元素並替換新的元素
+// slice: Select elements from an array
+// https://www.w3schools.com/jsref/jsref_slice_array.asp
+// array.slice(start, end(不算))
+console.log(ages.slice(1, 3))
+
+// splice: adds/removes items to/from an array, and returns the removed item(s).
+// syntax: array.splice(index, howmany, item1, ....., itemX)
 // array.splice(index,n,(替換元素1)，(替換元素2)…)
-    console.log(ages.splice(4, 2, 'xd', 'kk'))
-    console.log(ages)
+console.log(ages.splice(0, 1))
+console.log(ages)
+
+console.log(ages.splice(4, 2, 'xd', 'kk'))
+console.log(ages)
 
 

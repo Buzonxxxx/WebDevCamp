@@ -12,4 +12,8 @@ console.log(users.find(user => user.name === 'Alex'))
 console.log(users.findIndex(user => user.name === 'Alex'))
 console.log(users.filter(user => user.name === 'Alex'))
 
+users.filter( function(user) {
+  return user.name === 'Alex'
+} )
+
 
