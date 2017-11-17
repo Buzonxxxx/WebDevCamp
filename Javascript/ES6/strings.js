@@ -1,21 +1,12 @@
-let firstName = 'Louis'
-let lastName = 'Liao'
+const firstName = 'Louis'
+const lastName = 'Liao'
+const fullName = `${firstName} ${lastName}`
 const yearOfBirth = 1983
-function calcAge(yearOfBirth){
-  return new Date().getFullYear() - yearOfBirth
-}
-//ES5
-// console.log('This is ' + firstName + ' ' + lastName +
-//  '. Today, he is ' + calcAge(yearOfBirth) + ' years old.')
-
-//ES6
-console.log(`This is ${firstName} ${lastName}. Today, he is ${calcAge(yearOfBirth)} years old.`)
+const calcAge = (yearOfBirth) => new Date().getFullYear() - yearOfBirth
+console.log(`This is ${fullName}. Today, he is ${calcAge(yearOfBirth)} years old.`)
 
 //string method
-const n = `${firstName} ${lastName}`
-console.log(n)
-console.log(n.startsWith('L'))
-console.log(n.endsWith('o'))
-console.log(n.includes('ou'))
-console.log(n.repeat(10))
-console.log(`${firstName} ${lastName} `.repeat(10))
+console.log(fullName.startsWith('L'))
+console.log(fullName.endsWith('o'))
+console.log(fullName.includes('ou'))
+console.log(`${fullName}\n`.repeat(10))

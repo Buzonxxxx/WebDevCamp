@@ -1,8 +1,10 @@
+//Array.from()
+//ToStudy
 const bar = [1,2,3,4,5]
-const barNew = Array.from(bar)
-for (const value of barNew){
-  console.log(value)
-}
+const newBar = Array.from(bar)
+console.log(newBar)
+newBar.forEach(num => console.log(num))
+
 /* real case
 const boxes = document.querySelectorAll('.box')
 const boxesArray = Array.from(boxes)
