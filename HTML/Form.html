@@ -1,69 +1,73 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Complete Form Solution</title>
 </head>
+
 <body>
-<h1>Register</h1>
+	<h1>Register</h1>
 
-<form>
-	<div>
-		<label for="First_name"> First Name:</label>
-		<input type="text" name="First_name" id="First_name" placeholder="John" required>
-		<label for="Last_name"> Last Name:</label>
-		<input type="text" name="Last_name" id="Last_name" placeholder="Smith" required>
-	</div>
+	<form>
+		<div>
+			<label for="First_name"> First Name:</label>
+			<input type="text" name="First_name" id="First_name" placeholder="John" required>
+			<label for="Last_name"> Last Name:</label>
+			<input type="text" name="Last_name" id="Last_name" placeholder="Smith" required>
+		</div>
 
-	<div>
-		<label for="radio_choice1">Male</label>
-		<input type="radio" name="radio_choice" id="radio_choice1" value="choice1">
-		<label for="radio_choice2">Female</label>
-		<input type="radio" name="radio_choice" id="radio_choice2" value="choice2">
-		<label for="radio_choice3">Other</label>
-		<input type="radio" name="radio_choice" id="radio_choice3" value="choice3">
-	</div>	
+		<div>
+			<label for="radio_choice1">Male</label>
+			<input type="radio" name="radio_choice" id="radio_choice1" value="choice1">
+			<label for="radio_choice2">Female</label>
+			<input type="radio" name="radio_choice" id="radio_choice2" value="choice2">
+			<label for="radio_choice3">Other</label>
+			<input type="radio" name="radio_choice" id="radio_choice3" value="choice3">
+		</div>
 
-	<div>
-		<label>
-		Email:
-		<input type="email" name="Email" id="Email" placeholder="your email" required>
-		</label>
-		<label>
-		Password:
-		<input type="password" name="Password" id="Password" pattern=".{5,10}" required title ="Passwaord must be 5 to 10 characters" placeholder="your password">
-		</label>
-	</div>
+		<div>
+			<label>
+				Email:
+				<input type="email" name="Email" id="Email" placeholder="your email" required>
+			</label>
+			<label>
+				Password:
+				<input type="password" name="Password" id="Password" pattern=".{5,10}" required title="Passwaord must be 5 to 10 characters"
+				 placeholder="your password">
+			</label>
+		</div>
 
-	<div>
-	<label for="select_month">Birthday:</label>
-	<select name="select_month" id="select_month" title="Month">
-		<option value="0" selected disabled>Month</option>
-		<option value="Jan">Jan</option>
-		<option value="Feb">Feb</option>
-		<option value="Mar">Mar</option>
-	</select>
-	<select name="select_day" id="select_day" title="Day">
-		<option value="0" selected disabled>Day</option>
-		<option value="1">1</option>
-		<option value="2">2</option>
-		<option value="3">3</option>
-	</select>
-	<select name="select_year" id="select_year" title="Year">
-		<option value="0" selected disabled>Year</option>
-		<option value="2000">2000</option>
-		<option value="2017">2017</option>
-		<option value="2018">2018</option>
-	</select>
-	</div>
+		<div>
+			<label for="select_month">Birthday:</label>
+			<select name="select_month" id="select_month" title="Month">
+				<option value="0" selected disabled>Month</option>
+				<option value="Jan">Jan</option>
+				<option value="Feb">Feb</option>
+				<option value="Mar">Mar</option>
+			</select>
+			<select name="select_day" id="select_day" title="Day">
+				<option value="0" selected disabled>Day</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+			</select>
+			<select name="select_year" id="select_year" title="Year">
+				<option value="0" selected disabled>Year</option>
+				<option value="2000">2000</option>
+				<option value="2017">2017</option>
+				<option value="2018">2018</option>
+			</select>
+		</div>
 
-	<div>
-		<label>
-		I agree to the terms and conditions
-		<input type="checkbox" name="checkbox" id="checkbox">
-		</label>
-	</div>
-	<button>Submit</button>
-</form>
+		<div>
+			<label>
+				I agree to the terms and conditions
+				<input type="checkbox" name="checkbox" id="checkbox">
+			</label>
+		</div>
+		<button>Submit</button>
+	</form>
 
 </body>
+
 </html>

@@ -15,17 +15,17 @@
 
 //ES6
 class Person6 {
-  constructor (name, yearOfBirth, job){
+  constructor(name, yearOfBirth, job) {
     this.name = name
     this.yearOfBirth = yearOfBirth
     this.job = job
   }
-  calculateAge(){
+  calculateAge() {
     let age = new Date().getFullYear() - this.yearOfBirth
     console.log(age)
   }
-//static method: method to the class, not to instance
-  static greeting(){
+  //static method: method to the class, not to instance
+  static greeting() {
     console.log("Hey there!")
   }
 }
