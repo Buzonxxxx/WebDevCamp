@@ -8,6 +8,7 @@
 <body>
 	<h1>Register</h1>
 
+	<!-- <form action="http://www.google.com" method="GET"> -->
 	<form>
 		<div>
 			<label for="First_name"> First Name:</label>
@@ -26,11 +27,11 @@
 		</div>
 
 		<div>
-			<label>
+			<label for="Email">
 				Email:
 				<input type="email" name="Email" id="Email" placeholder="your email" required>
 			</label>
-			<label>
+			<label for="Password">
 				Password:
 				<input type="password" name="Password" id="Password" pattern=".{5,10}" required title="Passwaord must be 5 to 10 characters"
 				 placeholder="your password">
@@ -60,7 +61,7 @@
 		</div>
 
 		<div>
-			<label>
+			<label for="checkbox">
 				I agree to the terms and conditions
 				<input type="checkbox" name="checkbox" id="checkbox">
 			</label>
