@@ -1,0 +1,21 @@
+.square {
+  background-color: blue ;
+  width: 30%;
+  padding-bottom: 30%;
+  margin: 1.66%;
+  float: left;
+}
+
+body {
+  background-color: black;
+}
+
+#container {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+h1 {
+  color: white;
+  text-align: center
+}
