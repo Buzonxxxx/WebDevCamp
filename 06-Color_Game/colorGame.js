@@ -8,31 +8,12 @@ const colors = [
 ]
 
 const squares = document.querySelectorAll(".square")
-const pickedColor = colors[3]
+const pickedColor = pickColor()
 const colorDisplay = document.querySelector("#colorDisplay")
+const messageDisplay = document.querySelector("#message")
+
 colorDisplay.textContent = pickedColor
 
-/* [for method]
-for (let i = 0; i < squares.length; i++) {
-  // add initial colors to squares
-  squares[i].style.backgroundColor = colors[i]
-
-  //add click listeners to squares
-  squares[i].addEventListener("click", function () {
-    //grab color of clicked square
-    const clickedColor = this.style.backgroundColor
-    //compare color in pickedColor
-    if (clickedColor === pickedColor) {
-      alert("Correct!")
-    }
-    else {
-      alert("Wrong!")
-    }
-  })
-}
-*/
-
-//[forEach method]
 squares.forEach(
   (square, i) => {
     square.style.backgroundColor = colors[i]
@@ -41,11 +22,32 @@ squares.forEach(
       const clickedColor = square.style.backgroundColor
       //compare color in pickedColor
       if (clickedColor === pickedColor) {
-        alert("Correct!")
+        messageDisplay.textContent = "Correct!"
+        changeColors(clickedColor)
       }
       else {
-        alert("Wrong!")
+        square.style.backgroundColor = "black"
+        messageDisplay.textContent = "Try Again!"
       }
     })
   })
 
+const changeColors = (color) => {
+  //loop through all squares
+  squares.forEach(
+    (square, i) => {
+      square.style.backgroundColor = color
+    })
+
+  //change each color to match given color
+}
+
+// const pickColor = () => {
+//   const random = Math.floor(Math.random() *  colors.length)
+//   return colors[random]
+// }
+
+function pickColor() {
+  const random = Math.floor(Math.random() *  colors.length);
+  return colors[random]
+}
