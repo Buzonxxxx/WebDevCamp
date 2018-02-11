@@ -10,6 +10,7 @@ const capitalize2 = function(str){
 }
 
 console.log(capitalize1("louisliao"))
+console.log(capitalize2("louisliao"))
 
 //is even?
 function isEven(num){
