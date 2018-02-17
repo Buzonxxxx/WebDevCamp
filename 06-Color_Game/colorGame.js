@@ -55,7 +55,7 @@ resetButton.addEventListener("click", () => {
     (square, i) => {
       square.style.backgroundColor = colors[i]
     })
-  h1.style.backgroundColor = "black"
+  h1.style.backgroundColor = "steelblue"
 })
 
 squares.forEach(
