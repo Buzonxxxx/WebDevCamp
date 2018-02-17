@@ -1,0 +1,58 @@
+p {
+	font-family: Arial;
+}
+
+h1 {
+	font-family: Georgia;
+}
+
+/*font-size*/
+
+body {
+	font-size: 10px
+}
+
+/* em: partent font size的倍數 */
+
+h1 {
+	font-size: 5.0em
+}
+
+/*font-weight*/
+
+P {
+	font-weight: bold;
+	font-weight: bolder;
+	font-weight: lighter;
+	font-weight: from 100 to 900;
+	/*400: normal, 700: bold*/
+}
+
+/*line-height*/
+
+p {
+	line-height: 2
+}
+
+/*text-align*/
+
+p {
+	text-align: center;
+	text-align: left;
+	text-align: right;
+}
+
+/*text-decoration*/
+
+p {
+	text-decoration: underline;
+	text-decoration: overline;
+	text-decoration: line-through;
+	text-decoration: blink;
+}
+
+/*letter-spacing 文字水平間隔*/
+
+p {
+	letter-spacing: 2px;
+}

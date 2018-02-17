@@ -1,5 +1,0 @@
-const first_name = prompt("What is your first name?")
-const last_name = prompt("What is your last name?")
-const age = prompt("What is your age?")
-alert("Great to meet you, "+ first_name + " " + last_name + ".")
-alert("You are "+ age + " years old. Right?")
