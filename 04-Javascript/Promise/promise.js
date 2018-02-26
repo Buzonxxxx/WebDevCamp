@@ -10,6 +10,10 @@ promise = new Promise((resolve, reject) => {
   setTimeout(() => {
     resolve()
   }, 3000)
+  // reject()
+  setTimeout(() => {
+    reject()
+  }, 3000)
 })
 
 promise
