@@ -5,14 +5,14 @@
   3. rejected -> catch
 */
 
-promise = new Promise((resolve, reject) => {
+p = new Promise((resolve, reject) => {
   // resolve()
   setTimeout(() => {
     resolve()
   }, 3000)
 })
 
-promise
+p
 .then(() => console.log('finally finished'))
 .then(() => console.log('I was also ran !!!'))
 .catch(() => console.log('uh ah!!'))
