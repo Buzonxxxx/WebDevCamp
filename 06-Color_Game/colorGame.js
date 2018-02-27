@@ -83,8 +83,6 @@ function changeColors(color) {
     (square, i) => {
       square.style.backgroundColor = color
     })
-
-  //change each color to match given color
 }
 
 function pickColor() {
