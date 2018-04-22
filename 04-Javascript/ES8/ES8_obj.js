@@ -10,12 +10,11 @@ let obj = {
   c: 'three',
 }
 
-let keys = Object.keys(obj)
-let values = Object.values(obj)
+console.log(Object.keys(obj))
+console.log(Object.values(obj))
+console.log(Object.entries(obj))
 let entries = Object.entries(obj)
-console.log(keys)
-console.log(values)
-console.log(entries)
+
 
 for (let entry of entries) {
   console.log(`key: ${entry[0]}, value: ${entry[1]}`)
