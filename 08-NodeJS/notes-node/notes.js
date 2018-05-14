@@ -52,6 +52,10 @@ const removeNote = (title) => {
   }
 
   const logNote = (note) => {
+    // Break on this line and use repl to output note
+    // User read command with title
+    // e.g. node inspect app.js read --title="ToDo1"  
+    debugger
     console.log('---')
     console.log(`Title: ${note.title}`)
     console.log(`Body: ${note.body}`)
