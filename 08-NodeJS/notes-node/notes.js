@@ -16,7 +16,6 @@ const saveNotes = (notes) => {
 }
 
 const addNote = (title, body) => {
-  // console.log('Adding note', title, body) 
   let notes = fetchNotes()
   const note = {
     title,
@@ -41,10 +40,15 @@ const getNote = (title) => {
 }
 
 const removeNote = (title) => {
-  // fetch note
-  // filter notes, removing the one with title of argument
-  // save new notes array
-}
+  // fetch notes
+  let notes = fetchNotes()
+  //只存沒被移除的note
+  const filteredNotes =  notes.filter( note => note.title !== title)
+  saveNotes(filteredNotes)
+
+  return notes.length !== filteredNotes.length
+  }
+
 module.exports = {
   addNote,
   getAll,
