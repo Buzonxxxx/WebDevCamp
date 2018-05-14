@@ -1,25 +1,14 @@
-console.log('Starting app')
-
 const fs = require('fs')
-const os = require('os')
 const _ = require('lodash')
-const notes = require('./notes.js')
 const yargs = require('yargs')
 
-const argv = yargs.argv
-//get system user info
-const user = os.userInfo()
-// create file and append string
-// fs.appendFileSync('greeting.txt', `Hello ${user.username}! You are in age ${notes.age}`)
+const notes = require('./notes.js')
 
-// console.log(_.isString('Louis'))
-// console.log(_.uniq([1,1,'Jack',2,'Louis',2,3,3,3]))
+const argv = yargs.argv
 
 // get command from console
 const command = argv._[0]
 console.log(`Command is: ${command}`)
-console.log('Process', process.argv)
-console.log('Yargs', argv)
 
 let message, note
 
@@ -36,7 +25,9 @@ switch(command){
   break
   
   case 'list':
-  notes.getAll()
+  let allNotes = notes.getAll()
+  console.log(`Printing ${allNotes.length} note(s)`)
+  allNotes.forEach(note => notes.logNote(note))
   break
   
   case 'read':

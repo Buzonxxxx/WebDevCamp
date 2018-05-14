@@ -12,10 +12,17 @@ console.log(person)
 
 
 /*
-[Hot to user debugger]
+[How to user CLI debugger]
 - set debugger breakpoint in your code
 - node inspect xxx.js
 - type 'c' to the debugger breakpoint
 - type 'repl'
 - verify your code
+- e.g. node inspect app.js read --title="ToDo1"  
+
+[How to user Chrome DevTool Debugger]
+- node --inspect-brk xxx.js
+- go to Chrome://inspect
+- click 'Open dedicated DevTools for Node'
+- e.g. node --inspect-brk app.js read --title="ToDo1"
 */
