@@ -21,30 +21,40 @@ console.log(`Command is: ${command}`)
 console.log('Process', process.argv)
 console.log('Yargs', argv)
 
+let message, note
+
 switch(command){
   case 'add':
   // if note = undefined, it means duplicate note
-  let note = notes.addNote(argv.title, argv.body)
+  note = notes.addNote(argv.title, argv.body)
   if (note){
     console.log('New note added!')
-    console.log('---')
-    console.log(`Title: ${argv.title}`)
-    console.log(`Body: ${argv.body}`)
+    notes.logNote(note)
   } else {
     console.log('The note is duplicated!')
   }
   break
+  
   case 'list':
   notes.getAll()
   break
+  
   case 'read':
-  notes.getNote(argv.title)
+  note = notes.getNote(argv.title)
+  if (note){
+    console.log('Note found')
+    notes.logNote(note)
+  } else {
+    console.log('Note not found')
+  }
   break
+
   case 'remove':
   const notRemoved = notes.removeNote(argv.title)
-  const message = notRemoved ? 'Note was removed' : 'Note not found' 
+  message = notRemoved ? 'Note was removed' : 'Note not found' 
   console.log(message)
   break
+  
   default: 
   console.log("Command not recognized")
 }

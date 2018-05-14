@@ -36,24 +36,32 @@ const getAll = () => {
 }
 
 const getNote = (title) => {
-  console.log(`Getting note: ${title}`)
+  let notes = fetchNotes()
+  const findNote = notes.filter( note => note.title === title)  
+  return findNote[0]
 }
 
 const removeNote = (title) => {
   // fetch notes
   let notes = fetchNotes()
   //只存沒被移除的note
-  const filteredNotes =  notes.filter( note => note.title !== title)
+  const filteredNotes = notes.filter( note => note.title !== title)
   saveNotes(filteredNotes)
 
   return notes.length !== filteredNotes.length
   }
 
+  const logNote = (note) => {
+    console.log('---')
+    console.log(`Title: ${note.title}`)
+    console.log(`Body: ${note.body}`)
+  }
 module.exports = {
   addNote,
   getAll,
   getNote,
-  removeNote
+  removeNote,
+  logNote
 }
 
 module.exports.add = (a, b) => a + b
