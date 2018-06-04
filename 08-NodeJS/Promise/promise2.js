@@ -7,6 +7,6 @@ let p = new Promise((resolve, reject) => {
 })
 
 p.then(response => console.log(response))
-  .catch(error => console.log(error))
+ .catch(error => console.log(error))
 
 console.log('after promise consumption')
