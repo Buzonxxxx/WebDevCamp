@@ -8,5 +8,5 @@ class Person {
   }
 }
 
-var friends = ['Louis', 'Bob', 'Jane']
+const friends = ['Louis', 'Bob', 'Jane']
 const person = new Person('Mike').myFriends6(friends)
