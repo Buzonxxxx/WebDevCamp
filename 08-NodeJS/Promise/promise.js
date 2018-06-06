@@ -20,3 +20,18 @@ p
 .then(() => console.log('finally finished'))
 .then(() => console.log('I was also ran !!!'))
 .catch(() => console.log('uh ah!!'))
+
+
+// rewrite in async/await, use try/catch for error handler
+const np = async() => {
+  try {
+  await setTimeout(() => {
+    console.log('finally finished')
+    console.log('I was also ran !!!')
+  }, 3000)
+  } catch(e) {
+    console.log('uh ah!!')
+  }
+}
+
+np()
