@@ -6,20 +6,24 @@
 */
 
 p = new Promise((resolve, reject) => {
-  // resolve()
   setTimeout(() => {
-    resolve()
+    resolve('Resolved promise data')
   }, 3000)
-  // reject()
   setTimeout(() => {
-    reject()
+    reject('Rejectedd promise data')
   }, 3000)
 })
 
 p
-.then(() => console.log('finally finished'))
-.then(() => console.log('I was also ran !!!'))
-.catch(() => console.log('uh ah!!'))
+.then( (response) => {
+  console.log('finally finished')
+  console.log('I was also ran !!!')
+  console.log(response)
+})
+.catch((error) => {
+  console.log('uh ah!!')
+  console.log(error)
+})
 
 
 // rewrite in async/await, use try/catch for error handler
