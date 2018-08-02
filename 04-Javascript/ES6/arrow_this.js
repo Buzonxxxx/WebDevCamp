@@ -1,12 +1,22 @@
-class Person {
-  constructor(name) {
-    this.name = name
-  }
-  myFriends6(friends) {
-    let arr = friends.map(el => `${this.name} is friends with ${el}`)
-    console.log(arr)
+const team1 = {
+  members: ['Jane', 'Bill'],
+  teamName: 'Super Squad',
+  teamSummary: function() {
+    return this.members.map(function(member) {
+      return `${member} is on team ${this.teamName}`
+    })
   }
 }
 
-const friends = ['Louis', 'Bob', 'Jane']
-const person = new Person('Mike').myFriends6(friends)
+const team2 = {
+  members: ['Jane', 'Bill'],
+  teamName: 'Super Squad',
+  teamSummary: function() {
+    return this.members.map((member) => {
+      return `${member} is on team ${this.teamName}`
+    })
+  }
+}
+
+console.log(team1.teamSummary())
+console.log(team2.teamSummary())

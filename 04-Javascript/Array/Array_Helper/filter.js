@@ -17,7 +17,7 @@ const comments = [
   { postId: 4, content: 'neat' },
 ]
 const commentsForPost = (post, comments) => {
-  comments.filter(comment => comment.postId === post.id)
+  return comments.filter(comment => comment.postId === post.id)
 }
 console.log(commentsForPost(post, comments))
 

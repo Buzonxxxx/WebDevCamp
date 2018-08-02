@@ -3,7 +3,8 @@
 
 //加總
 const numbers = [10, 20, 30]
-const result = numbers.reduce((sum, number) => sum + number, 0)
+// first argument is initila value, second argument is element in array
+const result = numbers.reduce((sum, number) => sum + number, 0) //0 is initial value
 console.log(result)
 
 //取值
@@ -41,5 +42,5 @@ const balanceParens = string => {
     return previous
   }, 0)
 }
-console.log(balanceParens(")((((((("))
+console.log(balanceParens(")((((((())))))"))
 

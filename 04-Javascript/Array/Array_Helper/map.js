@@ -1,8 +1,14 @@
 /*map  
   使用 map() 時他需要回傳一個值，
-  他會透過函式內所回傳的值組合成一個陣列。
+  他會透過函式內所回傳的值組合成一個*陣列*。
 */
-//sample1
+
+// put each element of array in each iteration function
+const numbers = [1, 2, 3]
+const double = numbers.map(num => num*2)
+console.log(double)
+
+
 const car = [
   {model: 'Buick', price: 'cheap'},
   {model: 'Carmaro', price: 'expensive'} 
