@@ -1,4 +1,4 @@
-function myforEach(arr,func){
+const myforEach = (arr,func) => {
 	// for .. of
 	for (const i of arr){
 		func(i)
