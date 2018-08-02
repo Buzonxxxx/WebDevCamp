@@ -1,0 +1,39 @@
+// Destructure
+
+//array
+const [name1, age1] = ['Mike', 33]
+console.log(name1)
+console.log(age1)
+
+// obj
+const obj = {
+  firstName: 'John',
+  lastName: 'Smith'
+}
+const { firstName, lastName } = obj
+console.log(firstName)
+console.log(lastName)
+
+const { firstName: a, lastName: b } = obj
+console.log(a)
+console.log(b)
+
+const savedField = {
+  extension: 'jpg',
+  name: 'repost',
+  size: 14040
+}
+const fileSummary = ({ extension, name, size}, { color }) => {
+  return `Color is ${color}, file name is ${name}.${extension} is of size ${size}`
+}
+console.log(fileSummary(savedField, { color: 'red' }))
+
+// function
+const calcAgeRetirement = (year) => {
+  age = new Date().getFullYear() - year
+  return [age, 65 - age]
+}
+
+const [age2, retirement] = calcAgeRetirement(1990)
+console.log(age2)
+console.log(retirement)
