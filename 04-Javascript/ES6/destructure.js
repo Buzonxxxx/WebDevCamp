@@ -3,9 +3,7 @@
 //ES5
 var john = ['john', 26]
 var name = john[0]
-// var age = john[1]
-// console.log(name)
-// console.log(age)
+
 //ES6
 const [name1, age1] = ['Mike', 33]
 console.log(`name 1 is ${name1}`)
