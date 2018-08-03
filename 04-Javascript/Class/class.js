@@ -22,3 +22,28 @@ Person.greeting()
 const Louis = new Person('Louis', 1983, 'Programmer')
 console.log(`${Louis.firstName} is ${Louis.calculateAge()} years old`)
 console.log(Louis.getEmailAddress())
+
+class Car1 {
+  constructor({ title }) {
+    this.title = title
+  }
+  drive() {
+    return 'vroom'
+  }
+}
+
+const car = new Car1({ title: 'Toyota' })
+console.log(car.drive())
+console.log(car.title)
+
+// class Car2 {
+//   constructor({ title }) {
+//     this.title = title
+//   }
+
+//   drive() {
+//     return 'vroom'
+//   }
+// }
+
+// class Toyota

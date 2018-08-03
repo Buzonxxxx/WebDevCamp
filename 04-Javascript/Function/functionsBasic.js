@@ -13,40 +13,25 @@ console.log(capitalize1("louisliao"))
 console.log(capitalize2("louisliao"))
 
 //is even?
-function isEven(num){
-	while (num%2 === 0){
-		return true;
-	}
-	return false;
-}
-console.log(isEven(333));
+const isEven = num => num%2 === 0 ? true : false
+console.log(isEven(333))
 
 //factorial
-function factorial(num){
-	let sum = 1;
+const factorial = num => {
+	sum = 1
 	for (let i = 1; i <=num; i++) {
-		sum=sum*i;
+		sum=sum*i
 	}
-	return sum;
+	return sum
 }
 console.log(factorial(10));
 
 //replace "-" to "_"
-function KebabToSnake(str){
-	const res = str.replace("-","_");
-	return res;
-}
+const KebabToSnake = (str) => res = str.replace("-","_");
 console.log(KebabToSnake("Hello-world"));
 
-//Function default parameters
-function cars(car1="BMW", car2="Benz"){
-	console.log(car1, car2)
-}
-cars()
-cars("Toyota", "Honda")
-
 // Pass function to another function
-setInterval(function(){
+setInterval(() => {
 	console.log("I am an anonymous function.")
 	console.log("THIS IS AWSOME!")
 }, 2000)

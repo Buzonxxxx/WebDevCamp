@@ -29,8 +29,8 @@ johnAthlete6.calculateAge()
 
 //Sample2
 class Car {
-  constructor(options) {
-    this.title = options.title
+  constructor({ title }) {
+    this.title = title
   }
   drive() {
     return 'vroom'

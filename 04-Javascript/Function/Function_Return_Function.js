@@ -1,4 +1,4 @@
-// Functions returning functions #ToPractice
+// Functions returning functions 
 
 const interviewQuestion = job => {
   if (job === 'designer') {
