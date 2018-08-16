@@ -1,8 +1,8 @@
 const button = document.querySelector("button")
-let isPurple = false
 
 //type 1
 
+// let isPurple = false
 // button.addEventListener("click", () => {
 //   if (isPurple){
 //     document.body.style.background = "white"

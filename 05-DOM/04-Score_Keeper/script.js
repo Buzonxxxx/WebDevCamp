@@ -45,12 +45,7 @@ p2Display.textContent = 0
 }
 
 numInput.addEventListener("change", () => {
-  //this = numInput
-  winningScoreDisplay.textContent = this.value
-  winningScore = Number(this.value)
+  winningScoreDisplay.textContent = event.target.value
+  winningScore = Number(event.target.value)
   reset()
 })
-
-//轉num型態用Number()
-//取element值用.value
-// MDN events https://developer.mozilla.org/en-US/docs/Web/Events

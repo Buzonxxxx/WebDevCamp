@@ -42,6 +42,8 @@ logo.setAttribute("srcset", "https://image.flaticon.com/icons/svg/37/37150.svg")
 //change all links 
 const links = document.getElementsByTagName("a")
 
-for (let i = 0; i < links.length; i++){
-  links[i].style.background = "pink"
-  }
+let i = 0
+while(i < links.length){
+  links[i].style.background = "blue"
+  i++
+}  
