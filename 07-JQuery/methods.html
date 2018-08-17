@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>JQuery Methods</title>
-	<script type="text/javascript" src="lib/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<style type="text/css">
 		.correct{
@@ -18,11 +18,27 @@
 			color: gray;
 			text-decoration: line-through;
 		}
+
+		div{
+			width: 100px;
+			height: 100px;
+			background:teal;
+			float: left;
+			margin: 20px;	
+		}
 	</style>
 
 </head>
 <body>
 <h1>JQuery Methods</h1>
+
+<div>Please don't fade me!</div>
+<div>I'm begging you, please!</div>
+<div>Help help help!</div>
+
+<button id='clickme'>Googbye!</button>
+
+<br>
 
 <input type="text" placeholder="your name" ="">
 
@@ -31,7 +47,9 @@
 	<option value="">Turtle</option>
 	<option value="">Toad</option>
 </select>
-
+<br>
+<button id='submit'>Don't click me</button>
+<input type='text'>
 <ul>
 	<li>Skittles</li>
 	<li>Starburst</li>
@@ -81,4 +99,36 @@ toggleClass()
 $("h1").removeClass("correct")
 $("li").first().toggleClass("wrong")
 
+click()
+$('#submit').click(function() {
+const text = $(this).text()
+console.log('You click the ' + text)
+})
+$('#submit').click(() => alert('clicked'))
+
+keypress()
+$('input').keypress(function() {
+console.log('Yout press a key')
+})
+
+on() 
+$('h1').on('click', function() {
+	$('h1').css('color', 'purple')
+})
+
+$('button').on('mouseenter', function() {
+	$(this).css('font-weight', 'bold')
+})
+
+$('button').on('mouseleave', function() {
+	$(this).css('font-weight', 'normal')
+})
+
+fadeOut()
+$('#clickme').click(function(){
+	$('div').fadeOut(2000, function(){
+	$(this).remove()	
+})
+})
 -->
+

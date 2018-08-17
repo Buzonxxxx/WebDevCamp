@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title>jQuery Demo</title>
-	<script type="text/javascript" src="lib/jquery-3.2.1.min.js"></script>
+	<!-- JQuery CDN -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -19,8 +20,9 @@
 </body>
 </html>
 
-<!--
-1. JQuery selector
+<!-- TYPE IN CHROME CONSOLE
+	
+1. JQuery selector by $()
 
 $("a")  
 $("li a")
@@ -29,7 +31,7 @@ $("#handsome")
 -->
 
 <!-- 
-2. Change css value
+2. Change css value by .css()
 
 $("h1").css("color", "yellow")  === document.querySelector("h1").style.color = "orange"
 $("li").css("color", "blue")
