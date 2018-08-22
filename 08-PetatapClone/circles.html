@@ -3,10 +3,19 @@
 <head>
   <title>Circles</title>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.5/paper-full.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.14/howler.js"></script>
   <link rel="stylesheet" href="circles.css">
   
   <script type="text/paperscript" canvas="myCanvas">
 
+    var sound1 = new Howl({
+      src: ['sounds/bubbles.mp3']
+    });
+
+    var sound2 = new Howl({
+      src: ['sounds/clay.mp3']
+    });
+    
     var circles = [];
     
     function onKeyDown(event) {
@@ -14,7 +23,16 @@
       var randomPoint = Point.random()
       var point = maxPoint * randomPoint
       var newCircle = new Path.Circle(point, 500)
-      newCircle.fillColor = 'blue'
+      if(event.key === 'a'){
+        sound1.play()
+        newCircle.fillColor = 'purple'
+      }
+      else if(event.key === 's'){
+        sound2.play()
+        newCircle.fillColor = '#16a085'
+      } else{
+        newCircle.fillColor = 'orange'
+      }
       circles.push(newCircle)
     }
 
