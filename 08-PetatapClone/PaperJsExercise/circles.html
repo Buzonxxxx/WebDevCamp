@@ -1,22 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Circles</title>
-  <script type="text/javascript" src="paper-full.js"></script>
-  <link rel="stylesheet" href="circles.css">
-  <script type="text/paperscript" canvas="myCanvas">
-    for(var y=0; y<=1000; y+=100 ){
-      for(var x=0; x<=1000; x+=100){
-      var myCircle = new Path.Circle(new Point(x, y), 10);
-      myCircle.fillColor = 'purple';
-      }
-    }   
-  </script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.5/paper-full.js"></script>
+<link rel="stylesheet" href="circles.css">
+<!-- Define inlined JavaScript -->
+<script type="text/javascript">
+	// Only executed our code once the DOM is ready.
+	window.onload = function() {
+		// Get a reference to the canvas object
+		var canvas = document.getElementById('myCanvas');
+		// Create an empty project and a view for the canvas:
+    paper.setup(canvas);
+    
+		for(var y=0; y<=1000; y+=100 ){
+			for(var x=0; x<=1000; x+=100){
+				var myCircle = new paper.Path.Circle(new paper.Point(x, y), 10);
+				myCircle.fillColor = 'purple';
+			}	
+		} 
+	}
+</script>
 </head>
 <body>
-  <canvas id="myCanvas" resize></canvas>
+	<canvas id="myCanvas" resize></canvas>
 </body>
 </html>
