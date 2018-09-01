@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 
 app.get('/results', (req, res) => {
   const query = req.query.search
-  request(`http://www.omdbapi.com/?apikey=thewdb&s=${query}`, function(error, response, body){
+  request(`http://www.omdbapi.com/?apikey=thewdb&s=${query}`, (error, response, body) => {
     if(!error && response.statusCode == 200){
       const results = JSON.parse(body)
       res.render('results', {results})
