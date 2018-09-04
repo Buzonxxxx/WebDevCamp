@@ -10,7 +10,8 @@ app.set('view engine', 'ejs')
 // DB SCHEMA SETUP
 const campgroundSchema = new mongoose.Schema({
   name: String,
-  image: String
+  image: String,
+  description: String
 })
 
 const Campground = mongoose.model("Campground", campgroundSchema)
@@ -18,7 +19,8 @@ const Campground = mongoose.model("Campground", campgroundSchema)
 // Campground.create(
 //   {
 //     name: 'Granite Hill', 
-//     image: 'https://cdn.pixabay.com/photo/2016/02/18/22/16/tent-1208201_1280.jpg'
+//     image: 'https://cdn.pixabay.com/photo/2016/02/18/22/16/tent-1208201_1280.jpg',
+//     description: 'This is a huge granite hill, no bathrooms. No water. Beautiful granite!'
 //   }, (err, campground) => {
 //     if(err) {
 //       console.log(err)
@@ -44,6 +46,7 @@ app.get('/', (req, res) => {
   res.render('landing')
 })
 
+//INDEX - show all campgrounds
 app.get('/campgrounds', (req, res) => {
   // Get all campgrounds from DB
   Campground.find({}, (err, allCampgrounds) => {
@@ -55,6 +58,7 @@ app.get('/campgrounds', (req, res) => {
   })
 })
 
+//CREATE - add new campgrounds to DB
 app.post('/campgrounds', (req, res) => {
   const name = req.body.name
   const image = req.body.image
@@ -70,8 +74,14 @@ app.post('/campgrounds', (req, res) => {
   })
 })
 
+//NEW - show from to create new campground
 app.get('/campgrounds/new', (req, res) => {
   res.render('new')
+})
+
+//SHOW - show more info about one campground
+app.get('/campgrounds/:id', (req, res) => {
+  res.render('show')
 })
 
 app.listen(3000, () => {
