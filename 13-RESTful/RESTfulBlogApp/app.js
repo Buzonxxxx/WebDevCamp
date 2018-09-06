@@ -33,6 +33,29 @@ app.get('/blogs', (req, res) => {
   })
 })
 
+app.post('/blogs', (req, res) => {
+  Blog.create(req.body.blog, (err, newBlog) => {
+    if(err) {
+      res.render('new')
+    } else {
+      res.redirect('/blogs')
+    }
+  })
+})
+
+app.get('/blogs/new', (req, res) => {
+  res.render('new')
+})
+
+app.get('/blogs/:id', (req, res) => {
+  Blog.findById(req.params.id, (err, foundBlog) => {
+    if(err) {
+      res.redirect('/blogs')
+    } else {
+      res.render('show', {foundBlog})
+    }
+  })
+})
 
 
 app.listen(3000, () => {
