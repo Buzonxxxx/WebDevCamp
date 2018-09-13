@@ -1,46 +1,15 @@
 const express    = require('express'),
       app        = express(),
       bodyParser = require('body-parser'),
-      mongoose   = require('mongoose')
-
-mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true })
+      mongoose   = require('mongoose'),
+      Campground = require('./models/campground')
+      seedDB     = require('./seeds')
+      
+mongoose.connect("mongodb://localhost/yelp_camp_v3", { useNewUrlParser: true })
 app.use(bodyParser.urlencoded({extended: true}))
 app.set('view engine', 'ejs')
-
-// DB SCHEMA SETUP
-const campgroundSchema = new mongoose.Schema({
-  name: String,
-  image: String,
-  description: String
-})
-
-const Campground = mongoose.model("Campground", campgroundSchema)
-
-// Campground.create(
-//   {
-//     name: 'Granite Hill', 
-//     image: 'https://cdn.pixabay.com/photo/2016/02/18/22/16/tent-1208201_1280.jpg',
-//     description: 'This is a huge granite hill, no bathrooms. No water. Beautiful granite!'
-//   }, (err, campground) => {
-//     if(err) {
-//       console.log(err)
-//     } else {
-//       console.log('Newly created campground:')
-//       console.log(campground)
-//     }
-//   })
-
-// const campgrounds = [
-//   {name: 'Salmon Creek', image: 'https://cdn.pixabay.com/photo/2016/11/21/15/14/camping-1845906_1280.jpg'},
-//   {name: 'Granite Hill', image: 'https://cdn.pixabay.com/photo/2016/02/18/22/16/tent-1208201_1280.jpg'},
-//   {name: 'Mountain Goat\'s Rest', image: 'https://cdn.pixabay.com/photo/2015/03/26/10/29/camping-691424_1280.jpg'},
-//   {name: 'Salmon Creek', image: 'https://cdn.pixabay.com/photo/2016/11/21/15/14/camping-1845906_1280.jpg'},
-//   {name: 'Granite Hill', image: 'https://cdn.pixabay.com/photo/2016/02/18/22/16/tent-1208201_1280.jpg'},
-//   {name: 'Mountain Goat\'s Rest', image: 'https://cdn.pixabay.com/photo/2015/03/26/10/29/camping-691424_1280.jpg'},
-//   {name: 'Salmon Creek', image: 'https://cdn.pixabay.com/photo/2016/11/21/15/14/camping-1845906_1280.jpg'},
-//   {name: 'Granite Hill', image: 'https://cdn.pixabay.com/photo/2016/02/18/22/16/tent-1208201_1280.jpg'},
-//   {name: 'Mountain Goat\'s Rest', image: 'https://cdn.pixabay.com/photo/2015/03/26/10/29/camping-691424_1280.jpg'},
-// ]
+      
+seedDB()      
 
 app.get('/', (req, res) => {
   res.render('landing')
@@ -82,10 +51,11 @@ app.get('/campgrounds/new', (req, res) => {
 
 //SHOW - show more info about one campground
 app.get('/campgrounds/:id', (req, res) => {
-  Campground.findById(req.params.id, (err, foundCampground) => {
+  Campground.findById(req.params.id).populate('comments').exec((err, foundCampground) => {
     if(err) {
       console.log(err)
     } else {
+      // render show template with that campground
       res.render('show', {foundCampground})
     }
   })
