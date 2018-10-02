@@ -1,5 +1,8 @@
 // push: add to the end of an array
 // pop:  remove the last item of an array
+
+//faster than shift/unshift
+
 const images = [
   { height: 10, width: 30 },
   { height: 20, width: 90 },
