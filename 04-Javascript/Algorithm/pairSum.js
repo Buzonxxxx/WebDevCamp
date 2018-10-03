@@ -4,7 +4,6 @@
 // [1 ,2, 4, 4] sum = 8
 
 const arr1 = [1 ,2, 4, 4]
-
 for (let i = 0; i<arr1.length; i++) {
   for (let j = i+1; j<arr1.length; j++) {
     if (arr1[i] + arr1[j] == 8) {
@@ -12,3 +11,8 @@ for (let i = 0; i<arr1.length; i++) {
     }  
   }
 }
+
+/**
+ * 
+ * return 
+ */
