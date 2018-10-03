@@ -3,5 +3,6 @@
 const names = ['John', 'Jane', 'Mark']
 console.log(names.indexOf('xxx'))
 console.log(names.indexOf('Jane'))
+console.log(names.indexOf('Mark'))
 
 
