@@ -1,3 +1,14 @@
+/**
+ * Q. accept 2 arrays, check if all one array's elements' square are in another array
+ * Solution:
+ *  1. 
+ * 
+ * 
+ * for..in: loop over keys in obj
+ * for..of: loop over array 
+ * in operator returns true if the specific key is in the object 
+ */
+
 function same(arr1, arr2){
     if(arr1.length !== arr2.length){
         return false;
@@ -23,4 +34,9 @@ function same(arr1, arr2){
     return true
 }
 
-same([1,2,3,2,5], [9,1,4,4,11])
+if(same([1,2,3,2,5], [9,1,4,4,25])){
+    console.log('Yes')
+} else {
+    console.log('No')
+}
+
