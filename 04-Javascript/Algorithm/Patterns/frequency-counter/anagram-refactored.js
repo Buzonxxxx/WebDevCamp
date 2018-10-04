@@ -29,8 +29,6 @@
  */
 
  function isAnagram(str1, str2) {
-  //  var arr1 = str1.split('');
-  //  var arr2 = str2.split('');
    if(str1.length !== str2.length) {
      return false
    }

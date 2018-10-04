@@ -4,8 +4,8 @@
  *  1. 
  * 
  * 
- * for..in: loop over keys in obj
- * for..of: loop over array 
+ * for...in: loop over keys in obj
+ * for...of: loop over array 
  * in operator returns true if the specific key is in the object 
  */
 
