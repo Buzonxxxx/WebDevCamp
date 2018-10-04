@@ -16,15 +16,14 @@ function validAnagram(first, second) {
     let letter = second[i];
     // can't find letter or letter is zero then it's not an anagram
     if (!lookup[letter]) {
-      console.log(lookup)
       return false;
     } else {
       lookup[letter] -= 1;
+      console.log(lookup)
     }
   }
-  console.log(lookup)
   return true;
 }
 
 // {a: 0, n: 0, g: 0, r: 0, m: 0,s:1}
-console.log(validAnagram('anagrams', 'nagaramm'))
+console.log(validAnagram('anagrams', 'nagarams'))
