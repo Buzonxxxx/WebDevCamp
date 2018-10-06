@@ -9,5 +9,5 @@ const users = [
 ]
 
 console.log(users.find(user => user.name === 'Alex'))
-console.log(users.findIndex(user => user.name === 'Alex'))
+
 

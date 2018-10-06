@@ -7,3 +7,5 @@ https://cs.slides.com/colt_steele/built-in-data-structures-25#/
 https://cs.slides.com/colt_steele/problem-solving-patterns#/
 - Searching Algorithm
 https://cs.slides.com/colt_steele/tries-21#/
+- Sorting Algorithm
+https://cs.slides.com/colt_steele/elementary-sorting-algorithms#/
