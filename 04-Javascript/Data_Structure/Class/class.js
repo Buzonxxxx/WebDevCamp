@@ -1,5 +1,6 @@
 class Person {
   constructor(firstName, yearOfBirth, job) {
+    // 'this' refer to individual instance of class
     this.firstName = firstName
     this.yearOfBirth = yearOfBirth
     this.job = job
@@ -12,38 +13,32 @@ class Person {
   getEmailAddress() {
     return `${this.firstName}.${this.lastName}${this.emailDomain}`
   }
-  //static method: method to the class, not to instance
-  static greeting() {
-    console.log("Hey there!")
-  }
 }
 
-Person.greeting()
 const Louis = new Person('Louis', 1983, 'Programmer')
+
 console.log(`${Louis.firstName} is ${Louis.calculateAge()} years old`)
 console.log(Louis.getEmailAddress())
 
-class Car1 {
-  constructor({ title }) {
-    this.title = title
+
+
+//class method: method to the class, not to instance
+
+class Point{
+  constructor(x, y){
+    this.x = x;
+    this.y = y;
   }
-  drive() {
-    return 'vroom'
+  static distance(a, b) {
+    const dx = a.x - b.x;
+    const dy = a.y - b.y;
+
+    return Math.hypot(dx,dy)
   }
 }
 
-const car = new Car1({ title: 'Toyota' })
-console.log(car.drive())
-console.log(car.title)
+const p1 = new Point(5,5)
+const p2 = new Point(10,10)
 
-// class Car2 {
-//   constructor({ title }) {
-//     this.title = title
-//   }
-
-//   drive() {
-//     return 'vroom'
-//   }
-// }
-
-// class Toyota
+const result = Point.distance(p1, p2)
+console.log(result)

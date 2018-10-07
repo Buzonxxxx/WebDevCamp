@@ -24,3 +24,4 @@ function insertionSort(arr){
 }
 
 console.log(insertionSort([1,2,9,-1,4]))
+// O(n^2)
