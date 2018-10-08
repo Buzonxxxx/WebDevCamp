@@ -1,15 +1,14 @@
 /*
-Q. accept 2 arrays, check if all one array's elements' square are in another array
+Q.  Write a function called same, which accepts two arrays. 
+    The function should return true if every value in the array has it's corresponding value squared 
+    in the second array. The frequency of values must be the same.
+
 Solution:
-    1. check if array length are the same
-        true: continue
-        false: return false
-    2. loop over arr1's element's square 
-    3. check if in another array
-        - true: remove the matched element and keep checking next array1's element
-        - false: return false
+    1. check: array length
+    2. check if arr1's element's square in arr2? if yes, remove element in arr2 and keep checking
 
-
+e.g. [1 ,2 ,3 ,4 ,5] => [4, 1, 9, 16, 25]
+    
 */
 
 function same(arr1, arr2){
@@ -22,14 +21,11 @@ function same(arr1, arr2){
             return false;
         }
         console.log(arr2);
-        arr2.splice(correctIndex,1)
+        arr2.splice(correctIndex, 1)
     }
     return true;
 }
 
-if(same([1,2,3,2], [9,1,4,4])){
-    console.log('Yes')
-} else {
-    console.log('No')
-}
+console.log(same([1,2,3,2], [9,1,4,4]))
 
+// O(n^2)
