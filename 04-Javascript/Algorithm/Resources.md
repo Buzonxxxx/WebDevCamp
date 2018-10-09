@@ -5,6 +5,8 @@ https://cs.slides.com/colt_steele/big-o-notation#/
 https://cs.slides.com/colt_steele/built-in-data-structures-25#/
 - Problem Solving Approach & Patterns
 https://cs.slides.com/colt_steele/problem-solving-patterns#/
+- Recursion
+https://cs.slides.com/colt_steele/searching-algorithms-22#/
 - Searching Algorithm
 https://cs.slides.com/colt_steele/tries-21#/
 - Sorting Algorithm
