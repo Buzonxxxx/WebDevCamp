@@ -11,5 +11,9 @@ https://cs.slides.com/colt_steele/searching-algorithms-22#/
 https://cs.slides.com/colt_steele/tries-21#/
 - Sorting Algorithm
 https://cs.slides.com/colt_steele/elementary-sorting-algorithms#/
+- Linked List
+https://cs.slides.com/colt_steele/singly-linked-lists#/
+- Binary Search Trees
+https://cs.slides.com/colt_steele/trees#/
 - Hash Table
 https://cs.slides.com/colt_steele/hash-tables#/
