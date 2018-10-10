@@ -11,3 +11,5 @@ https://cs.slides.com/colt_steele/searching-algorithms-22#/
 https://cs.slides.com/colt_steele/tries-21#/
 - Sorting Algorithm
 https://cs.slides.com/colt_steele/elementary-sorting-algorithms#/
+- Hash Table
+https://cs.slides.com/colt_steele/hash-tables#/
