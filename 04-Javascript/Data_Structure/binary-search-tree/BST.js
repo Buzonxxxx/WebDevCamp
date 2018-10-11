@@ -81,7 +81,8 @@ tree.insert(2)
 tree.insert(16)
 tree.insert(7)
 
-console.log(tree.find(10))
+console.log(tree)
 
-
+// Insertion - O(log n)
+// Searching - O(log n)
 
