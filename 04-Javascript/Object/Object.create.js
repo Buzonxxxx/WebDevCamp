@@ -1,6 +1,6 @@
 //Object.create
 const personProto = {
-  calculateAge: function() {
+  calculateAge() {
     console.log(2016 - this.yearOfBirth)
   }
 }

@@ -3,55 +3,50 @@
  * An anagram is a word, phrase, or name formed by rearranging the letters of another, 
  * such as cinema, formed from iceman
  * 
- * example:
- * isAnagram('','') // true
- * isAnagram('car', 'rca') // true
- * isAnagram('cat', 'acb') // false
- * 
- * [Solution 1]
- * 1. split string into char and put in array. "car" => ['c', 'a', 'r'], "rca" => ['r', 'c', 'a']
- * 2. check if two array's length are the same
- *    true: nex step
- *    false: return false     
- * 3. loop array 1 and find match in array 2
- *    match: remove char in array 2 and keep finding next char
- *    no match: return false
- * 
- * [Solution 2]
- *  1. split string into char and put in array. "car" => ['c', 'a', 'r'], "rca" => ['r', 'c', 'a']
- *  2. check if two array's length are the same
- *    true: nex step
- *    false: return false     
- *  3. turn arrays into counter object 
- *      ['c', 'a', 'r'] => {'c': 1, 'a': 1, 'r': 1}  
- *      ['r', 'c', 'a'] => {'r': 1, 'c': 1, 'a': 1}
- *  4. check obj1's key and count shoule be matched in obj2
- */
+example:
+    isAnagram('','') // true
+    => {‘’: 1} 
+    => {‘’: 1}
 
- function isAnagram(str1, str2) {
-   if(str1.length !== str2.length) {
-     return false
-   }
-   var counter1 = {};
-   var counter2 = {};
-   for(let i of str1){
-     counter1[i] = (counter1[i] || 0 ) +1 
-   }
-   for(let i of str2){
-    counter2[i] = (counter2[i] || 0 ) +1 
+    isAnagram('car', 'rca') // true
+    => {‘c’:1, ‘a’:1, ‘r’:s}
+    => {‘r’:1, ‘c’:1. ‘a’:1}
+
+    isAnagram('cat', 'acb') // false
+    => {‘c’: 1, ‘a’: 1, ‘t’: 1}
+    => {‘a’: 1, ‘c’: 1, ‘b’: 1}
+
+ - if two strings length is different, return false
+
+ - declare two frequency counters
+
+ - loop over chars of str1 
+ - if char is not in counter1, put char in counter and set value1
+ - if char is already in counter1, increase 1 of char value
+
+ - loop over chars of str2
+ - if char is not in counter2, put char in counter and set value1
+ - if char is already in counter2, increase 1 of char value
+
+ - if key in counter 1 doesn’t in counter 2, return false
+ - if each key’s value does not exist in counter 2, return false
+*/
+
+function isAnagram(str1,str2){
+	if(str1.length !== str2.length) return false;
+	let counter1 = {};
+	let counter2 = {};
+	for(i=0; i< str1.length; i++){
+		counter1 = (counter1[i] || 0) + 1;
   }
-  console.log(counter1)
-  console.log(counter2)
-  for (let key in counter1) {
-    if(counter1[key] !== counter2[key]){
-      return false
-    }
-    if(!(key in counter2)){
-      return false
-    }
+  for(i=0; i< str2.length; i++){
+		counter2 = (counter1[i] || 0) + 1;
   }
-  return true
- }
+  for(let key in counter1){
+	  if(!(key in counter2)) return false;
+	  if(counter1[key] !== counter2[key]) return false;
+  }
+	return true;
+}
 
-
- console.log(isAnagram('saaasd', 'sdsaaa'))
+ console.log(isAnagram('saaads', 'sdsaaa'))

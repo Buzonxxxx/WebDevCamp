@@ -3,6 +3,8 @@ Object.keys()
 Object.value()
 Object.entries()
 hasOwnProperty()
+
+=> all return an array
 */
 
 let obj = {

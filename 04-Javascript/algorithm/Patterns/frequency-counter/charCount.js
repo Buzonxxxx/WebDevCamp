@@ -12,21 +12,21 @@ Solution:
 */
 
 // Original
-function charCount(str) {
-  var result = {}
-  for(var i = 0; i < str.length; i++){
-    var char = str[i].toLowerCase()
+function charCount(str){
+	let result = {};
+	for(i=0; i<str.length; i++){
+		let char = str[i].toLowerCase();
     if(/[a-z0-9]/.test(char)){
-      if(result[char] > 0) {
-        result[char]++
-      } else {
-        result[char] = 1
+      if(char in result){
+        result[char]++;
       }
-    }
+      else{
+        result[char] = 1;	
+      }
+    } 	
   }
-  return result
+	return result;
 }
-
 console.log(charCount("Hello, World!!!"))
 
 // Refactor version
@@ -64,20 +64,3 @@ console.log(charCount("Hello, World!!!"))
 //       }
 //   return true
 // }
-
-// my version
-// function charCount(str) {
-//   var result = {}
-//   str = str.split('')
-//   str.forEach(char => {
-//     var char = char.toLowerCase()
-//     if(/[a-z0-9]/.test(char))
-//       if(result[char] > 0) {
-//         result[char]++
-//       } else {
-//         result[char] = 1
-//       }
-//   })
-//   return result
-// }
-// console.log(charCount("Hello, hi"))

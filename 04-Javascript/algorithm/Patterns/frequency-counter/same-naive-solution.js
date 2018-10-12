@@ -12,16 +12,11 @@ e.g. [1 ,2 ,3 ,4 ,5] => [4, 1, 9, 16, 25]
 */
 
 function same(arr1, arr2){
-    if(arr1.length !== arr2.length){
-        return false;
-    }
-    for(let i = 0; i < arr1.length; i++){
-        let correctIndex = arr2.indexOf(arr1[i] ** 2)
-        if(correctIndex === -1) {
-            return false;
-        }
-        console.log(arr2);
-        arr2.splice(correctIndex, 1)
+    if(arr1.length !== arr2.length) return false;
+    for(i=0; i< arr1.length; i++){
+        let index = arr2.indexOf(arr1[i] ** 2);
+        if (index === -1) return false;
+        else arr2.splice(index,1);
     }
     return true;
 }

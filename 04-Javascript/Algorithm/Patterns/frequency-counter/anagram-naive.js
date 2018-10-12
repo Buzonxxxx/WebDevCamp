@@ -18,24 +18,24 @@
  *   
  */
 
- function isAnagram(str1, str2) {
-   var arr1 = str1.split('')
-   var arr2 = str2.split('')
-   if(arr1.length !== arr2.length) {
-     return false
-   }
-   for (var i = 0; i < arr1.length; i++) {
-      var correctIndex = arr2.indexOf(arr1[i])
-      if(correctIndex === -1){
-        return false
-      } 
-      console.log(arr2)
-      arr2.splice(correctIndex, 1)
-   }
-   return true
- }
-
-
- console.log(isAnagram('a', ''))
+function isAnagram(str1, str2){
+	arr1 = str1.split('');
+	arr2 = str2.split('');
+	if(arr1.length !== arr2.length){
+	  return false;
+  }
+	for(let i = 0; i<arr1.length; i++){
+    let char = arr1[i]; 
+		let index = arr2.indexOf(char);
+		if(index === -1){
+	    return false;
+    }
+    else{
+	    arr2.splice(index,1);
+    }
+  }
+  return true;
+}
+ console.log(isAnagram('ab', 'ba'))
 
  //O(n^2)
