@@ -13,3 +13,9 @@ switch(job){
   default: 
   console.log("John does something else")
 }
+
+let num = -10;
+while (num <= 19){
+	console.log(num)
+	num++
+}

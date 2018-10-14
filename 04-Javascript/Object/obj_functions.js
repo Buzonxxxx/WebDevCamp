@@ -1,8 +1,21 @@
 /* 
+let obj = {
+  a: 'one',
+  b: 'two',
+  c: 'three',
+}
+
 Object.keys()
+=> [a, b, c]
+
 Object.value()
+=> ['one', 'two', 'three']
+
 Object.entries()
-hasOwnProperty()
+=> [ [ 'a', 'one' ], [ 'b', 'two' ], [ 'c', 'three' ] ]
+
+hasOwnProperty('a')
+=> true
 
 => all return an array
 */
@@ -19,7 +32,6 @@ console.log(Object.entries(obj))
 console.log(obj.hasOwnProperty('a'))
 
 let entries = Object.entries(obj)
-
 
 for (let entry of entries) {
   console.log(`key: ${entry[0]}, value: ${entry[1]}`)

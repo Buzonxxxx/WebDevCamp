@@ -6,20 +6,16 @@
  * ([1,2,5,2,8,1,5],2) // 10
  */
 
-function maxSubarraySum(arr, num) {
-  if ( num > arr.length){
-    return null;
-  }
-  var max = -Infinity;
-  for (let i = 0; i < arr.length - num + 1; i ++){
+function maxSubarraySum(arr, n){
+  if(n > arr.length) return null
+
+	let max = - Infinity;
+	for(let i = 0; i<arr.length - n + 1; i++){
     temp = 0;
-    for (let j = 0; j < num; j++){
-      temp += arr[i + j];
+	  for(let j = 0; j < n; j++){
+	    temp = temp + arr[i + j];
     }
-    if (temp > max) {
-      max = temp;
-    }
-    console.log(temp)
+    if (temp > max) max = temp;
   }
   return max;
 }

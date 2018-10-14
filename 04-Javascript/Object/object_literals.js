@@ -1,8 +1,6 @@
 function createBookShop(inventory) {
   return {
-    // inventory: inventory => inventory
-    inventory,
-    // inventoryValue(): function() {...} => inventoryValue() {...}
+    inventory,   
     inventoryValue() {
       return this.inventory.reduce((total, book) => total + book.price, 0)
     },
@@ -21,5 +19,6 @@ const bookshop = createBookShop(inventory)
 
 console.log(bookshop.inventoryValue())
 console.log(bookshop.priceForTitle('Harry Potter'))
+console.log(bookshop.inventory)
 
 

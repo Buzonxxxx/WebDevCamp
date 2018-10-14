@@ -15,30 +15,40 @@ example:
 
 function countUniqueValues(arr){
 	let i = 0;
-	for(j = 1; j<arr.length; j++){
+	let counter = 1;
+	for(let j = i+1; j<arr.length; j++){
     if(arr[i] !== arr[j]){
-    i++;
-    arr[i] = arr[j];
-    } 
+      counter++;
+      arr[i] = arr[j];
+    }
   }
-  return i + 1;
+  return counter;
 }
 
 console.log(countUniqueValues([1, 2, 3, 3, 4]))
 
 // [reduce solution]
+// function countByReduce(arr){
+//   var uniq = arr.reduce(function(a,b){
+//     if (a.indexOf(b) < 0 ){
+//       a.push(b);
+//     }
+//     return a;
+//     },[]);
+//   return uniq.length
+// }
+
 function countByReduce(arr){
-  var uniq = arr.reduce(function(a,b){
-    if (a.indexOf(b) < 0 ){
-      a.push(b);
-    }
+  let uniq = arr.reduce( (a, b) => {
+    if(a.indexOf(b) === -1) a.push(b);
     return a;
-    },[]);
-  return uniq.length
+  }, [])
+  return uniq.length;
 }
+  
 console.log(countByReduce([1,2,3,4,4,4,7,7,12,12,13]))
 
 // [Use set object]  
-let set =  new Set([1,1,1,1,1,2])
-console.log(set.size);
+// let set =  new Set([1,1,1,1,1,2])
+// console.log(set.size);
 
