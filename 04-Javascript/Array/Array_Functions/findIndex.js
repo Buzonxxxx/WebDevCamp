@@ -7,3 +7,4 @@ const users = [
 ]
 
 console.log(users.findIndex(user => user.name === 'Alex'))
+// 0

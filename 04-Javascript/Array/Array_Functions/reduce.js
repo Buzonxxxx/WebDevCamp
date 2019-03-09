@@ -28,10 +28,8 @@ const myArr = [
 ]
 
 const newArr = myArr.reduce((arr, element) => arr.concat(element), [])
-// ex: [ 1, 2 ].concat([ 3, 4, 5 ])
-// [ 1, 2, 3, 4, 5, 6, 7, 8 ]
 console.log(newArr);
-
+// [ 1, 2, 3, 4, 5, 6, 7, 8 ]
 
 //interview question
 //parentheses are balance or not?
@@ -43,4 +41,3 @@ const balanceParens = string => {
   }, 0)
 }
 console.log(balanceParens(")((((((())))))"))
-

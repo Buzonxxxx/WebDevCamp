@@ -1,4 +1,3 @@
-
 // return true or false
 
 let a = 'wonderful'

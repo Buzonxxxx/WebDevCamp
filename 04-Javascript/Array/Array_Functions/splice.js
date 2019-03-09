@@ -3,7 +3,11 @@
 const ages = [1, 2, 3, 4, 5, 6]
 
 console.log(ages.splice(0, 1))
+// [ 1 ]
 console.log(ages)
+// [ 2, 3, 4, 5, 6 ]
 
 console.log(ages.splice(0, 2, 'xd', 'kk'))
+// [ 2, 3 ] 
 console.log(ages)
+// [ 'xd', 'kk', 4, 5, 6 ]

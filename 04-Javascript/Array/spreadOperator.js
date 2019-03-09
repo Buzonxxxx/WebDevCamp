@@ -4,15 +4,8 @@
 const familySmith = ['John', 'Jane', 'Mark']
 const familyMiller = ['Mary', 'Bob', "Ann"]
 
-// old solution
-const bigFamily1 = familySmith.concat(familyMiller)
-console.log(bigFamily1)
-
-// with spread operator
-const bigFamily2 = [...familySmith, 'Louis', ...familyMiller]
-console.log(bigFamily2)
-
-
+const bigFamily = [...familySmith, 'Louis', ...familyMiller]
+console.log(bigFamily)
 
 
 // Sample 2
@@ -22,5 +15,11 @@ const validateShoppingList = (...items) => {
   }
   return items
 }
-
 console.log(validateShoppingList('oranges', 'bread', 'eggs')) 
+
+// Sample 3
+const max = array => Math.max(...array)
+const min = array => Math.min(...array)
+
+console.log(max([-5, 100]))
+console.log(min([-5, 100]))
