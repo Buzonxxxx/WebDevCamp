@@ -1,19 +1,31 @@
+// Symbol.iterator tells for..of loop how to iterate the object
+
+const testingTeam = {
+  lead: 'Amanda',
+  tester: 'Bill',
+  [Symbol.iterator]: function* () {
+    yield this.lead;
+    yield this.tester;
+  }
+}
+
 const engineeringTeam = {
+  testingTeam,
   size: 3,
   department: 'Engineering',
   lead: 'Jill',
   manager: 'Alex',
-  engineer: 'Dave'
-}
-
-function* TeamIterator(team){
-  yield team.lead;
-  yield team.manager;
-  yield team.engineer;
+  engineer: 'Dave',
+  [Symbol.iterator]: function* () {
+    yield this.lead;
+    yield this.manager;
+    yield this.engineer;
+    yield* this.testingTeam;
+  }
 }
 
 const names = [];
-for (let name of TeamIterator(engineeringTeam)){
+for (let name of engineeringTeam){  
   names.push(name);
 }
 console.log(names);
