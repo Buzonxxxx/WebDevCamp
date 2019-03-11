@@ -22,7 +22,7 @@ console.log(Louis.getEmailAddress())
 
 
 
-//class method: method to the class, not to instance
+// Static: class method: method to the class, not to instance
 
 class Point{
   constructor(x, y){
