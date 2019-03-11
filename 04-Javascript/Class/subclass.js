@@ -37,6 +37,7 @@ class Car {
   }
 }
 class Toyota extends Car {
+  // 用super不要destructure
   constructor(options) {
     super(options) //Car.constructor()
     this.color = options.color

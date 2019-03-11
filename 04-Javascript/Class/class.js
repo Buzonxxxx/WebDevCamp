@@ -1,6 +1,5 @@
 class Person {
   constructor(firstName, yearOfBirth, job) {
-    // 'this' refer to individual instance of class
     this.firstName = firstName
     this.yearOfBirth = yearOfBirth
     this.job = job
@@ -16,7 +15,6 @@ class Person {
 }
 
 const Louis = new Person('Louis', 1983, 'Programmer')
-
 console.log(`${Louis.firstName} is ${Louis.calculateAge()} years old`)
 console.log(Louis.getEmailAddress())
 
@@ -33,7 +31,7 @@ class Point{
     const dx = a.x - b.x;
     const dy = a.y - b.y;
 
-    return Math.hypot(dx,dy)
+    return Math.hypot(dx,dy) // Math.sqrt(dx*dx + dy*dy)
   }
 }
 
