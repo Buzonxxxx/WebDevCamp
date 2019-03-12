@@ -1,6 +1,6 @@
 //Sample1
 class Person {
-  constructor (name, yearOfBirth, job){
+  constructor ({ name, yearOfBirth, job }){
     this.name = name
     this.yearOfBirth = yearOfBirth
     this.job = job
@@ -11,10 +11,11 @@ class Person {
   }
 }
 class Athlete extends Person {
-  constructor(name, yearOfBirth, job, olypicGames, medals){
-    super(name, yearOfBirth, job)
-    this.olypicGames = olypicGames
-    this.medals = medals
+  // 用super不要destructure
+  constructor(options){
+    super(options) //Car.constructor()
+    this.olypicGames = options.olypicGames
+    this.medals = options.medals
   }
   wonMedal(){
     this.medals++
@@ -22,41 +23,16 @@ class Athlete extends Person {
   }
 }
 
-const johnAthlete6 = new Athlete('John', 1990, 'swimmer', 3, 10)
+const johnAthlete6 = new Athlete({ name: 'John', yearOfBirth: 1990, job: 'swimmer', olypicGames: 3, medals: 10 })
 johnAthlete6.wonMedal()
 johnAthlete6.calculateAge()
 /*************************************************************************************************************************************************/
 
 //Sample2
-class Car {
-  constructor({ title }) {
-    this.title = title
-  }
-  drive() {
-    return 'vroom'
-  }
-}
-class Toyota extends Car {
-  // 用super不要destructure
-  constructor(options) {
-    super(options) //Car.constructor()
-    this.color = options.color
-  }
-  honk() {
-    return 'beep'
-  }
-}
-const toyota = new Toyota({ color: 'red', title: 'daily driver' })
-console.log(toyota.honk())
-console.log(toyota.drive())
-console.log(toyota)
-/*************************************************************************************************************************************************/
-
-//Sample3
 class Monster {
-  constructor(options) {
+  constructor({ name }) {
     this.health = 100;
-    this.name = options.name;
+    this.name = name;
   }
 }
 class Snake extends Monster {

@@ -1,27 +1,19 @@
-class Person {
-  constructor(firstName, yearOfBirth, job) {
-    this.firstName = firstName
-    this.yearOfBirth = yearOfBirth
-    this.job = job
-    this.lastName = 'Liao'
-    this.emailDomain = '@facebook.com'
+class Bike {
+  constructor(brand, type, color, outFactoryYear) {
+    this.brand = brand
+    this.type = type
+    this.color = color
+    this.outFactoryYear = outFactoryYear;
+    this.owner = 'Louis'
   }
-  calculateAge(){
-    return new Date().getFullYear() - this.yearOfBirth
-  }
-  getEmailAddress() {
-    return `${this.firstName}.${this.lastName}${this.emailDomain}`
+  calculateProdYear() {
+    return new Date().getFullYear() - this.outFactoryYear
   }
 }
-
-const Louis = new Person('Louis', 1983, 'Programmer')
-console.log(`${Louis.firstName} is ${Louis.calculateAge()} years old`)
-console.log(Louis.getEmailAddress())
-
-
+const cervelo = new Bike('cervelo', 'road bike', 'blue', 6)
+console.log(`The color is ${cervelo.color} and it's produced on ${cervelo.calculateProdYear()}`)
 
 // Static: class method: method to the class, not to instance
-
 class Point{
   constructor(x, y){
     this.x = x;
