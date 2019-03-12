@@ -1,26 +1,32 @@
-const users = [{
-  id: 1,
-  name: 'Andrew',
-  schoolId: 101
-}, {
-  id: 2,
-  name: 'Jessica',
-  schoolId: 999
-}];
-
-const grades = [{
-  id: 1,
-  schoolId: 101,
-  grade: 86
-}, {
-  id: 2,
-  schoolId: 999,
-  grade: 100
-}, {
-  id: 3,
-  schoolId: 101,
-  grade: 80
-}];
+const users = [
+  {
+    id: 1,
+    name: 'Andrew',
+    schoolId: 101
+  },
+  {
+    id: 2,
+    name: 'Jessica',
+    schoolId: 999
+  }
+];
+const grades = [
+  {
+    id: 1,
+    schoolId: 101,
+    grade: 86
+  },
+  {
+    id: 2,
+    schoolId: 999,
+    grade: 100
+  },
+  {
+    id: 3,
+    schoolId: 101,
+    grade: 80
+  }
+];
 
 const getUser = id => {
   return new Promise((resolve, reject) => {
@@ -48,11 +54,17 @@ const getStatus = (userID) => {
     let average = 0
 
     if (grades.length > 0) {
-      average = grades.map((grade) => grade.grade).reduce((a, b) => a + b ) / grades.length
+      average = grades.map((grade) => grade.grade).reduce((a, b) => a + b) / grades.length
     }
     return `${user.name} has a ${average}% in class`
   })
 }
+
+getStatus(1).then((status) => {
+  console.log(status)
+}).catch(((e) => {
+  console.log(e)
+}))
 
 // async / await way
 const getStatusAlt = async (userID) => {
@@ -61,7 +73,7 @@ const getStatusAlt = async (userID) => {
   let average = 0
 
   if (grades.length > 0) {
-    average = grades.map((grade) => grade.grade).reduce((a, b) => a + b ) / grades.length
+    average = grades.map((grade) => grade.grade).reduce((a, b) => a + b) / grades.length
   }
   return `${user.name} has a ${average}% in class`
 }
@@ -73,8 +85,3 @@ getStatusAlt(1).then((status) => {
 })
 
 
-// getStatus(1).then((status) => {
-//   console.log(status)
-// }).catch(((e) => {
-//   console.log(e)
-// }))
