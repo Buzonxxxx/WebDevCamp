@@ -1,3 +1,8 @@
+const inventory = [
+  { title: 'Harry Potter', price: 10 },
+  { title: 'Eloquent Javascript', price: 15}
+]
+
 function createBookShop(inventory) {
   return {
     inventory,   
@@ -9,11 +14,6 @@ function createBookShop(inventory) {
     }
   }
 }
-
-const inventory = [
-  { title: 'Harry Potter', price: 10 },
-  { title: 'Eloquent Javascript', price: 15}
-]
 
 const bookshop = createBookShop(inventory)
 
