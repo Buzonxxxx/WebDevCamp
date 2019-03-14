@@ -1,5 +1,4 @@
 // Functions returning functions 
-
 const interviewQuestion = job => {
   if (job === 'designer') {
     return function (name) {

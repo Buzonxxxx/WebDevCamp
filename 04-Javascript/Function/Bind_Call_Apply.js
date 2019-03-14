@@ -1,52 +1,50 @@
-// Bind, Call and Apply
-
 const john = {
   name: 'Louis',
   age: 34,
   job: 'engineer',
-  presentation: function (style, timeOfDay) {
+  presentation(style, timeOfDay) {
     if (style === 'formal') {
-      console.log(`Good ${timeOfDay}, Ladies and gentlemen! I\'m ${this.name}, I\'m a ${this.job} and I\'m ${this.age} years old`)
+      console.log(`Good ${timeOfDay}, Ladies and gentlemen! I'm ${this.name}, I'm a ${this.job} and I'm ${this.age} years old`)
     } else if (style === 'friendly') {
-      console.log(`Hey! What\'s up? I\'m a ${this.job} and I\'m ${this.age} years old. Have a nice ${timeOfDay}.`)
+      console.log(`Hey! What's up? I'm ${this.name}, I'm a ${this.job} and I'm ${this.age} years old. Have a nice ${timeOfDay}.`)
     }
   }
 }
-// john.presentation('formal', 'Morning')
-// john.presentation('friendly', 'Morning')
 
 const emily = {
   name: 'Emily',
   age: 35,
   job: 'designer'
 }
+
+john.presentation('formal', 'morning')
+john.presentation('friendly', 'morning')
+
 // call(): method borrowing, 3 arguments: this, style, timeOfDay
-// john.presentation.call(emily, 'formal', 'Morning')
+john.presentation.call(emily, 'friendly', 'afternoon')
 
 // apply(): accept argument as array
-// john.presentation.apply(emily, ['formal', 'Morning'])
+john.presentation.apply(emily, ['formal', 'morning'])
 
 // bind(): generate copy of function and so we can store somewhere
 const johnFriendly = john.presentation.bind(john, 'friendly')
-johnFriendly('Evening')
-const emilyFormal = john.presentation.bind(emily, 'formal')
-emilyFormal('afternoon')
+johnFriendly('evening')
+const emilyFormal = john.presentation.bind(emily, 'formal', 'afternoon')
+emilyFormal()
 
 /**************************************************************/
-// Rewrite function argument
-// #ToPractice
 const years = [1990, 1965, 1937, 2005, 1998]
-const calculatAge = el => 2017 - el
+const calculatAge = el => new Date().getFullYear() - el
+
 const arrayCalc = (arr, fn) => {
   let arrRes = []
   arr.forEach( yearOfAge => arrRes.push(fn(yearOfAge)))
   return arrRes
 }
+const ages = arrayCalc(years, calculatAge)
+console.log(ages)
 
 const isFullAge = (limit, el) => el >= limit
-
-const ages = arrayCalc(years, calculatAge)
 const fullJapan = arrayCalc(ages, isFullAge.bind(this, 20))
-console.log(ages)
 console.log(fullJapan)
 

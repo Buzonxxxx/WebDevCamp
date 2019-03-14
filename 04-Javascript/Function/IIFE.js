@@ -10,17 +10,17 @@
 // game()
 
 //IIFE without argument
-(function () {
-  let score = Math.random()*10
-  if (score >= 5){
-    console.log(score)
-  }
-})()
+// (function () {
+//   let score = Math.random()*10
+//   if (score >= 5){
+//     console.log(score)
+//   }
+// })()
 
 //IIFE with argument
 (function (num) {
   let score = Math.random()*10
-  if (score >= 5 - num){
+  if (score >= num){
     console.log(score)
   }
 })(5)

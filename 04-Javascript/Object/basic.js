@@ -14,7 +14,7 @@ const person2 = {
 
 //Retrive data from obj
 console.log(person1.name)
-console.log(person1["name"])
+console.log(person1["name"]) //[] 裡面要放string
 
 //method in object
 const obj = {
