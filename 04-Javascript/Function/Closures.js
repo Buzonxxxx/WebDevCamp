@@ -30,3 +30,13 @@ const interviewQuestion = job => {
   }
 }
   interviewQuestion('teacher')('Mark')
+
+  // ES6 Closure
+
+  const call = () => {
+    const secret = 'ES6 Rocks!'
+    const reveal = () => console.log(secret)
+    reveal()
+  }
+  
+  call()
