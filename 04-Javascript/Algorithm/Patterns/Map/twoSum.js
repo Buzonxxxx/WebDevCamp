@@ -15,7 +15,6 @@ var twoSum1 = function(nums, target) {
   }
 };
 console.log(twoSum1([1,2,6,8], 8))
-console.log(twoSum1([3,2,4], 6))
 // O(n)
 
 var twoSum2 = function(nums, target) {
@@ -26,6 +25,5 @@ var twoSum2 = function(nums, target) {
   }
 };
 
-console.log(twoSum2([1,2,6,8], 8))
-console.log(twoSum2([3,2,4], 6))
+// console.log(twoSum2([1,2,6,8], 8))
 // O(n^2)
