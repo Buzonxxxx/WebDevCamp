@@ -12,7 +12,7 @@ https://en.wikipedia.org/wiki/Associative_array
 
 const question = new Map()
 question.set('question', 'What is the official name of the latest major Javascript version?')
-question.set(1, 'ES5') //(key, value)
+question.set(1, 'ES5') 
 question.set(2, 'ES6')
 question.set(3, 'ES2015')
 question.set(4, 'ES7')
@@ -20,21 +20,14 @@ question.set('correct', 3)
 question.set(true, 'Correct answer :D')
 question.set(false, 'Wrong, please try again!')
 
-// console.log(question.get('question'))
-// console.log(question.size)
+console.log(question.get('question'))
+console.log(question.size)
+if(question.has(4)) question.delete(4)
+console.log(question.entries())
+console.log(question.keys())
+console.log(question.values())
 
-// if(question.has(4)){
-// question.delete(4)
-// console.log('Answer 4 is here.')
-// }
-
-//clear all data in Map()
-
-// question.clear()
-// console.log(question.entries())
-// question.forEach( (value, key) => 
-// console.log(`This is ${key}, and it's set to ${value}`)
-// )
+question.forEach( (value, key) => console.log(`This is ${key}, and it's set to ${value}`))
 
 for (let [key, value] of question.entries()){
   if (typeof(key) === 'number'){
@@ -42,5 +35,20 @@ for (let [key, value] of question.entries()){
   }
 }
 
-const ans = parseInt(prompt('Write the correct answer'))
+const ans = 3
 console.log(question.get(ans === question.get('correct')))
+
+question.clear()
+console.log(question.entries())
+
+/* 
+clear()
+delete(key)
+entries()
+get(key)
+has(key)
+keys()
+values()
+set(key, value)
+forEach()
+*/
