@@ -2,25 +2,21 @@
 // Because nums[0] + nums[1] = 2 + 7 = 9,
 // return [0, 1].
 
-var twoSumWithMap = function(nums, target) {
+const twoSumWithMap = (nums, target) => {
   const map = new Map();
   for (let i = 0; i < nums.length; i++){
-      if (!map.has(target - nums[i])) { 
-          map.set(nums[i], i)
-          console.log(map)
-         }
-      else {
-        return [map.get(target - nums[i]), i]
-      }
+      if (!map.has(target - nums[i])) map.set(nums[i], i)
+      else return [map.get(target - nums[i]), i]
+      console.log(map)
   }
 };
 console.log(twoSumWithMap([1,2,6,8], 8))
 // O(n)
 
-var twoSumWithForLoop = function(nums, target) {
+const twoSumWithForLoop = (nums, target) => {
   for (let i = 0; i < nums.length; i++) {
-      for(let j = i+1; j < nums.length; j++){
-          if(nums[i] + nums[j] == target) return [i,j];
+    for(let j = i+1; j < nums.length; j++){
+      if(nums[i] + nums[j] == target) return [i,j];
       }
   }
 };

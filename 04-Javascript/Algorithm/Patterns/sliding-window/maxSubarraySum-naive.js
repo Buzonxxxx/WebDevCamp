@@ -6,9 +6,8 @@
  * ([1,2,5,2,8,1,5],2) // 10
  */
 
-function maxSubarraySum(arr, n){
+const maxSubarraySum = (arr, n) => {
   if(n > arr.length) return null
-
 	let max = - Infinity;
 	for(let i = 0; i<arr.length - n + 1; i++){
     temp = 0;
