@@ -35,8 +35,8 @@ console.log(newArr);
 //parentheses are balance or not?
 const balanceParens = string => {
   return !string.split("").reduce((previous, char) => {
-    if (char === '(') { return ++previous }
-    if (char === ')') { return --previous }
+    if (char === '(')  return ++previous 
+    if (char === ')')  return --previous 
     return previous
   }, 0)
 }
