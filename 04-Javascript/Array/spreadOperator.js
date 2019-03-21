@@ -23,3 +23,13 @@ const min = array => Math.min(...array)
 
 console.log(max([-5, 100]))
 console.log(min([-5, 100]))
+
+// 實作push, unshift, remove
+const push = (x, array) => [...array, x]
+const unshift = (x, array) => [x, ...array]
+const remove = (index, arr) => [...arr.slice(0, index), ...arr.slice(index + 1)]
+
+
+console.log(push(1, [2,3]))
+console.log(unshift(1, [2,3]))
+console.log(remove(1, [1,2,3]))

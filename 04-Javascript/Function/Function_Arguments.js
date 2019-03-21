@@ -1,5 +1,5 @@
-//Passing function as an argument 
-//Higher order function
+// 接受Funciton 回傳 Function 的 Function
+// Higher order function
 const years = [1990, 1965, 1937, 2005, 1998]
 
 const arrayCalc = (arr, fn) => {

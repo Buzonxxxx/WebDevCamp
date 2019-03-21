@@ -6,28 +6,26 @@
  * ([1,2,5,2,8,1,5],2) // 10
  */
 
-// function maxSubarraySum(arr, num){
-//   let maxSum = 0;
-//   let tempSum = 0;
-//   if (arr.length < num) return null;
-//   for (let i = 0; i < num; i++) {
-//     maxSum += arr[i];
-//   }
-//   tempSum = maxSum;
-//   for (let i = num; i < arr.length; i++) {
-//     tempSum = tempSum - arr[i - num] + arr[i];
-//     maxSum = Math.max(maxSum, tempSum);
-//     // console.log(maxSum)
-//   }
-//   return maxSum;
-// }
+const loop = (arr, n) => {
+  if(n > arr.length) return null
+	let max = -Infinity;
+	for(let i = 0; i<arr.length - n + 1; i++){
+    temp = 0;
+	  for(let j = 0; j < n; j++){
+	    temp = temp + arr[i + j];
+    }
+    if (temp > max) max = temp;
+  }
+  return max;
+}
+console.log(loop([1,2,5,2,8,1,5],2))
+ // O(n^2)
 
-
-function maxSubarraySum(arr, n){
+ const maxSubarraySum = (arr, n) => {
   if(n > arr.length) return null;
   var maxSum = 0;
   var tempSum = 0;
-  for(let i = 0; i< n; i++){
+  for(let i = 0; i < n; i++){
     maxSum += arr[i];
   }
   for(let j = n; j<arr.length; j++){
@@ -38,5 +36,4 @@ function maxSubarraySum(arr, n){
   }
 
 console.log(maxSubarraySum([1,2,5,2,9,1,5],2))
-
- // O(n)
+// O(n)

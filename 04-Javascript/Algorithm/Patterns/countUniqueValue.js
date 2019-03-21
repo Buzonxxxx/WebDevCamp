@@ -38,5 +38,6 @@ console.log(countByReduce([1,2,3,4,4,4,7,7,12,12,13]))
 
 // [Use set object]  
 let set =  new Set([1,1,1,1,1,2])
+console.log([...set])
 console.log(set.size);
 
