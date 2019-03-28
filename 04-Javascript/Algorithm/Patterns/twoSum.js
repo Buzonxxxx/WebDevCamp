@@ -10,7 +10,7 @@ const twoSumWithMap = (nums, target) => {
       console.log(map)
   }
 };
-console.log(twoSumWithMap([1,2,6,8], 8))
+console.log(twoSumWithMap([1,2,3,8,10,13,15,7,6], 8))
 // O(n)
 
 const twoSumWithForLoop = (nums, target) => {
@@ -20,5 +20,5 @@ const twoSumWithForLoop = (nums, target) => {
       }
   }
 };
-console.log(twoSumWithForLoop([1,2,6,8], 8))
+console.log(twoSumWithForLoop([1,2,3,8,10,13,15,7,6], 8))
 // O(n^2)
