@@ -1,4 +1,4 @@
-//filter()回傳是true的element
+// filter()回傳符合條件的element的組成的新array
 
 const products = [
   { name: 'cucumber', type: 'vegetable', quantity: 33, price: 1 },
@@ -6,11 +6,8 @@ const products = [
   { name: 'carrot', type: 'vegetable', quantity: 30, price: 13 },
   { name: 'apple', type: 'fruit', quantity: 15, price: 12 },
 ]
-console.log(products.filter(product => product.type === 'vegetable'))
-// [ { name: 'cucumber', type: 'vegetable', quantity: 33, price: 1 },
-//   { name: 'carrot', type: 'vegetable', quantity: 30, price: 13 } ]
-console.log(products.filter(product => product.type === 'fruit' && product.quantity < 20 && product.price > 10))
-// [ { name: 'apple', type: 'fruit', quantity: 15, price: 12 } ]
+const result = products.filter(product => product.type === 'fruit' && product.quantity < 20 && product.price > 10)
+console.log(result)
 
 //real use case
 const post = { id: 4, title: 'New Post' }

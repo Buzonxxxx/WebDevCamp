@@ -1,7 +1,7 @@
 // push: add to the end of an array
 // pop:  remove the last item of an array
 
-//faster than shift/unshift
+// faster than shift/unshift
 
 const images = 
 [
