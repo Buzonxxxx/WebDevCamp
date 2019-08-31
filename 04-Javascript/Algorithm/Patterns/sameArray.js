@@ -15,7 +15,7 @@ const loop = (arr1, arr2) => {
     });
     return true
 }
-console.log(loop([1,2,3,2], [9,1,4,4]))
+// console.log(loop([1,2,3,2], [9,1,4,4]))
 // O(n^2)
 
 
@@ -31,8 +31,14 @@ const counter = (arr1, arr2) => {
 	if (arr1.length !== arr2.length) return false;
 	let counter1 = {};
     let counter2 = {};
-    arr1.forEach(num => counter1[num] = (counter1[num] || 0) +1);
+    arr1.forEach(num => {
+        // console.log(counter1[num])
+        counter1[num] = (counter1[num] || 0) +1
+        // console.log(counter1[num])
+        // console.log(counter1)
+    });
     arr2.forEach(num => counter2[num] = (counter2[num] || 0) +1);
+    // console.log(counter2)
     for(let key in counter1){
         if(!(key**2 in counter2)) return false;
         if(counter1[key] !== counter2[key**2]) return false;
