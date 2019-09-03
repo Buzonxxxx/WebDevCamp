@@ -10,6 +10,8 @@ When to use?
 https://en.wikipedia.org/wiki/Associative_array
 */
 
+// https://blog.kdchang.cc/2016/09/23/javascript-data-structure-algorithm-dictionary-hash-table/
+
 const question = new Map()
 question.set('question', 'What is the official name of the latest major Javascript version?')
 question.set(1, 'ES5') 
@@ -50,10 +52,21 @@ has(key)
 keys()
 values()
 set(key, value)
-forEach()
 */
 
+var twoSum = function(nums, target) {
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++){
+      if (!map.has(target - nums[i])) { 
+          map.set(nums[i], i)
+        }
+      else {
+        return [map.get(target - nums[i]), i]
+      }
+  }
+};
 
+console.log(twoSum([1,2,3,6], 9))
 
 
 
