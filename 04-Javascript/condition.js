@@ -16,8 +16,15 @@ switch (job) {
 }
 
 // while
-let num = -10;
-while (num <= 19) {
+let num = -3;
+while (num <= 3) {
   console.log(num);
   num++;
 }
+
+// do while
+let x = -3
+do {
+  console.log(x)
+  x++
+} while (x <= 3);

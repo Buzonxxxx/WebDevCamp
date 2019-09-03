@@ -1,3 +1,4 @@
+// 檔案處理, file handling
 const fs = require("fs");
 
 const originalNote = {
@@ -23,4 +24,4 @@ console.log(typeof note);
 console.log(note);
 
 // remove file from local
-fs.unlinkSync("./notes.json");
+// fs.unlinkSync("./notes.json");

@@ -12,11 +12,11 @@ const person2 = {
 	city: "taipei"
 };
 
-//Retrive data from obj
+// Retrive data from obj
 console.log(person1.name)
 console.log(person1["name"]) //[] 裡面要放string
 
-//method in object
+// method in object
 const obj = {
 	name: "Louis",
 	yearOfBirth: 1983,
@@ -29,6 +29,19 @@ const obj = {
 	} 
 }
 obj.calculateAge()
+
+const tasks = {
+  task: [
+    { text: "Grocery shopping", completed: true },
+    { text: "Clean yard", completed: false },
+    { text: "Film course", completed: false }
+  ],
+  getTasksToDo() {
+    return this.task.filter(task => task.completed == false);
+  }
+};
+
+console.log(tasks.getTasksToDo());
 
 // namespacing
 const dogspace = {};
