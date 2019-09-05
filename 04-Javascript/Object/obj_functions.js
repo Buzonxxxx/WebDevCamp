@@ -6,6 +6,8 @@ let obj = {
 
 console.log(Object.keys(obj))
 console.log(Object.values(obj))
+
+// entries: obj to array
 console.log(Object.entries(obj))
 console.log(Object.create(obj))
 console.log(obj.hasOwnProperty('a'))

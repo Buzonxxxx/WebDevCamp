@@ -1,34 +1,16 @@
-const arr = "Louasfsafasfsis"
-console.log(arr.slice(0,1))
-console.log(arr)
+var singleNumber = function(nums) {
+  const map = new Map();
+  for (let i = 0; i < nums.length; i++){
+    if (!map.has(nums[i])) {
+      map.set(nums[i], 1)
+    } 
+    else {
+      map.set(nums[i]), map.get(nums[i] + 1)
+    }
+  }
+  for (let i = 0; i < nums.length; i++){
+    if(map.get(nums[i]) == 1) return nums[i]
+  }
+};
 
-
-var car = {make: 'Honda', model: 'Accord', year: 1998};
-
-console.log('make' in car);
-
-
-// Calculate IM swim time 
-// 100m 155s
-function IMSwimTime(time) {
-  var min = (time * 38) / 60
-  var sec = (time * 38) % 60
-  console.log(`Expected finish time is ${min} minutes ${sec} seconds`)
-}
-// Calculate IM bike time 
-// 25 km/hr
-function IMBikeTime(time) {
-  var hr = 180 / time
-  console.log(`Expected finish time is ${hr} hours `)
-}
-
-// Calculate IM run time 
-// 6m30s/km
-function IMRunTime(time) {
-  var hr = 180 / time
-  console.log(`Expected finish time is ${hr} hours `)
-}
-
-IMSwimTime(155)
-IMBikeTime(25)
-IMRunTime(150)
+console.log(singleNumber([4,1,2,1,2]))

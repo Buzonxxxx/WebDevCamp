@@ -13,7 +13,7 @@ class Bike {
 const cervelo = new Bike('cervelo', 'road bike', 'blue', 6)
 console.log(`The color is ${cervelo.color} and it's produced on ${cervelo.calculateProdYear()}`)
 
-// Static: class method: method to the class, not to instance
+// Static: class method: call by class, not instance
 class Point{
   constructor(x, y){
     this.x = x;
