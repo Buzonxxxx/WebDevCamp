@@ -4,6 +4,10 @@ let obj = {
   c: 'three',
 }
 
+// count object size
+console.log(Object.keys(obj).length)
+console.log(Object.values(obj).length)
+
 console.log(Object.keys(obj))
 console.log(Object.values(obj))
 
