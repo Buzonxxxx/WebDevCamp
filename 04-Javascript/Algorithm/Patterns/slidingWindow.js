@@ -7,23 +7,8 @@
  * i.g.
  * ([1,2,5,2,8,1,5], 2) // 10
  * 
+ * 
  */
-
-const loop = (arr, n) => {
-  if(n > arr.length || n <= 0 ) return null
-  let max = -Infinity;
-	for(let i = 0; i < arr.length - n + 1; i++){
-    temp = 0;
-	  for(let j = 0; j < n; j++){
-	    temp = temp + arr[i + j];
-    }
-    if (temp > max) max = temp;
-  }
-  return max;
-}
-// console.log(loop([1,2,5,2,8,1,5],2))
-            //index  0 1 2 3 4 5 6 ,n
- // O(n^2)
 
 const maxSubArraySum = (arr, n) => {
   if(n > arr.length || arr.length <= 0) {
@@ -34,9 +19,7 @@ const maxSubArraySum = (arr, n) => {
   for (let i = 0; i < n; i++){
     tempSum = tempSum + arr[i];
   }
-
   maxSum = Math.max(tempSum, maxSum)
-
   for (let i = n; i < arr.length; i++){
     //減掉頭個數字arr[i - n], 加上新的數字 arr[i]
     tempSum = tempSum - arr[i - n] + arr[i];
@@ -44,8 +27,8 @@ const maxSubArraySum = (arr, n) => {
   }
   return maxSum;
 }  
-
-// console.log(maxSubArraySum([1,2,5,2,9,1,5],2))
+console.log(maxSubArraySum([1,2,5,2,9,1,5], 2)) // 11
+console.log(maxSubArraySum([1,2,5,2,8,1,5], 3)) // 15
 // O(n)
 
 /* 
@@ -86,6 +69,6 @@ const findLongestSubstring = str => {
   }
   return maxLength;
 }
-console.log(findLongestSubstring('abcabcbb')) // 3
-console.log(findLongestSubstring("pwwkew")) // 3
-console.log(findLongestSubstring("dvdf")) // 3
+// console.log(findLongestSubstring('abcabcbb')) // 3
+// console.log(findLongestSubstring("pwwkew")) // 3
+// console.log(findLongestSubstring("dvdf")) // 3

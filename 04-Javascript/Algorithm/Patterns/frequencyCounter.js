@@ -6,8 +6,8 @@
  * loop over the string for each char
  * handle uppperCase and lowerCase char by toLowerCase()
  * filter out non-number/letter char by regexp
- * if char not in obj, add char and count = 1 to obj
- * if char in obj, add count to obj
+ *   if char not in obj, add char and count = 1 to obj
+ *   if char in obj, add count to obj
  * return obj
  */
 
@@ -156,31 +156,3 @@ const same = (arr1, arr2) => {
   }
 // console.log(countUniqueValues1([1,1,1,2,2,3,4,5,6,7,7]))
 // console.log(countUniqueValues2([1,1,1,2,2,3,4,5,6,7,7]))
-
-/* 
- * 5.
- * Given a sorted array of integers, write a function called search, 
- * that accepts a value and returns the index where the value passed to the function is located. 
- * If the value is not found, return -1
- *
- * i.g. search([1,2,3,4,5,6],4) // 3  
- * 
- * 
- * // loop array and put number and it's index in object
- * // if n in obj's key, return obj's value
-*/
-
-const search = (arr, n) => {
-  const result = {};
-  for (let i = 0; i < arr.length; i++ ) {
-    if (!result[arr[i]]) {
-      result[arr[i]] = i;
-    }
-  }
-  if (n in result ) return result[n]
-  else return -1
-}
-
-// console.log(search([1,2,3,4,5,6],4)) // 3  
-// console.log(search([1,2,3,4,5,6],6)) // 5
-// console.log(search([1,2,3,4,5,6],11)) // -1

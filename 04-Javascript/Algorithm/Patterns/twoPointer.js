@@ -20,6 +20,6 @@
         }
     return undefined;
 }
-console.log(twoPointer([-3, -2, -1, 0, 1, 2, 3]))
+console.log(twoPointer([-2,-1,0,1,2,3,4,5])) //[-2,2]
 // O(n)
 
