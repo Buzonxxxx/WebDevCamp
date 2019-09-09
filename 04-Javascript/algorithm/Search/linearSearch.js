@@ -1,28 +1,26 @@
-/**
+/* 
+ * 1.
+ * Given a sorted array of integers, write a function called search, 
+ * that accepts a value and returns the index where the value passed to the function is located. 
+ * If the value is not found, return -1
+ *
+ * i.g. search([1,2,3,4,5,6],4) // 3  
  * 
-  This function accepts an array and a value
-  Loop through the array and check if the current array element is equal to the value
-  If it is, return the index at which the element is found
-  If the value is never found, return -1
  * 
- * 
- * 
- * 
- */
+ * // loop array and put number and it's index in object
+ * // if n in obj's key, return obj's value
+*/
 
-// ([10, 15, 12 ,13 ,5 ,6], 13) => 13
-// ([10, 15, 12 ,13 ,5 ,6], 9) => -1
-
-
-function linearSearch(arr, num) {
-  for( var i = 0; i< arr.length; i++){
-    if(arr[i] === num) return i;
+const search = (arr, n) => {
+  for (let i = 0; i < arr.length; i++ ) {
+    if (arr[i] == n) {
+      return i;
+    }
   }
   return -1;
 }
+// Linear Search O(n)
 
-console.log(linearSearch([10, 15, 12 ,13 ,5 ,6], 9))
-console.log(linearSearch([10, 15, 12 ,13 ,5 ,6], 13))
-
-// linear search
-// O(n)
+console.log(search([1,2,3,4,5,6],4)) // 3  
+console.log(search([1,2,3,4,5,6],6)) // 5
+console.log(search([1,2,3,4,5,6],11)) // -1

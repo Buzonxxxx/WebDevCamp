@@ -1,62 +1,67 @@
 // fill, join: 填滿array
 const address = new Array(39).fill(0).join('') + 1;
 console.log(address, address.length)
+// 0000000000000000000000000000000000000001 40
 
 // join: array to string
 const a = [1,1,1]
 console.log(a.join(''))
+// 111
 
 // concat 
 const f1 = ['Jane', 'Olive']
 const f2 = ['Ken, John']
 let bigFamily = f1.concat(f2)
-console.log(bigFamily)
+// console.log(bigFamily)
 
 // spread parameter 把一個陣列展開(expand)成個別數值"的速寫語法
 bigFamily = [...f1, 'Louis', ...f2]
-console.log(bigFamily)
+// console.log(bigFamily)
 
 const max = array => Math.max(...array)
 const min = array => Math.min(...array)
 console.log(max([-5, 100]))
+// 100
 console.log(min([-5, 100]))  
+// -5
 
 // push: add to the end of an array
 // pop:  remove the last item of an array
 // (faster than shift/unshift)
 const arr = [1,2,3]
 arr.push(4)
+// [1,2,3,4]
 console.log(arr)
 arr.pop()
+// [1,2,3]
 console.log(arr)
 
 // unshift: add to the in front of an array
 // shift:   remove the first item of an array
 const arr2 = [1,2,3]
 arr2.shift()
+// [2,3]
 console.log(arr2)
 arr2.unshift(1)
+// [1,2,3]
 console.log(arr2)
 
 // sort, reverse
 const arr3 = [1,3,2]
 console.log(arr.sort())
+// [1,2,3]
 console.log(arr.reverse())
+// [3,2,1]
 
 // 小到大
-arr3.sort(function(a, b) {
-  return a - b;
-});
-console.log('sort: a - b')
-console.log(arr3)
-// [1,2,3,5,6,9]
-
+console.log([4,3,6,2,7,1,5,9,8].sort((num1, num2) => num1 - num2))
 // 大到小
-arr3.sort(function(a, b) {
-  return b - a;
-});
-console.log('sort: b - a')
-console.log(arr3)
+console.log([4,3,6,2,7,1,5,9,8].sort((num1, num2) => num2 - num1))
+
+// 短到長
+console.log([ "Steele", "Colt", "Data Structures", "Algorithms" ].sort((str1, str2) => str1.length - str2.length))
+// 長到短
+console.log([ "Steele", "Colt", "Data Structures", "Algorithms" ].sort((str1, str2) => str2.length - str1.length))
 
 // delete
 const arr4 = [1, 2, 3];

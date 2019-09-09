@@ -1,16 +1,12 @@
-function collectOddValues(arr){
-  let newArr = [];
-  
+const collectOddValues = arr => {
+  let result = [];
   if(arr.length === 0) {
-      return newArr;
+      return result;
   }
-      
-  if(arr[0] % 2 !== 0){
-      newArr.push(arr[0]);
+  if(arr[0] % 2 !== 0) {
+    result.push(arr[0]);
   }
-      
-  newArr = newArr.concat(collectOddValues(arr.slice(1)));
-  return newArr;
+  result = result.concat(collectOddValues(arr.slice(1)));
+  return result;
 }
-
-console.log(collectOddValues([1,2,3,4,5]))
+console.log(collectOddValues([1,2,3,4,5,6,7,8,9]))

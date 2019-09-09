@@ -4,19 +4,23 @@
 // If the "minimum" is not the value (index) you initially began with, swap the two values.
 // Repeat this with the next element until the array is sorted.
 
-function swap(arr, index1, index2){
-  var temp = arr[index1];
-  arr[index1] = arr[index2];
-  arr[index2] = temp;
-}
+// loop後找到最小的, 放到最前面
 
-function selectSort(arr){
+const selectSort = arr => {
   for(i = 0; i < arr.length; i++){
-    let min = i;
+    let minIndex = i;
+    // find minimum value's index
     for(j = i + 1; j < arr.length; j++){
-      if(arr[j] < arr[min]) min = j;
+      if(arr[j] < arr[minIndex]){
+        minIndex = j;
+      } 
     }
-    if(i !== min) swap(arr, min, i)
+    if(i !== minIndex) {
+      // swap
+      let temp = arr[minIndex];
+      arr[minIndex] = arr[i];
+      arr[i] = temp;
+    }
   }
   return arr;
 }

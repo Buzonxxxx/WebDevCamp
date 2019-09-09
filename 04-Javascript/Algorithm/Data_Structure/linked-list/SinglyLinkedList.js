@@ -1,7 +1,26 @@
-// piece of data - val
-// reference to next node - next
+/*
+ * Singly Linked Lists are an excellent alternative to arrays 
+ * when insertion and deletion at the beginning are frequently required
+ * Arrays contain a built in index whereas Linked Lists do not
+ * The idea of a list data structure that consists of nodes is the foundation 
+ * for other data structures like Stacks and Queues
+ * 
+ * 只知道前(head), 後(tail)是誰, 不知道現在在哪裡
+ * Linked Lists consist of nodes, and each node has a value and a pointer to another node or null
+ * 
+ * [Lists]
+ * - Do not have indexes!
+ * - Connected via nodes with a next pointer
+ * - Random access is not allowed
+ * 
+ * [Arrays]
+ * - Indexed in order!
+ * - Insertion and deletion can be expensive
+ * - Can quickly be accessed at a specific index
+ * 
+ */
 
-class Node{
+class Node {
     constructor(val){
         this.val = val;
         this.next = null;
@@ -20,7 +39,9 @@ class SinglyLinkedList{
             this.head = newNode;
             this.tail = this.head;
         } else {
+            // add newNode to next of tail
             this.tail.next = newNode;
+            // update tail
             this.tail = newNode;
         }
         this.length++;
@@ -30,10 +51,12 @@ class SinglyLinkedList{
         if(!this.head) return undefined;
         var current = this.head;
         var newTail = current;
+        // find new tail (one ahead of tail)
         while(current.next){
             newTail = current;
             current = current.next;
         }
+        // set new tail
         this.tail = newTail;
         this.tail.next = null;
         this.length--;
@@ -45,7 +68,7 @@ class SinglyLinkedList{
     }
     shift(){
         if(!this.head) return undefined;
-        var currentHead = this.head;
+        const currentHead = this.head;
         this.head = currentHead.next;
         this.length--;
         if(this.length === 0){
@@ -67,8 +90,8 @@ class SinglyLinkedList{
     }
     get(index){
         if(index < 0 || index >= this.length) return null;
-        var counter = 0;
-        var current = this.head;
+        let counter = 0;
+        let current = this.head;
         while(counter !== index){
             current = current.next;
             counter++;
@@ -76,7 +99,7 @@ class SinglyLinkedList{
         return current;
     }
     set(index, val){
-        var foundNode = this.get(index);
+        const foundNode = this.get(index);
         if(foundNode){
             foundNode.val = val;
             return true;
@@ -139,11 +162,3 @@ list.print()
 
 
 
-
-// Singly Linked Lists are an excellent alternative to arrays 
-// when insertion and deletion at the beginning are frequently required
-
-// Arrays contain a built in index whereas Linked Lists do not
-
-// The idea of a list data structure that consists of nodes is the foundation 
-// for other data structures like Stacks and Queues
