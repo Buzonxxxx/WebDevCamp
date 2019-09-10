@@ -1,12 +1,11 @@
 /*
- * Singly Linked Lists are an excellent alternative to arrays 
- * when insertion and deletion at the beginning are frequently required
- * Arrays contain a built in index whereas Linked Lists do not
- * The idea of a list data structure that consists of nodes is the foundation 
- * for other data structures like Stacks and Queues
+ * - Singly Linked Lists are an excellent alternative to arrays 
+ *   when insertion and deletion at the beginning are frequently required
+ * - Arrays contain a built in index whereas Linked Lists do not
+ * - The idea of a list data structure that consists of nodes is the foundation 
+ *   for other data structures like Stacks and Queues
  * 
- * 只知道前(head), 後(tail)是誰, 不知道現在在哪裡
- * Linked Lists consist of nodes, and each node has a value and a pointer to another node or null
+ * 只知道前(head), 後(tail)是誰, 長度(length), 不知道現在在哪裡
  * 
  * [Lists]
  * - Do not have indexes!
@@ -111,9 +110,9 @@ class SinglyLinkedList{
         if(index === this.length) return !!this.push(val);
         if(index === 0) return !!this.unshift(val);
         
-        var newNode = new Node(val);
-        var prev = this.get(index - 1);
-        var temp = prev.next;
+        const newNode = new Node(val);
+        const prev = this.get(index - 1);
+        const temp = prev.next;
         prev.next = newNode;
         newNode.next = temp;
         this.length++;
@@ -123,29 +122,38 @@ class SinglyLinkedList{
         if(index < 0 || index >= this.length) return undefined;
         if(index === 0) return this.shift();
         if(index === this.length - 1) return this.pop();
-        var previousNode = this.get(index - 1);
-        var removed = previousNode.next;
+
+        const previousNode = this.get(index - 1);
+        const removed = previousNode.next;
         previousNode.next = removed.next;
         this.length--;
         return removed;
     }
+    // possible interveiw question
     reverse(){
-        var node = this.head;
+        // swap head and tail
+        let node = this.head;
         this.head = this.tail;
         this.tail = node;
-        var next;
-        var prev = null;
-        for(var i = 0; i < this.length; i++){
-          next = node.next;
-          node.next = prev;
-          prev = node;
-          node = next;
+
+        let next;
+        let prev = null;
+        // 13 -> 27 -> 32 -> 71
+        // 13 <- 27
+        // 13 <- 27 <- 32
+        // 13 <- 27 <- 32 <- 71
+        for(let i = 0; i < this.length; i++){
+          // node: 13
+          next = node.next; // next: 27
+          node.next = prev; // node.next: null
+          prev = node; // update prev to node
+          node = next; // update node to next
         }
         return this;
       }
     print(){
-        var arr = [];
-        var current = this.head
+        let arr = [];
+        let current = this.head
         while(current){
             arr.push(current.val)
             current = current.next
@@ -155,9 +163,10 @@ class SinglyLinkedList{
 }
         
 
-var list = new SinglyLinkedList()
+const list = new SinglyLinkedList()
 list.push("HELLO")
 list.push("GOODBYE")
+list.reverse()
 list.print()
 
 
