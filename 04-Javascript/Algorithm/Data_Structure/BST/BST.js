@@ -1,3 +1,6 @@
+// Insertion - O(log n)
+// Searching - O(log n)
+
 class Node {
   constructor(value){
       this.value = value;
@@ -11,7 +14,7 @@ class BinarySearchTree {
       this.root = null;
   }
   insert(value){
-      var newNode = new Node(value);
+      const newNode = new Node(value);
       if(this.root === null){
           this.root = newNode;
           return this;
@@ -36,8 +39,7 @@ class BinarySearchTree {
   }
   find(value){
       if(this.root === null) return false;
-      var current = this.root,
-          found = false;
+      var current = this.root, found = false;
       while(current && !found){
           if(value < current.value){
               current = current.left;
@@ -81,8 +83,8 @@ tree.insert(2)
 tree.insert(16)
 tree.insert(7)
 
-console.log(tree)
+// console.log(tree)
+console.log(tree.find(2))
 
-// Insertion - O(log n)
-// Searching - O(log n)
+
 
