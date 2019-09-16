@@ -1,5 +1,5 @@
 // 用for...in遍歷陣列，得到的是索引
-var array = ['a','b','c','d','e'];  
+var array = ['a','b','c'];  
 for(let key in array) {  
     console.log(key,array[key]);  
 }; 
@@ -10,13 +10,8 @@ var table = {
 	b : true,
 	c : "jadeshu"
 };  
-for(let key in array) {  
-  console.log(key,array[key]);  
-}; 
-
-// find value "jadeshu" in table object, return its key
 for(let key in table) {  
-	if(table[key] == "jadeshu"){
+  if(table[key] == "jadeshu"){
     console.log(key)
   }
-} 
+}; 
