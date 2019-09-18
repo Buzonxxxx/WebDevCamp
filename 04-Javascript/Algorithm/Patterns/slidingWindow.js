@@ -7,6 +7,10 @@
  * i.g.
  * ([1,2,5,2,8,1,5], 2) // 10
  * 
+ * validate input
+ * sum to n and assign to tempSum
+ * update maxSum
+ * loop from n, add right element, minus left element, update maxSum
  * 
  */
 
@@ -14,21 +18,19 @@ const maxSubArraySum = (arr, n) => {
   if(n > arr.length || arr.length <= 0) {
     return null;
   }
-  let tempSum = 0, maxSum = 0;
-  // sum from index 0 to n
+  let tempSum = 0; maxSum = 0;
   for (let i = 0; i < n; i++){
-    tempSum = tempSum + arr[i];
+    tempSum += arr[i];
   }
-  maxSum = Math.max(tempSum, maxSum)
-  for (let i = n; i < arr.length; i++){
-    //減掉頭個數字arr[i - n], 加上新的數字 arr[i]
-    tempSum = tempSum - arr[i - n] + arr[i];
-    maxSum = Math.max(tempSum, maxSum)
+  maxSum = Math.max(tempSum, maxSum);
+  for(let i = n; i < arr.length -1; i++){
+    tempSum = tempSum - arr[i-n] + arr[i];
+    maxSum = Math.max(tempSum, maxSum);
   }
   return maxSum;
 }  
-console.log(maxSubArraySum([1,2,5,2,9,1,5], 2)) // 11
-console.log(maxSubArraySum([1,2,5,2,8,1,5], 3)) // 15
+// console.log(maxSubArraySum([1,2,5,2,9,1,5], 2)) // 11
+// console.log(maxSubArraySum([1,2,5,2,8,1,5], 3)) // 15
 // O(n)
 
 /* 
@@ -51,24 +53,22 @@ console.log(maxSubArraySum([1,2,5,2,8,1,5], 3)) // 15
  * 
  */
 
+ // TODO: Practice
 const findLongestSubstring = str => {
   if (typeof str !== "string") {
     return null;
   }
-  let start = 0, maxLength = 0, currentLength = 0, seen = {};
-  for (let i = 0; i < str.length; i++){
-    if(seen[str[i]]) {
-      // if found dup, update start to dup char index's next
-      start = Math.max(start, seen[str[i]])
+  let start = 0, currentLength = 0, maxLength = 0, seen = {};
+  for (i = 0; i < str.length; i++) {
+    if(seen[str[i]]){
+      start = Math.max(start, seen[str[i]]);
     }
-    // length = current index - beginning of substring + 1 (to include current in count)
     currentLength = i - start + 1;
-    maxLength = Math.max(maxLength, currentLength)
-    // store the index of the next char so as to not double count
+    maxLength = Math.max(currentLength, maxLength);
     seen[str[i]] = i + 1;
   }
   return maxLength;
 }
-// console.log(findLongestSubstring('abcabcbb')) // 3
+console.log(findLongestSubstring('abcabcbb')) // 3
 // console.log(findLongestSubstring("pwwkew")) // 3
 // console.log(findLongestSubstring("dvdf")) // 3

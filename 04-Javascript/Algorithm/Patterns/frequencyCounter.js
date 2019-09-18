@@ -11,31 +11,30 @@
  * return obj
  */
 
-const charCount1 = str => {
-	let result = {};
-  for(let char of str){
-		char = char.toLowerCase();
-    if(/[a-z0-9]/.test(char)) {
-      char in result? result[char] + 1 : result[char] = 1;	
-    }
-  }
-	return result;
-}
+// const charCount1 = str => {
+// 	let result = {};
+//   for(let char of str){
+// 		char = char.toLowerCase();
+//     if(/[a-z0-9]/.test(char)) {
+//       char in result? result[char] + 1 : result[char] = 1;	
+//     }
+//   }
+// 	return result;
+// }
 
 const charCount2 = str => {
-	const result = {}
-	for (let i = 0; i < str.length; i++){
-    const char = str[i].toLowerCase();
-		if(/[a-z0-9]/.test(char)){
-			if(!result[char]){
-				result[char] = 1
-			}
-			else {
-				result[char] = result[char] + 1
-			}
-		}
-	}
-	return result
+  const result = {};
+  for (let i = 0; i < str.length; i++) {
+    let char = str[i].toLowerCase();
+    if (/[a-z0-9]/.test(char)) {
+      if (!result[char]) {
+        result[char] = 1;
+      } else {
+        result[char] = result[char] + 1;
+      }
+    }
+  }
+  return result;
 }
 // console.log(charCount1("Hello, World!!!"))
 // console.log(charCount2("Hello, World!!!"))
@@ -54,31 +53,26 @@ const charCount2 = str => {
  * if chat in obj => count - 1, if complete the loop, return true 
  */
 
-const anagram = (first, second) => {
-  if (first.length !== second.length) return false
-  const result = {};
-  for (let i = 0; i < first.length; i++) {
-    let charA = first[i];
-    if (!result[charA]){
-      result[charA] = 1;
+const anagram = (str1, str2) => {
+  if(str1.length !== str2.length) return false;
+  const charCount = {};
+  for (let i = 0; i < str1.length; i++) {
+    if(!charCount[str1[i]]) {
+      charCount[str1[i]] = 1;
     }
     else {
-      result[charA] = result[charA] + 1;
+      charCount[str1[i]] = charCount[str1[i]] + 1;
     }
   }
-  console.log(result)
-
-  for (let i = 0; i < second.length; i++) {
-    let charB = second[i];
-    if (!result[charB]) {
-      return false;
+  for (let i = 0; i < str2.length; i++) {
+    if(!charCount[str2[i]]){
+      return false
     }
     else {
-      result[charB] = result[charB] -1;
+      charCount[str2[i]] = charCount[str2[i]] - 1;
     }
   }
-  console.log(result)
-  return true;
+  return true
 }
 // console.log(anagram('anagrams', 'nagarams'))
 
@@ -92,10 +86,10 @@ const anagram = (first, second) => {
  * e.g. [1,2,3,2], [9,1,4,4]
  * 
  * 
- * // loop arr1 and put element and it's count
- * // loop arr2 and get each element 
- * // if arr2 element !== key** in obj => return false
- * // if arr2 element == key** in obj,obj count -1
+ * // loop arr2 and put element and it's count
+ * // loop arr1 and get each element 
+ * // if arr1's element** not in obj => return false
+ * // if arr1's element** in obj, obj count -1
  * // return true
  *  
 */
@@ -103,21 +97,21 @@ const anagram = (first, second) => {
 const same = (arr1, arr2) => {
   const result = {};
   for (let i = 0; i < arr2.length; i++){
-    if (!result[arr2[i]]) {
+    if(!result[arr2[i]]) {
       result[arr2[i]] = 1;
-    }
-    else {
+    } else {
       result[arr2[i]] = result[arr2[i]] + 1;
     }
-    console.log(result)
   }
   for (let i = 0; i < arr1.length; i++){
-    if(!result[arr1[i]**2] ) return false
+    if(!result[arr1[i]**2]) {
+      return false;
+    }
     else {
       result[arr1[i]**2] = result[arr1[i]**2] - 1;
     }
   }
-  return true
+  return true;
 }
 // console.log(same([1,2,3,2], [9,1,4,4]))
 
@@ -145,6 +139,7 @@ const same = (arr1, arr2) => {
       result[arr[i]] = result[arr[i]] + 1;
     }
   }
+  console.log(result)
   return Object.keys(result).length
  }
  
@@ -156,3 +151,32 @@ const same = (arr1, arr2) => {
   }
 // console.log(countUniqueValues1([1,1,1,2,2,3,4,5,6,7,7]))
 // console.log(countUniqueValues2([1,1,1,2,2,3,4,5,6,7,7]))
+
+const numJewelsInStones = (J, S) => {
+  const result = {};
+  for (let i = 0; i < S.length; i++){
+      if(!result[S[i]]) {
+          result[S[i]] = 1;
+      }
+      else {
+          result[S[i]] = result[S[i]] + 1;
+      }
+  }
+  let sum = 0;
+  for (let i = 0; i < J.length; i++){
+    if(result[J[i]]) {
+      sum = sum + result[J[i]];
+    }
+  }
+  return sum;
+};
+
+console.log(numJewelsInStones("aA", "aAAbbbb"))
+console.log(numJewelsInStones("z", "ZZ"))
+
+
+
+
+
+
+
