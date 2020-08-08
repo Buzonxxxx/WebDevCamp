@@ -1,63 +1,55 @@
 /*CSS Selectors*/
 
 /*Element*/
-li{
-
+li {
 }
 
 /*class*/
-.hello{
-
+.hello {
 }
 
 /*ID*/
-#name{
-
+#name {
 }
 
 /*star*/
-*{
-
+* {
 }
 /*Decendant Selector*/
 li a {
-
 }
 /*Adjacent Selector*/
-h4 + ul{
-
+h4 + ul {
 }
 /*Attribute Selector*/
-a[href="www.123.456.com"]{
-
+a[href="www.123.456.com"] {
 }
 /*nth of type*/
-ul:nth-of-type(3){
-
+ul:nth-of-type(3) {
 }
 /******************************************/
 td.Workout {
-   color:purple;  
+	color: purple;
 }
 
-td.Basketball{
-	color: purple
+td.Basketball {
+	color: purple;
 }
 
 td.Run {
-	color:purple;
+	color: purple;
 }
 
-td.Cycling{
-	color:purple;
+td.Cycling {
+	color: purple;
 }
 
-td.Coding{
-	color: green
+td.Coding {
+	color: green;
 }
 
-td.Off{
-	color: lightgrey
+td.Off {
+	color: lightgrey;
 }
 #quote {
 	color: #f142f4;
@@ -69,29 +61,26 @@ td.Off{
 	background-size: cover;
 }*/
 
-body{
+body {
 	background: pink;
 }
 
-h1{
-
+h1 {
 }
 
 caption {
-   caption-side: top;
-   /*border: 1px dashed brown;*/
-   
+	caption-side: top;
+	/*border: 1px dashed brown;*/
 }
 
 a:link {
-   text-decoration: none;
+	text-decoration: none;
 }
 
 a:hover {
 	color: red;
 	cursor: pointer;
 }
-a:active{
+a:active {
 	color: black;
 }
-

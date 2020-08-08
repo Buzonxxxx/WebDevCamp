@@ -9,13 +9,13 @@ h1 {
 /*font-size*/
 
 body {
-	font-size: 10px
+	font-size: 10px;
 }
 
 /* em: partent font size的倍數 */
 
 h1 {
-	font-size: 5.0em
+	font-size: 5.0em;
 }
 
 /*font-weight*/
@@ -31,7 +31,7 @@ P {
 /*line-height*/
 
 p {
-	line-height: 2
+	line-height: 2;
 }
 
 /*text-align*/
