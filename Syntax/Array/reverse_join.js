@@ -5,5 +5,4 @@ console.log(address, address.length);
 
 // reverse & join(把element接起來變string)
 const letters = [ 'E', 'S', 'R', 'E', 'V', 'E', 'R' ];
-// console.log(letters.reverse().join('.'));
-console.log(letters.reverse().join('-'));
+console.log(letters.reverse().join('').toLowerCase());
