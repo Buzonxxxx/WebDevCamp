@@ -1,5 +1,21 @@
-/* eslint-disable func-names */
-// Functions returning functions
+// Return a function
+
+const makeBetweenFunc = (x, y) => {
+	return function(num) {
+		return num >= x && num <= y;
+	};
+};
+
+const isChild = makeBetweenFunc(0, 18);
+console.log(isChild(15));
+console.log(makeBetweenFunc(0, 18)(15));
+
+const isNineties = makeBetweenFunc(1990, 2000);
+console.log(isNineties(1866));
+console.log(makeBetweenFunc(1990, 2000)(1866));
+
+console.log('=================');
+
 const interviewQuestion = (job) => {
 	if (job === 'designer') {
 		return function(name) {
