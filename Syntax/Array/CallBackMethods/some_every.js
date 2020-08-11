@@ -1,8 +1,11 @@
-// 找array內符合元素
-const arr = [ 1, 2, 3, 4, 4, 5 ];
+// return boolean
+// every 全部符合才回true
+const words = [ 'dog', 'dig', 'log', 'bag', 'wag' ];
+const result = words.every((word) => {
+	const last = word.length - 1;
+	return word[last] === 'g';
+});
+console.log(result);
 
 // some 一個符合就回true
-console.log(arr.some((num) => num > 3));
-
-// every 全部符合才回true
-console.log(arr.every((num) => num > 3));
+console.log(words.some((word) => word[0] === 'd'));

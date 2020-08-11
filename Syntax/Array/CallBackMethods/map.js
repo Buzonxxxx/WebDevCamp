@@ -10,6 +10,7 @@ console.log(sqrt([ 9, 16 ]));
 
 console.log('===========');
 
+// return objs in array
 const numbers = [ 20, 21, 22, 23, 24, 25 ];
 const numDetail = numbers.map((num) => {
 	return {

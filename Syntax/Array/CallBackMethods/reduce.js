@@ -1,5 +1,4 @@
-// reduce()方法會由左至右的為陣列中的每個元素呼叫一次回呼函式，
-// 並將回呼函式的傳回值當作下一次呼叫回呼函式的參數傳入
+// Executed a reducer function on each element of the array resulting in a "single value"
 
 // 加總
 const numbers = [ 10, 20, 30 ];

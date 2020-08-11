@@ -1,14 +1,24 @@
 // sort, reverse
 const arr = [ 1, 3, 2 ];
 console.log(arr.sort());
-// [1,2,3]
 console.log(arr.reverse());
-// [3,2,1]
+
+console.log('==========');
+
+const prices = [ 12, 3000, 35.99, 400.5, 9500, 99.99 ];
+
+const badSort = prices.sort();
+console.log(badSort);
 
 // 小到大
-console.log([ 4, 3, 6, 2, 7, 1, 5, 9, 8 ].sort((num1, num2) => num1 - num2));
+const ascSort = prices.sort((a, b) => a - b);
+console.log(ascSort);
+
 // 大到小
-console.log([ 4, 3, 6, 2, 7, 1, 5, 9, 8 ].sort((num1, num2) => num2 - num1));
+const descSort = prices.sort((a, b) => b - a);
+console.log(descSort);
+
+console.log('==========');
 
 // 短到長
 console.log([ 'Steele', 'Colt', 'Data Structures', 'Algorithms' ].sort((str1, str2) => str1.length - str2.length));
