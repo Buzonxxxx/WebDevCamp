@@ -23,3 +23,20 @@ const myArr = [ [ 1, 2 ], [ 3, 4, 5 ], [ 6, 7, 8 ] ];
 const newArr = myArr.reduce((arr, element) => arr.concat(element), []);
 console.log(newArr);
 // [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+
+// Tally
+const votes = [ 'y', 'y', 'n', 'y', 'n', 'y', 'n', 'y', 'n', 'n', 'n' ];
+const voteTally = votes.reduce((tally, val) => {
+	// option 1
+	// if (tally[val]) {
+	// 	tally[val]++;
+	// } else {
+	// 	tally[val] = 1;
+	// }
+
+	// option 2
+	tally[val] = (tally[val] || 0) + 1;
+	return tally;
+}, {});
+
+console.log(voteTally);
