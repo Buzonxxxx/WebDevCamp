@@ -1,4 +1,5 @@
 // Executed a reducer function on each element of the array resulting in a "single value"
+// 若沒有提供初始值，則原陣列的第一個元素將會被當作初始的累加器
 
 // 加總
 const numbers = [ 10, 20, 30 ];

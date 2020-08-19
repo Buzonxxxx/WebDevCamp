@@ -4,5 +4,7 @@
 // 你如果放在其餘的參數前，就會產生錯誤。
 
 const addNumbers = (...numbers) => numbers.reduce((sum, number) => sum + number, 0);
-
 console.log(addNumbers(1, 2, 3, 4, 5));
+
+const multiply = (...numbers) => numbers.reduce((total, currVal) => total * currVal);
+console.log(multiply(1, 2, 3, 4, 5));
