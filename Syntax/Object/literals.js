@@ -1,6 +1,6 @@
 const inventory = [ { title: 'Harry Potter', price: 10 }, { title: 'Eloquent Javascript', price: 15 } ];
 
-function createBookShop(_inventory) {
+const createBookShop = (_inventory) => {
 	return {
 		inventory: _inventory,
 		inventoryValue() {

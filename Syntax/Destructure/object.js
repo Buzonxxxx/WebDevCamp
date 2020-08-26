@@ -1,4 +1,3 @@
-// [obj]
 const obj = {
 	firstName: 'John',
 	lastName: 'Smith'

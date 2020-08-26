@@ -5,7 +5,7 @@ const compaines = [
 	{ name: 'Uber', location: 'San Francisco' }
 ];
 const [ { location } ] = compaines;
-console.log(location);
+console.log(location); // get first one
 
 const [ , { location: googleLocation }, { location: uberLocation } ] = compaines;
 console.log(googleLocation);

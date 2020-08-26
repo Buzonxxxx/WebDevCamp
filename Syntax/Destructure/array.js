@@ -1,5 +1,3 @@
-// [array]
-
 // 1
 const member = [ 'Mike', 'Louis', 'Levi', 'Lucas' ];
 const [ name1, name2, ...rest ] = member;
