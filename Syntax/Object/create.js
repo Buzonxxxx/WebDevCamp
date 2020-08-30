@@ -25,3 +25,11 @@ John.job = 'teacher';
 console.log(John);
 console.log(John.yearOfBirth);
 console.log(John.calculateAge());
+
+// namespacing
+const dogspace = {};
+const catspace = {};
+dogspace.speak = () => console.log('WOOF!');
+catspace.speak = () => console.log('MEOW!');
+dogspace.speak();
+catspace.speak();
