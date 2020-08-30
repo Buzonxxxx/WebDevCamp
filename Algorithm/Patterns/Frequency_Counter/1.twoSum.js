@@ -9,17 +9,17 @@
  */
 
 const twoSum = (nums, target) => {
-  if (nums.length < 2) return false;
-  const result = {};
-  for (let i = 0; i < nums.length; i++) {
-    const num = nums[i];
-    if (!(target - num in result)) {
-      result[num] = i; // 9 - 2 = 7, not in obj, => {'2':0, }, 9 - 7 = 2, in obj => return index
-    } else {
-      return [result[target - num], i];
-    }
-  }
-  return undefined;
+	if (nums.length < 2) return false;
+	const result = {};
+	for (let i = 0; i < nums.length; i++) {
+		const num = nums[i];
+		if (!(target - num in result)) {
+			result[num] = i; // 9 - 2 = 7, not in obj, => {'2':0, }, 9 - 7 = 2, in obj => return index
+		} else {
+			return [ result[target - num], i ];
+		}
+	}
+	return undefined;
 };
 
-console.log(twoSum([2, 7, 11, 15], 9));
+console.log(twoSum([ 2, 7, 11, 15 ], 9));
