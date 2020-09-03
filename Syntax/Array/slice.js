@@ -8,9 +8,10 @@ const arr6 = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 console.log(arr6.slice(0, 1));
 // [ 1 ]
 console.log(arr6);
-// [ 1, 2, 3 ]
-console.log(arr6.slice(5)); // 從5取到最後
-// [ 2, 3 ]
+//  1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+console.log(arr6.slice(5)); // 從index 5取到最後
+// [ 6, 7, 8, 9, 10 ]
 console.log(arr6.slice(9));
-// [ 3 ]
+// [ 10 ]
 console.log(arr6.slice(-3)); // 從後面取三個
+// [ 8, 9, 10 ]
