@@ -1,3 +1,4 @@
+// shorthand methods
 const math = {
 	add: (a, b) => a + b,
 	multiply(x, y) {
