@@ -10,7 +10,7 @@ function howl() {
 	console.log('AWOOOOOO');
 }
 
-// const /let isn't hoisted
+// const/let isn't hoisted
 // console.log(name);
 // let name = 'Louis';
 

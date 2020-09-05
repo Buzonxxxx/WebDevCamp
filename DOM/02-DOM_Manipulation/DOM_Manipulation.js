@@ -1,6 +1,6 @@
-//DOM Manipulation
+// DOM Manipulation
 
-//Change style
+// Change style
 const h1 = document.querySelector("h1")
 h1.style.color = "blue"
 h1.style.border = "5px solid pink"
