@@ -11,22 +11,24 @@ h1.style.border = '5px solid pink';
 //   color: blue;
 //   border: 10px soloid red;
 // }
+
+// classList
 const h1 = document.querySelector('h1');
 h1.classList.add('some-class');
 h1.classList.remove('some-class');
 h1.classList.toggle('some-class');
 
-// change the content of tag
+// textContent: change the content of tag
 const h1 = document.querySelector('h1');
 h1.textContent;
 h1.textContent = 'xxx xxx xxx';
 document.querySelector('h1').textContent = 'xxx xxx xxx';
 
-// return a string of all the HTML contain element
+// innerHTML: return a string of all the HTML contain element
 document.querySelector('p').innerHTML;
-document.body.innerHTML = '<h1>Bye!</h1>';
+document.body.innerHTML = '<h1>Bye!</h1>'; // need use string
 
-// get and set attribute
+// getAttribute/setAttribute: get and set attribute
 const link = document.querySelector('a');
 link.getAttribute('href');
 link.setAttribute('href', 'www.yahoo.com');
