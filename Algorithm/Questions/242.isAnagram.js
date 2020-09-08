@@ -1,6 +1,6 @@
 
 /*
- * 2.
+ * [Frequency Counter]
  * isAnagram('','') // true
  * isAnagram('car', 'rca') // true
  * isAnagram('cat', 'acb') // false

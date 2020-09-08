@@ -1,4 +1,5 @@
 /**
+ * [Multiple Pointers]
  * Given a sorted array of integers, if there is a pair in the array where the average of the pair equals
  * the target average.
  *

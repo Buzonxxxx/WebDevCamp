@@ -3,7 +3,7 @@
   "editor.fontSize": 14,
   "editor.tabSize": 2,
   "terminal.integrated.fontSize": 14,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": -1,
   "[Log]": {
     "editor.fontSize": 14
   },

@@ -1,4 +1,5 @@
 /**
+ * [Frequency Counter]
  * Accept a variable number of arguments, and checks whether there are any duplicates among the arguments passed in.
  *
  * 1. Use rest parameter to put arguments in array

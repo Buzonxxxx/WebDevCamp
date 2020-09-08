@@ -1,4 +1,5 @@
 /**
+ * [Frequency Counter]
  * Given two positive integer numbers, find out if two numbers have the same frequency of digits
  * Time: O(N)
  * i.g.

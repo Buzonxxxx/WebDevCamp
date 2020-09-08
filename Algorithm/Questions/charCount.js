@@ -1,5 +1,5 @@
 /*
- * 1.
+ * [Frequency Counter]
  * i.g. "hello" => {h:1, e:1, l:2, o:1}
  *
  *

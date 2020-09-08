@@ -1,4 +1,4 @@
-/* eslint-disable no-plusplus */
+// [Frequency Counter]
 // interview question
 // parentheses are balance or not?
 
