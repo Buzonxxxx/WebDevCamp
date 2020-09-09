@@ -33,9 +33,21 @@ const link = document.querySelector('a');
 link.getAttribute('href');
 link.setAttribute('href', 'www.yahoo.com');
 
+const range = document.querySelector('input[type="range"]');
+range.getAttribute('max')
+range.getAttribute('min')
+range.setAttribute('min', '-500')
+
 const img = document.getElementsByTagName('img');
 img.getAttribute('src');
 img.setAttribute('src', 'http://xxxx.xx.xxx');
+
+// parentElement / children / nextElementSibling / previouslementSibling
+firstLi = document.querySelector('li')
+firstLi.parentElement
+firstLi.children
+firstLi.nextElementSibling
+firstLi.previouslementSibling
 
 // change Google logo
 const logo = document.querySelector('#hplogo');
