@@ -27,18 +27,19 @@ Example 5:
 Input: "{[]}"
 Output: true
 */
+
+// user array
 const isValid = (s) => {
-  if (s === null || s.length <= 0) return true;
-  const arr = s.split('');
-  const stack = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === '[') stack.push(']');
-    else if (arr[i] === '{') stack.push('}');
-    else if (arr[i] === '(') stack.push(')');
-    else if (stack.length === 0 || arr[i] !== stack.pop()) return false;
-    console.log(stack);
-  }
-  if (stack.length === 0) return true;
-  return false;
+	const stack = [];
+	for (let i = 0; i < s.length; i++) {
+		const char = s[i];
+		if (char === '(') stack.push(')');
+		else if (char === '[') stack.push(']');
+		else if (char === '{') stack.push('}');
+		else if (stack.length === 0 || char !== stack.pop()) return false;
+	}
+	if (stack.length === 0) return true;
+	return false;
 };
+
 console.log(isValid('{[]}'));

@@ -1,5 +1,8 @@
-const translateRomanNumeral = (romanNumeral) => {
-	const DIGIT_VALUES = {
+// loop string
+// if next value bigger than current value, result += nextValue - currentVal
+
+const translateRomanNumeral = (s) => {
+	const table = {
 		I: 1,
 		V: 5,
 		X: 10,
@@ -8,20 +11,15 @@ const translateRomanNumeral = (romanNumeral) => {
 		D: 500,
 		M: 1000
 	};
-
 	let result = 0;
-	const input = romanNumeral.split('');
-	for (let i = 0; i < input.length; i++) {
-		const currentValue = DIGIT_VALUES[input[i]];
-		const nextValue = DIGIT_VALUES[input[i + 1]];
-		if (currentValue === undefined) {
-			return 'null';
-		}
-		if (currentValue < nextValue) {
-			result += nextValue - currentValue;
-			i += 1;
+	for (let i = 0; i < s.length; i++) {
+		const currentVal = table[s[i]];
+		const nextVal = table[s[i + 1]];
+		if (currentVal < nextVal) {
+			result += nextVal - currentVal;
+			i++;
 		} else {
-			result += currentValue;
+			result += currentVal;
 		}
 	}
 	return result;
