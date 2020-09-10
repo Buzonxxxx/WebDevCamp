@@ -24,21 +24,21 @@
  */
 
 // validate num
-// keep num
+// save num to target
 // reverse num
 // if reverse num === num return true
 
 const isPalindrome = (num) => {
-  if (num < 0) return false;
-  if (num >= 0 && num < 10) return true;
-  let target = num;
-  let reverseNum = 0;
-  while (target > 0) {
-    reverseNum = (reverseNum * 10) + (target % 10);
-    target = parseInt(target / 10, 10);
-  }
-  if (reverseNum === num) return true;
-  return false;
+	if (num < 0) return false;
+	if (num >= 0 && num < 10) return true;
+	let target = num;
+	let reverseNum = 0;
+	while (target > 0) {
+		reverseNum = reverseNum * 10 + target % 10;
+		target = parseInt(target / 10);
+	}
+	if (reverseNum === num) return true;
+	return false;
 };
 
 console.log(isPalindrome(121));
