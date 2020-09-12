@@ -19,23 +19,43 @@
 // S and J will consist of letters and have length at most 50.
 // The characters in J are distinct.
 
+// Obj
 const numJewelsInStones = (J, S) => {
-  const result = {};
-  for (let i = 0; i < S.length; i++) {
-    if (!result[S[i]]) {
-      result[S[i]] = 1;
-    } else {
-      result[S[i]] += 1;
-    }
-  }
-  let sum = 0;
-  for (let i = 0; i < J.length; i++) {
-    if (result[J[i]]) {
-      sum += result[J[i]];
-    }
-  }
-  return sum;
+	const sCount = {};
+	let total = 0;
+	for (let i = 0; i < S.length; i++) {
+		const char = S[i];
+		sCount[char] ? (sCount[char] += 1) : (sCount[char] = 1);
+	}
+	for (let j = 0; j < J.length; j++) {
+		const char = J[j];
+		if (sCount[char]) total += sCount[char];
+	}
+	return total;
+};
+
+// Map
+const numJewelsInStones2 = (J, S) => {
+	const map = new Map();
+	for (let i = 0; i < S.length; i++) {
+		let charS = S[i];
+		if (map.has(charS)) {
+			map.set(charS, map.get(charS) + 1);
+		} else {
+			map.set(charS, 1);
+		}
+	}
+	let sum = 0;
+	for (let j = 0; j < J.length; j++) {
+		let charJ = J[j];
+		if (map.has(charJ)) {
+			sum += map.get(charJ);
+		}
+	}
+	return sum;
 };
 
 console.log(numJewelsInStones('aA', 'aAAbbbb'));
 console.log(numJewelsInStones('z', 'ZZ'));
+console.log(numJewelsInStones2('aA', 'aAAbbbb'));
+console.log(numJewelsInStones2('z', 'ZZ'));
