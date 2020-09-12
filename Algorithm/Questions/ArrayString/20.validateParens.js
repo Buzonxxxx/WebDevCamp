@@ -29,17 +29,20 @@ Output: true
 */
 
 // user array
+
 const isValid = (s) => {
-	const stack = [];
+	if (s.length <= 1) return false;
+	let arr = [];
 	for (let i = 0; i < s.length; i++) {
 		const char = s[i];
-		if (char === '(') stack.push(')');
-		else if (char === '[') stack.push(']');
-		else if (char === '{') stack.push('}');
-		else if (stack.length === 0 || char !== stack.pop()) return false;
+		if (char === '(') arr.push(')');
+		else if (char === '[') arr.push(']');
+		else if (char === '{') arr.push('}');
+		else if (arr.length === 0 || char !== arr.pop()) return false;
 	}
-	if (stack.length === 0) return true;
+	if (arr.length === 0) return true;
 	return false;
 };
 
 console.log(isValid('{[]}'));
+console.log(isValid('(('));
