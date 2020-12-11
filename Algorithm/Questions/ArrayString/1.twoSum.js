@@ -1,4 +1,6 @@
 /**
+ * https://leetcode.com/problems/two-sum/
+ * 
  * [Frequency Counter]
  * Given an array of integers, return indices of the two numbers
  * such that they add up to a specific target.
@@ -6,6 +8,10 @@
  // validate input (nums.length >= 2)
  // if (target - num) not in obj, put num and its index in object i.g {'2': 0}
  // else return index of (target - num) and index of num
+ * 
+ *
+ * 2020/11/6 Review
+ * 
  */
 
 const twoSum = (nums, target) => {
