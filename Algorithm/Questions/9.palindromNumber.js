@@ -32,23 +32,11 @@ const isPalindrome = (num) => {
 	if (num < 0) return false;
 	if (num >= 0 && num < 10) return true;
     // reverse num shoule equal to num
-    const str = num.toString()
-    let newStr = ''
-    for (let i = str.length -1; i >= 0; i--){
-        newStr += str[i]
-    }
-    const newNum = parseInt(newStr)
+    const str = num.toString().split('').reverse().join('')
+    
+    const newNum = parseInt(str)
     if (newNum == num) return true
 		return false
-		
-	// let target = num;
-	// let reverseNum = 0;
-	// while (target > 0) {
-	// 	reverseNum = reverseNum * 10 + target % 10;
-	// 	target = parseInt(target / 10);
-	// }
-	// if (reverseNum === num) return true;
-	// return false;
 };
 
 console.log(isPalindrome(121));
