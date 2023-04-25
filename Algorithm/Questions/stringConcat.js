@@ -25,8 +25,8 @@
 // };
 
 const print = (str, n) => {
-  let newStr = str.slice(0, n)
-  newStr = newStr.slice(0, newStr.length - 1 ) + newStr.split('').reverse().join('')
+  let newStr = str.slice(0, n) // 'abcd'
+  newStr = newStr.slice(0, newStr.length - 1 ) + newStr.split('').reverse().join('') // 'abc' + 'dcba'
   return newStr
 };
 
