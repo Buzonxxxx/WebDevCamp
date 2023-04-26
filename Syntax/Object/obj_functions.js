@@ -5,8 +5,8 @@ const obj = {
 };
 
 // put keys, values in array
-console.log(Object.keys(obj));
-console.log(Object.values(obj));
+console.log(Object.keys(obj)); //[ 'a', 'b', 'c' ]
+console.log(Object.values(obj)); //[ 'one', 'two', 'three' ]
 
 // count object size
 console.log(Object.keys(obj).length);
