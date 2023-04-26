@@ -32,5 +32,10 @@ const reverseString2 = (s) => {
 	return s;
 };
 
+const reverseString3 = (s) => {
+	return s.reverse()
+}
+
 console.log(reverseString([ 'h', 'e', 'l', 'l', 'o' ]));
 console.log(reverseString2([ 'h', 'e', 'l', 'l', 'o' ]));
+console.log(reverseString3([ 'h', 'e', 'l', 'l', 'o' ]));

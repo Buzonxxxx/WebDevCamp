@@ -34,9 +34,7 @@ const isPalindrome = (num) => {
     // reverse num shoule equal to num
     const str = num.toString().split('').reverse().join('')
     
-    const newNum = parseInt(str)
-    if (newNum == num) return true
-		return false
+    return parseInt(str) === num
 };
 
 console.log(isPalindrome(121));
