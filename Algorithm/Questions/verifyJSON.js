@@ -45,6 +45,7 @@ let jsondata = {
 }
 
 const isValidJson = (jsonData) => {
+  let isValid = true
   const obj = jsonData
   const keywords = obj.keywords
   const keywordsFrequency = obj["keywords frequency"]
@@ -60,18 +61,28 @@ const isValidJson = (jsonData) => {
 
     if(frequency < 0) {
       console.log(`The ${key}'s frequency: ${frequency} < 0`)
-      // return false
+      isValid = false
+    } else if(frequency === undefined) {
+      console.log(`Frequency ${key} is undefined`)
+      isValid = false
     }
     if(recency > 12) {
       console.log(`The ${key}'s recency: ${recency} > 12`)
-      // return false
+      isValid = false
+    } else if(recency === undefined) {
+      console.log(`Recency ${key} is undefined`)
+      isValid = false
     }
     if (diff >= 6) {
       console.log(`The ${key}'s date: ${recencyDate} > 6`)
-      // return false
+      isValid = false
+    } else if (recencyDate === undefined) {
+      console.log(`RecencyDate ${key} is undefined`)
+      isValid = false
     }
 
     }
+    return isValid
   }
 
 
