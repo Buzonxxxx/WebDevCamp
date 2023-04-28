@@ -20,42 +20,48 @@
 // The characters in J are distinct.
 
 // Obj
+
 const numJewelsInStones = (J, S) => {
-	const sCount = {};
-	let total = 0;
-	for (let i = 0; i < S.length; i++) {
-		const char = S[i];
-		sCount[char] ? (sCount[char] += 1) : (sCount[char] = 1);
+	const sCount = {}
+	let total = 0
+	for(let item of S) {
+		if (sCount[item]) {
+			sCount[item]++
+		} else {
+			sCount[item] = 1
+		}
 	}
-	for (let j = 0; j < J.length; j++) {
-		const char = J[j];
-		if (sCount[char]) total += sCount[char];
+
+	for(let item of J) {
+		if (sCount[item]) {
+			total += sCount[item]
+		}
 	}
-	return total;
+	return total
 };
 
 // Map
-const numJewelsInStones2 = (J, S) => {
-	const map = new Map();
-	for (let i = 0; i < S.length; i++) {
-		let charS = S[i];
-		if (map.has(charS)) {
-			map.set(charS, map.get(charS) + 1);
-		} else {
-			map.set(charS, 1);
-		}
-	}
-	let sum = 0;
-	for (let j = 0; j < J.length; j++) {
-		let charJ = J[j];
-		if (map.has(charJ)) {
-			sum += map.get(charJ);
-		}
-	}
-	return sum;
-};
+// const numJewelsInStones2 = (J, S) => {
+// 	const map = new Map();
+// 	for (let i = 0; i < S.length; i++) {
+// 		let charS = S[i];
+// 		if (map.has(charS)) {
+// 			map.set(charS, map.get(charS) + 1);
+// 		} else {
+// 			map.set(charS, 1);
+// 		}
+// 	}
+// 	let sum = 0;
+// 	for (let j = 0; j < J.length; j++) {
+// 		let charJ = J[j];
+// 		if (map.has(charJ)) {
+// 			sum += map.get(charJ);
+// 		}
+// 	}
+// 	return sum;
+// };
 
 console.log(numJewelsInStones('aA', 'aAAbbbb'));
 console.log(numJewelsInStones('z', 'ZZ'));
-console.log(numJewelsInStones2('aA', 'aAAbbbb'));
-console.log(numJewelsInStones2('z', 'ZZ'));
+// console.log(numJewelsInStones2('aA', 'aAAbbbb'));
+// console.log(numJewelsInStones2('z', 'ZZ'));

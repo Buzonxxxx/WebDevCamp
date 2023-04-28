@@ -27,14 +27,15 @@ const same = (arr1, arr2) => {
     }
   }
 
-  for (let i = 0; i < arr1.length; i++) {
-    if (!result[arr1[i] ** 2]) {
-      return false;
+  for(let num of arr1) {
+    if (!result[num ** 2]){
+      return false
     }
-    result[arr1[i] ** 2] -= 1;
+    result[num ** 2] -=1
   }
-  return true;
-};
+  return true
+}
+
 console.log(same([1, 2, 3, 2], [9, 1, 4, 4]));
 
 

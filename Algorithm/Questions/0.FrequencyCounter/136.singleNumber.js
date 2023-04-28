@@ -13,10 +13,14 @@
 const countUniqueValues = (nums) => {
 	const result = {};
 	for (let num of nums) {
-		result[num] ? (result[num] += 1) : (result[num] = 1);
+		if(result[num]) {
+			result[num]++
+		} else {
+			result[num] = 1
+		}
 	}
 
-	for (let num of nums) {
+	for (let num in nums) {
 		if (result[num] === 1) {
 			return num;
 		}

@@ -20,26 +20,26 @@
  */
 
 const sameFrequency = (num1, num2) => {
-  const str1 = num1.toString();
-  const str2 = num2.toString();
-  if (str1.length !== str2.length) {
-    return false;
-  }
-  const result = {};
-  for (let i = 0; i < str1.length; i++) {
-    if (!result[str1[i]]) {
-      result[str1[i]] = 1;
+  const str1 = num1.toString()
+  const str2 = num2.toString()
+  if (str1.length !== str2.length) return false
+
+  const obj = {}
+  for(let char of str1) {
+    if(obj[char]) {
+      obj[char]++
     } else {
-      result[str1[i]] += 1;
+      obj[char] = 1
     }
   }
-  for (let i = 0; i < str2.length; i++) {
-    if (!result[str2[i]]) {
-      return false;
-    }
-    result[str2[i]] -= 1;
+
+  for(let char of str2) {
+    if(!obj[char]) {
+      return false
+    } 
+    obj[char] -= 1
   }
-  return true;
+  return true
 };
 
 console.log(sameFrequency(182, 281)); // true
