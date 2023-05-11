@@ -8,6 +8,9 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
+// remove space using regex
+// .replace(/[^\w]/g, '') => only keep character 
+// e.g. 'rail safety' => railsafety
 function anagrams(stringA, stringB) {
   const cleanStringA = stringA.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('')
   const cleanStringB = stringB.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('')
@@ -15,8 +18,8 @@ function anagrams(stringA, stringB) {
 }
 
 console.log(anagrams('rail safety', 'fairy tales'))
-console.log(anagrams('RAIL! SAFETY!', 'fairy tales'))
-console.log(anagrams('Hi there', 'Bye there'))
+// console.log(anagrams('RAIL! SAFETY!', 'fairy tales'))
+// console.log(anagrams('Hi there', 'Bye there'))
 
 
 // Solution#1

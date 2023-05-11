@@ -6,27 +6,30 @@
 // maxChar("abcccccccd") === "c"
 // maxChar("apple 1231111") === "1"
 
+
+// put each char and its count in the obj
+// find the largest count in the obj
+
 function maxChar(str) {
-  const charMap = {}
-  let max = 0
+  const result = {}
+  for(let char of str) {
+    if (!result[char]) {
+        result[char] = 1
+    } else {
+        result[char] += 1
+    }
+  }
+  
   let maxChar = ''
-
-  for (let char of str) {
-      if(charMap[char]) {
-          charMap[char]++
-      } else {
-          charMap[char] = 1
-      }
+  let max = 0
+  for(let char in result) {
+    if (result[char] > max) {
+        max = result[char]
+        maxChar = char
+    }
   }
-
-  for (let char in charMap) { // loop key
-      if (charMap[char] > max) {
-          max = charMap[char]
-          maxChar = char
-      }
-  }
-
   return maxChar
+
 }
 
 console.log(maxChar("apple 1231111"))
