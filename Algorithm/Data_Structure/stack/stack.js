@@ -2,7 +2,7 @@
  *
  *
  * use array: push(), pop() or unshift(), shift()
- * 後進先出
+ * 後進先出 FILO
  *
  */
 
