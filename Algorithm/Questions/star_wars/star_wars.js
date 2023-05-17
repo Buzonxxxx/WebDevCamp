@@ -1,5 +1,5 @@
 const axios = require('axios')
-// https://swapi.py4e.com/api/
+// https://swapi.py4e.com/
 
 // Please design an automation script to check:
 
@@ -34,16 +34,32 @@ async function overOneThousandSpeed() {
   try {
       const response = await axios.get('https://swapi.py4e.com/api/films/');
       let films = response.data.results
-      console.log(films)
-      // films = films.sort((a, b) => a.episode_id > b.episode_id ? 1 : -1)
-      // for(let film of films) {
-      //   console.log(`The No.${film.episode_id} film's name is ${film.title}`)
-      // }
+      let vehicleAPIs = []
+      for(let film of films) {
+        vehicleAPIs = vehicleAPIs.concat(film.vehicles)
+      }
+      
+      let uniqueVehicleAPIs = [...new Set(vehicleAPIs)]
+
+      for (let vehicleAPI of uniqueVehicleAPIs) {
+        const response = await axios.get(vehicleAPI)
+        
+        const max_atmosphering_speed = response.data.max_atmosphering_speed
+        const vehicleName = response.data.name
+        
+        if (max_atmosphering_speed && max_atmosphering_speed > 1000) {
+          console.log(`The ${vehicleName}'s speed is over 1000, it'is ${max_atmosphering_speed}`)
+        }
+      }
     } catch(error){
       console.log(error)
     }
   }
 
-  // getSpecis()
-  // listAllFilms()
-  overOneThousandSpeed()
+  async function test() {
+    await getSpecis()
+    await listAllFilms()
+    await overOneThousandSpeed()
+  }
+
+  test()
