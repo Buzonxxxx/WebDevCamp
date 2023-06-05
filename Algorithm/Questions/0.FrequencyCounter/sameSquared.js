@@ -18,9 +18,10 @@
 */
 
 const same = (arr1, arr2) => {
-  const result = {};
+  if (arr1.length !== arr2.length) return false
+  const result = {}
   for (let num of arr2) {
-    if (result[num]) {
+    if (result[num]){
       result[num]++
     } else {
       result[num] = 1
@@ -28,10 +29,8 @@ const same = (arr1, arr2) => {
   }
 
   for(let num of arr1) {
-    if (!result[num ** 2]){
-      return false
-    }
-    result[num ** 2] -=1
+    if(!result[num ** 2]) return false
+    result[num ** 2] -= 1
   }
   return true
 }

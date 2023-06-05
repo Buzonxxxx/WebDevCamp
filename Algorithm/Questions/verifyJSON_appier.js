@@ -46,18 +46,17 @@ let jsondata = {
 
 const isValidJson = (jsonData) => {
   let isValid = true
-  const obj = jsonData
-  const keywords = obj.keywords
-  const keywordsFrequency = obj["keywords frequency"]
-  const keywordsRecency = obj["keywords recency"]
-  const KeywordRecencyDate = obj["Keyword Recency Date"]
+  const keywords = jsonData.keywords
+  const keywordsFrequency = jsonData["keywords frequency"]
+  const keywordsRecency = jsonData["keywords recency"]
+  const KeywordRecencyDate = jsonData["Keyword Recency Date"]
   for(let key of keywords) {
     const frequency = keywordsFrequency[key]
     const recency = keywordsRecency[key]
     const recencyDate = KeywordRecencyDate[key]
     const date = new Date(recencyDate)
     const nowDate = new Date("2021-02-06")
-    const diff = (nowDate - date) / (24*60*60*1000)
+    const diff = (nowDate - date) / (24*60*60*1000) // 差幾天
 
     if(frequency < 0) {
       console.log(`The ${key}'s frequency: ${frequency} < 0`)

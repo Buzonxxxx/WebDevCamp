@@ -9,18 +9,10 @@
 //   palindrome("abcdefg") === false
 
 function palindrome(str) {
-  return str.split('').every((char, i) => {
-      return char === str[str.length -i -1]
-  })
+    let reversed = ''
+    reversed = str.split('').reverse().join('')
+    return str === reversed
 }
 
-console.log(palindrome('greetings'))
 console.log(palindrome('abba'))
-
-module.exports = palindrome;
-
-// function palindrome(str) {
-//     let reversed = ''
-//     reversed = str.split('').reverse().join('')
-//     return str === reversed
-// }
+console.log(palindrome('greetings'))

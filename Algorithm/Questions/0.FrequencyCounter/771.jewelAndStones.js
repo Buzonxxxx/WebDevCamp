@@ -19,22 +19,25 @@
 // S and J will consist of letters and have length at most 50.
 // The characters in J are distinct.
 
+// put each stone in an obj with its count
+// loop J and check if it is in the obj
+// if it's in the obj, accumulate the count
+
 // Obj
 
 const numJewelsInStones = (J, S) => {
 	const sCount = {}
-	let total = 0
-	for(let item of S) {
-		if (sCount[item]) {
-			sCount[item]++
+	for (let stone of S) {
+		if(sCount[stone]) {
+			sCount[stone]++
 		} else {
-			sCount[item] = 1
+			sCount[stone] = 1
 		}
 	}
-
-	for(let item of J) {
-		if (sCount[item]) {
-			total += sCount[item]
+	let total = 0
+	for (let jewel of J) {
+		if(sCount[jewel]) {
+			total += sCount[jewel]
 		}
 	}
 	return total

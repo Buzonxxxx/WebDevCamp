@@ -20,16 +20,15 @@ function maxChar(str) {
     }
   }
   
-  let maxChar = ''
   let max = 0
+  let maxChar = ''
   for(let char in result) {
     if (result[char] > max) {
-        max = result[char]
-        maxChar = char
+      max = result[char]
+      maxChar = char
     }
   }
   return maxChar
-
 }
 
 console.log(maxChar("apple 1231111"))

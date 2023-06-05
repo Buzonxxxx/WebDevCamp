@@ -44,23 +44,25 @@
 // 7. After loop, if isLastInterval flag is true, push current inteveral to result array
 // 8. return result array
 
-const mergeInterval = (...args) => {
+// mergeInterval([1, 3], [2, 4], [6, 1], [10, 4])
+
+const mergeInterval = (...args) => {  // args = [ [ 1, 3 ], [ 2, 4 ], [ 6, 1 ], [ 10, 4 ] ]
   if (args.length === 0) return false;
   const result = [];
-  let scope = args[0][0] + args[0][1];
-  let startPoint = args[0][0];
+  let scope = args[0][0] + args[0][1]; // 1 + 3 = 4
+  let startPoint = args[0][0]; // 1
   let newInterval;
   let isLastInterval = false;
 
   for (let i = 1; i < args.length; i++) {
-    const currentStart = args[i][0];
-    const currentLength = args[i][1];
+    const currentStart = args[i][0]; // 2
+    const currentLength = args[i][1]; // 4
 
     if (currentStart < 0 || currentLength < 0) return false;
 
     if (currentStart <= scope) {
-      newInterval = [startPoint, currentStart + currentLength - 1];
-      scope = newInterval[0] + newInterval[1];
+      newInterval = [startPoint, currentStart + currentLength - 1]; // [1, 2+4-1=5]
+      scope = newInterval[0] + newInterval[1]; // 6
     } else {
       result.push(newInterval);
       startPoint = currentStart;

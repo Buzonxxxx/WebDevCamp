@@ -26,7 +26,7 @@ const isAnagram = (str1, str2) => {
 
 	for (let char of str2) {
 		if(!result[char]) return false
-		result[char] -= 1
+		result[char] -= 1	
 	}
 	return true
 };
@@ -46,4 +46,5 @@ const isAnagram = (str1, str2) => {
 // 	if (arr.length === 0) return true;
 // 	else return false;
 // };
+console.log(isAnagram('anagrams', 'nagarama')); // false
 console.log(isAnagram('anagrams', 'nagarams')); // true

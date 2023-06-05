@@ -18,14 +18,14 @@ function reverse(str) {
   // return str.split('').reverse().join('')
 
   // solution3
-  // let reversed = ''
-  // for (let char of str) {
-  //     reversed = char + reversed // '', a, pa, ppa, lppa, elppa
-  // }
-  // return reversed
+  let reversed = ''
+  for (let char of str) {
+      reversed = char + reversed // '', a, pa, ppa, lppa, elppa
+  }
+  return reversed
 
   // solution4
-  return str.split('').reduce((reversed, char) => char + reversed, '')
+  // return str.split('').reduce((reversed, char) => char + reversed, '') // reduce
 }
 
 console.log(reverse('hello'))
