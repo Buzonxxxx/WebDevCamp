@@ -15,21 +15,21 @@
  */
 
 const maxSubArraySum = (arr, n) => {
-  if (n > arr.length || arr.length <= 0) {
-    return null;
-  }
-  let tempSum = 0;
-  let maxSum = 0;
+  if (arr.length < 0 || n > arr.length) return false
+
+  let tempSum = 0
+  let maxSum = 0
+
   for (let i = 0; i < n; i++) {
-    tempSum += arr[i];
+    tempSum += arr[i]
   }
-  maxSum = Math.max(tempSum, maxSum);
-  for (let i = n; i < arr.length - 1; i++) {
-    tempSum = tempSum - arr[i - n] + arr[i];
-    maxSum = Math.max(tempSum, maxSum);
+
+  for (let i = n; i < arr.length; i++) {
+    tempSum = tempSum - arr[i - n] + arr[i]
+    maxSum = Math.max(tempSum, maxSum)
   }
-  return maxSum;
+  return maxSum
 };
-console.log(maxSubArraySum([1, 2, 5, 2, 9, 1, 5], 2)); // 11
-// console.log(maxSubArraySum([1, 2, 5, 2, 8, 1, 5], 3)); // 15
+console.log(maxSubArraySum([1, 2, 5, 2, 2, 1, 5, 9], 2)); // 14
+console.log(maxSubArraySum([1, 2, 5, 2, 8, 8, 8], 3)); // 24
 // O(n)

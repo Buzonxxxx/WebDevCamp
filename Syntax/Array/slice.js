@@ -8,7 +8,7 @@ const arr6 = [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
 console.log(arr6.slice(0, 1));
 // [ 1 ]
 console.log(arr6);
-//  1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
+// [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]
 console.log(arr6.slice(5)); // 從index 5取到最後
 // [ 6, 7, 8, 9, 10 ]
 console.log(arr6.slice(9));

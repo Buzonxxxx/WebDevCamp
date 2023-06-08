@@ -49,10 +49,11 @@
 const mergeInterval = (...args) => {  // args = [ [ 1, 3 ], [ 2, 4 ], [ 6, 1 ], [ 10, 4 ] ]
   if (args.length === 0) return false;
   const result = [];
+  args.sort((a, b) => a[0] - b[0])
+
   let scope = args[0][0] + args[0][1]; // 1 + 3 = 4
   let startPoint = args[0][0]; // 1
   let newInterval;
-  let isLastInterval = false;
 
   for (let i = 1; i < args.length; i++) {
     const currentStart = args[i][0]; // 2
@@ -69,13 +70,9 @@ const mergeInterval = (...args) => {  // args = [ [ 1, 3 ], [ 2, 4 ], [ 6, 1 ], 
       scope = currentStart + currentLength;
       newInterval = [currentStart, currentLength];
     }
-    if (i === args.length - 1) {
-      isLastInterval = true;
-    }
   }
-  if (isLastInterval) {
-    result.push(newInterval);
-  }
+  result.push(newInterval);
+
   return result;
 };
 

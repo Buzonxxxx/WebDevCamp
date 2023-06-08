@@ -33,7 +33,7 @@
     const newArr = []
     const arr = str.split(' ') // turn string into array
     for (let word of arr) { // loop arr
-      word = word[0].toUpperCase() + word.slice(1)
+      word = word[0].toUpperCase() + word.slice(1) // 從index 1 取到最後
       newArr.push(word)
     }
 
