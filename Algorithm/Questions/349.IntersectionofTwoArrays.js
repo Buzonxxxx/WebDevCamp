@@ -9,13 +9,22 @@
 // Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
 // Output: [9,4]
 
+// verify nums1, nums2 are valid
+// init a result array
+// loop nums1
+// if nums1's element in nums2 && element not in result array
+//   ==> push element in result array
+
 var intersection = function(nums1, nums2) {
-	const result = [];
-	for (let num of nums1) {
-		if (nums2.indexOf(num) !== -1 && result.indexOf(num) === -1) result.push(num);
-	}
-	return result;
+	if (nums1.length === 0 || nums2.length === 0) return false
+	 const result = []
+	 for (let num of nums1) {
+			 if (nums2.indexOf(num) !== -1 && result.indexOf(num) === -1) {
+					 result.push(num)
+			 }
+	 }
+	 return result
 };
 
-console.log(intersection([ 1, 2, 2, 1 ], [ 2, 2 ]));
-console.log(intersection([ 4, 9, 5 ], [ 9, 4, 9, 8, 4 ]));
+console.log(intersection([ 1, 2, 2, 1 ], [ 2, 2 ])); // [2]
+console.log(intersection([ 4, 9, 5 ], [ 9, 4, 9, 8, 4 ])); // [4, 9]

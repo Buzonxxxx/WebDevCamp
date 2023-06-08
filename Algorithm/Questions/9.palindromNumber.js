@@ -28,14 +28,18 @@
 // reverse num
 // if reverse num === num return true
 
-const isPalindrome = (num) => {
-	if (num < 0) return false;
-	if (num >= 0 && num < 10) return true;
-    // reverse num shoule equal to num
-    const str = num.toString().split('').reverse().join('')
-    
-    return parseInt(str) === num
+// check if x valid, x should not be negative number, x in 0 ~ 9, should be true
+// convert x to String
+// compare x and reversed x
+
+var isPalindrome = function(x) {
+    if (x < 0) return false
+    if (x >= 0 && x <= 9) return true
+    const str = x.toString()
+
+    return str === str.split('').reverse().join('')
+
 };
 
-console.log(isPalindrome(121));
-console.log(isPalindrome(10));
+console.log(isPalindrome(121)); // true
+console.log(isPalindrome(10)); // false

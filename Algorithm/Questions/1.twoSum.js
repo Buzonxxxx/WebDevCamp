@@ -1,31 +1,26 @@
-/**
- * https://leetcode.com/problems/two-sum/
- * 
- * [Frequency Counter]
- * Given an array of integers, return indices of the two numbers
- * such that they add up to a specific target.
- *
- // validate input (nums.length >= 2)
- // if (target - num) not in obj, put num and its index in object i.g {'2': 0}
- // else return index of (target - num) and index of num
- * 
- *
- * 2020/11/6 Review
- * 
- */
+// Input: nums = [2,7,11,15], target = 9
+// Output: [0,1]
+// Explanation: Because nums[0] + nums[1] == 9, we return [0, 1].
 
-const twoSum = (nums, target) => {
-	if (nums.length < 2) return false;
-	const result = {};
+// verify nums
+// init a result object {}
+// loop nums
+// if target - num is not in the object
+//   => put the num in object and set value equal to its index
+// else return [object[target - num], num's index]
+
+ var twoSum = function(nums, target) {
+	if (nums.length <= 1) return false
+	const result = {}
 	for (let i = 0; i < nums.length; i++) {
-		const num = nums[i];
-		if (!(target - num in result)) {
-			result[num] = i; // 9 - 2 = 7, not in obj, => {'2':0, }, 9 - 7 = 2, in obj => return index
-		} else {
-			return [ result[target - num], i ];
-		}
+			const num = nums[i]
+			if (result[target - num] === undefined) {
+					result[num] = i
+			} else {
+				return [result[target - num], i]
+			}
 	}
-	return undefined;
+	return undefined
 };
 
 console.log(twoSum([ 2, 7, 11, 15 ], 9));
