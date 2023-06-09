@@ -7,13 +7,19 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
+// put vowels in an array
+// verify str
+// init count = 0
+// loop str
+// if char in vowels array, count it
+
+
 function vowels(str) {
-  const vowels = ['a', 'e', 'i', 'o', 'u']
+  const table = ['a', 'e', 'i', 'o', 'u']
+  if (str.length === 0) return false
   let count = 0
-  for(let char of str.toLowerCase()) {
-    if(vowels.includes(char)) { // array.includes()
-      count += 1
-    }
+  for (let char of str) {
+    if (table.includes(char)) count++
   }
   return count
 }
@@ -21,8 +27,3 @@ function vowels(str) {
   console.log(vowels('Hi There!')) //--> 3
   console.log(vowels('Why do you ask?')) //--> 4
   console.log(vowels('Why?')) //--> 0
-
-  // function vowels(str) {
-  //   const matches = str.match(/[aeiou]/gi) // ['i', 'o', 'u']
-  //   return matches ? matches.length : 0  
-  // }

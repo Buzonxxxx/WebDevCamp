@@ -58,7 +58,7 @@ const isValidJson = (jsonData) => {
     const nowDate = new Date("2021-02-06")
     const diff = (nowDate - date) / (24*60*60*1000) // 差幾天
 
-    if(frequency < 0) {
+    if (frequency < 0) {
       console.log(`The ${key}'s frequency: ${frequency} < 0`)
       isValid = false
     } else if(frequency === undefined) {

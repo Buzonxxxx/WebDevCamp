@@ -26,9 +26,7 @@ const fib2 = (n) => {
   if (n < 2) {
     return n
   }
-
   return fib2(n - 1) + fib2(n - 2)
-  // fib(4) = fib(3) + fib(2) = fib(2) + fib(1) + fib(2) = fib(1)+fib(0) + 1 + fib(1)+fib(0) = 1+0+1+1+0  
 }
 
 console.log(fib2(4))

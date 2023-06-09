@@ -1,25 +1,4 @@
 
-// Your previous Java content is preserved below:
-
-// Merge Intersection
-// [1, 3], [2,4], [6,1], [10,4]  → [1,6], [10,4]  ( [start, length] )
-
-/**
- * Definition for an interval.
- * public class Interval {
- *     int start;
- *     int length;
- *     Interval() { start = 0; length = 0; }
- *     Interval(int s, int l) { start = s; length = l; }
- * }
- */
-// class Solution {
-//     public List<Interval> merge(List<Interval> intervals) {
-
-//     }
-// }
-
-
 // Merge Intersection
 // [1, 3], [2,4], [6,1], [10,4]  → [1,6], [10,4]  ( [start, length] )
 
@@ -51,29 +30,22 @@ const mergeInterval = (...args) => {  // args = [ [ 1, 3 ], [ 2, 4 ], [ 6, 1 ], 
   const result = [];
   args.sort((a, b) => a[0] - b[0])
 
-  let scope = args[0][0] + args[0][1]; // 1 + 3 = 4
-  let startPoint = args[0][0]; // 1
-  let newInterval;
-
+  let cur = args[0]
+  
   for (let i = 1; i < args.length; i++) {
     const currentStart = args[i][0]; // 2
     const currentLength = args[i][1]; // 4
-
-    if (currentStart < 0 || currentLength < 0) return false;
-
-    if (currentStart <= scope) {
-      newInterval = [startPoint, currentStart + currentLength - 1]; // [1, 2+4-1=5]
-      scope = newInterval[0] + newInterval[1]; // 6
+    if (currentStart <= cur[0] + cur[1]) { // merge
+      cur[1] = Math.max(cur[1], currentStart + currentLength - 1)
     } else {
-      result.push(newInterval);
-      startPoint = currentStart;
-      scope = currentStart + currentLength;
-      newInterval = [currentStart, currentLength];
+      result.push(cur);
+      cur = args[i]
     }
   }
-  result.push(newInterval);
+  result.push(cur);
 
   return result;
 };
 
 console.log(mergeInterval([1, 3], [2, 4], [6, 1], [10, 4]));
+console.log(mergeInterval([1,3], [2,6], [8,10], [15,18]));

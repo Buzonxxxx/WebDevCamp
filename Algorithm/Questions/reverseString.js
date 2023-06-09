@@ -6,28 +6,17 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
+// verify str
+// init a empty resilt string
+// loop string and concat to the result string
+
 function reverse(str) {
-  // solution1
-  // let reverseStr = ""
-  // for (i = str.length -1; i>=0; i--){
-  //     reverseStr += str[i]
-  // }
-  // return reverseStr
-
-  // solution2
-  // return str.split('').reverse().join('')
-
-  // solution3
-  let reversed = ''
+  if (str.length === 0) return false
+  let result = ''
   for (let char of str) {
-      reversed = char + reversed // '', a, pa, ppa, lppa, elppa
+    result = char + result
   }
-  return reversed
-
-  // solution4
-  // return str.split('').reduce((reversed, char) => char + reversed, '') // reduce
+  return result
 }
 
 console.log(reverse('hello'))
-
-module.exports = reverse;

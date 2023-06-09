@@ -1,5 +1,5 @@
 /*
- * [Sliding Window]
+ *
  * Write a function called maxSubarraySum which accepts an array of integers and a number called n.
  * The function should calculate the maximum sum of n "consecutive elements" in the array.
  *
@@ -9,20 +9,18 @@
  * validate input
  * sum to n and assign to tempSum
  * update maxSum
- *
- * loop from n, add right element, minus left element, update maxSum
+ * loop array from n, add right element, minus left element, update maxSum
  *
  */
 
 const maxSubArraySum = (arr, n) => {
-  if (arr.length < 0 || n > arr.length) return false
-
+  if (arr.length === 0 || n > arr.length) return false
   let tempSum = 0
   let maxSum = 0
-
   for (let i = 0; i < n; i++) {
     tempSum += arr[i]
   }
+  maxSum = tempSum
 
   for (let i = n; i < arr.length; i++) {
     tempSum = tempSum - arr[i - n] + arr[i]
