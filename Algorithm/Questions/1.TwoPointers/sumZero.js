@@ -9,22 +9,31 @@
  * [1,2,3,4,5] => return undefined
  */
 
+// verify arr
+// get left and right elements' index
+// while left element < right element
+// get sum of left and right elements
+// if sum === 0, return result
+// if sum > 0, shift right element to left one
+// else(sum < 0), shift left element to right one
+
 const sumZero = (arr) => {
-  let left = 0;
-  let right = arr.length - 1;
+  if (arr.length === 0) return false
+  let left = 0
+  let right = arr.length - 1
   while (arr[left] < arr[right]) {
-    const sum = arr[left] + arr[right];
+    let sum = arr[left] + arr[right]
     if (sum === 0) {
-      return [arr[left], arr[right]];
+      return [arr[left], arr[right]]
     }
     if (sum > 0) {
-      right -= 1;
+      right -= 1
     } else {
-      left += 1;
+      left += 1
     }
   }
-  return undefined;
-};
+}
+  
 console.log(sumZero([-2, -1, 0, 1, 2, 3, 4, 5])); // [-2,2]
 console.log(sumZero([1, 2, 3, 4, 5])); // undefined
 // O(n)

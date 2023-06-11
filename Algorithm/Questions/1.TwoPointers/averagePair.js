@@ -5,6 +5,9 @@
  *
  * Time: O(N)
  *
+ *  verify inputs
+ *  get left and the right index of array
+ *  while arr[left] < arr[right]
  * 1. get pair average of first(left) and last element(right)
  * 2. if pair average = target, return true
  * 3. if pair average < target, left++
@@ -12,21 +15,21 @@
  * 5. else return false
  */
 
+// 
 const averagePair = (arr, target) => {
-  let left = 0;
-  let right = arr.length - 1;
+  if (arr.length === 0) return false
+  let left = 0
+  let right = arr.length - 1
   while (arr[left] < arr[right]) {
-    const average = arr[left] + arr[right] / 2;
-    if (average === target) {
-      return true;
-    }
-    if (average < target) {
-      left += 1;
+    let average = (arr[left] + arr[right]) / 2
+    if (average === target) return true
+    if (average > target) {
+      right--
     } else {
-      right -= 1;
+      left++
     }
   }
-  return false;
+  return false
 };
 console.log(averagePair([1, 2, 3], 2.5));// true
 console.log(averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8)); // true
