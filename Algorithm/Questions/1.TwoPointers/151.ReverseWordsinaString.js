@@ -39,16 +39,12 @@
 // There is at least one word in s.
  
 
-// Follow up:
-
-// Could you solve it in-place with O(1) extra space?
-
 /**
  * @param {string} s
  * @return {string}
  */
 var reverseWords = function(s) {
-  let arr = s.trim().split(' ')
+  let arr = s.split(' ')
   arr = arr.filter( ele => ele != "" )
   return arr.reverse().join(' ')
 };

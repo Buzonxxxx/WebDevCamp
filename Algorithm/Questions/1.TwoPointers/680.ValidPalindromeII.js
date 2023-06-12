@@ -1,35 +1,38 @@
-// Given a non-empty string s, you may delete at most one character. Judge whether you can make it a palindrome.
+// Given a string s, return true if the s can be palindrome after deleting at most 
+// one character from it.
 
-// Example 1:
-// Input: "aba"
-// Output: True
-// Example 2:
-// Input: "abca"
-// Output: True
+// Input: s = "aba"
+// Output: true
+
+// Input: s = "abca"
+// Output: true
 // Explanation: You could delete the character 'c'.
-// Note:
-// The string will only contain lowercase characters a-z. The maximum length of the string is 50000.
 
-/**
- * @param {string} s
- * @return {boolean}
- */
+// Input: s = "abc"
+// Output: false
+
 const validPalindrome = (s) => {
-  const stop = s.length / 2
-  for (let i = 0; i < stop; i++) {
-      let j = s.length - i - 1
-      if (s[i] !== s[j]) {
-          return isPalindrome(deleteChar(s, i)) || isPalindrome(deleteChar(s, j))
-      }
+  let i = 0
+  let j = s.length - 1
+  while (i < j) {
+    if (s[i] !== s[j]) {
+      // delete s[i]
+      let deleteLeft = s.slice(0, i) + s.slice(i + 1, s.length)
+      // delete s[j]
+      let deleteRight = s.slice(0, j) + s.slice(j + 1, s.length)
+
+      return isPalindrome(deleteLeft) ||
+      isPalindrome(deleteRight) ||
+      isPalindrome(s)
+    }
+    i++
+    j--
   }
   return true
-};
-
-// delete s[i]
-const deleteChar = (s, i) => s.slice(0, i) + s.slice(i + 1, s.length);
+}
 
 const isPalindrome = (s) => s === s.split('').reverse().join('');
 
-console.log(validPalindrome('abca'))
-
-
+console.log(validPalindrome('aba')) // true
+console.log(validPalindrome('abca')) // true
+console.log(validPalindrome('abc')) // false

@@ -16,15 +16,21 @@ Minimize the total number of operations.
  */
 
 var moveZeroes = function(nums) {
-  // Two pointers
+  // move non-zero numbers to left with original order
   let pos = 0
   for (let i = 0; i < nums.length; i++) {
-      if(nums[i] != 0) {
-          nums[pos] = nums[i]
-          pos++
-      }
+    if (nums[i] !== 0) {
+        nums[pos] = nums[i]
+        pos++
+    }
   }
+
+  // add zero to the end
   for (let i = pos; i < nums.length; i++) {
-      nums[i] = 0
+    nums[i] = 0
   }
+  return nums
+  
 };
+
+console.log(moveZeroes([0,1,0,3,12]))

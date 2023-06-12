@@ -32,6 +32,9 @@
 // 1 <= n <= 300
 // nums[i] is 0, 1, or 2.
 
+// Input: nums = [2,0,2,1,1,0]
+// Output: [0,0,1,1,2,2]
+
 /**
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
@@ -39,14 +42,19 @@
 var sortColors = function(nums) {
   let left = 0;
   let curr = 0;
-  let right = nums.length-1;
-  while (curr<=right) 
-     if (nums[curr] == 0) 
-      [nums[curr++], nums[left++]] = [nums[left], nums[curr]]; //swap values, you are always putting the 0 to the left edge, can increment new current since we have already looked at it before (curr>=left so we have already evaluated it)
-     else if (nums[curr] == 2) 
-      [nums[curr], nums[right--]] = [nums[right], nums[curr]]; //swap, so right side always has 2's, do not increment current yet because don't know what value it was.
-     else
-      curr++; // current was a 1, so you don't move it to either side, go next
+  let right = nums.length - 1;
+  while (curr <= right) {
+    if (nums[curr] == 0) 
+     [nums[curr++], nums[left++]] = [nums[left], nums[curr]]; 
+     //swap values, you are always putting the 0 to the left edge, can increment new current since we have already looked at it before (curr>=left so we have already evaluated it)
+    else if (nums[curr] == 2) 
+     [nums[curr], nums[right--]] = [nums[right], nums[curr]]; 
+     //swap, so right side always has 2's, do not increment current yet because don't know what value it was.
+    else
+     curr++; 
+     // current was a 1, so you don't move it to either side, go next
+  }
+  
   return nums
 };
 

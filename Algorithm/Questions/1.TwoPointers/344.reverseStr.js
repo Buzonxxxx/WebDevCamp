@@ -3,39 +3,35 @@
 // Do not allocate extra space for another array,
 // you must do this by modifying the input array in-place with O(1) extra memory.
 
-const reverseString = (s) => {
-	if (s.length === 0) return s;
-	let str = '';
-	// transform input array to string
-	for (let i = 0; i < s.length; i++) {
-		str += s[i];
+// Input: s = ["h","e","l","l","o"]
+// Output: ["o","l","l","e","h"]
+
+// Input: s = ["H","a","n","n","a","h"]
+// Output: ["h","a","n","n","a","H"]
+
+// verify s
+// loop s and swap the left and right element
+
+var reverseString = function(s) {
+	if (s.length === 0) return false
+	let temp = ''
+	let i = 0
+	let j = s.length - 1
+	while (i < j) {
+		 // swap
+		 temp = s[j]
+		 s[j] = s[i]
+		 s[i] = temp
+		 i++
+		 j--
 	}
-	let left = 0;
-	let right = s.length - 1;
-	while (right >= 0) {
-		s[left] = str.charAt(right);
-		left += 1;
-		right -= 1;
-	}
-	return s;
+	return s
 };
 
 const reverseString2 = (s) => {
-	let temp = '';
-	let i = 0;
-	for (let j = s.length - 1; j > i; j--) {
-		temp = s[j];
-		s[j] = s[i];
-		s[i] = temp;
-		i++;
-	}
-	return s;
-};
-
-const reverseString3 = (s) => {
-	return s.reverse()
+	s.reverse()
+	return s
 }
 
 console.log(reverseString([ 'h', 'e', 'l', 'l', 'o' ]));
 console.log(reverseString2([ 'h', 'e', 'l', 'l', 'o' ]));
-console.log(reverseString3([ 'h', 'e', 'l', 'l', 'o' ]));
