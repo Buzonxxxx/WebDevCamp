@@ -20,11 +20,10 @@ var lengthOfLongestSubstring = function(s) {
     for (let i = 0; i < s.length; i++) {
         const char = s[i]
         if (arr.indexOf(char) !== -1) { 
-            arr = arr.slice(arr.indexOf(char) + 1)
+            arr = arr.slice(arr.indexOf(char) + 1) //  // 從index取到最後
         }
         arr.push(char) // [a, b, c], a => [b, c, a]
         maxLen = Math.max(maxLen, arr.length)
-				console.log(arr)
     }
     return maxLen
 };
