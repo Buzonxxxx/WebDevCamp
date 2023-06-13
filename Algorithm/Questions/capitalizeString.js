@@ -21,7 +21,7 @@
     let arr = str.split(' ')
     let newArr = []
     for (let word of arr) {
-      newArr.push(word[0].toUpperCase() + word.slice(1))
+      newArr.push(word[0].toUpperCase() + word.slice(1))  // 從index1取到最後
     }
     
     return newArr.join(' ')

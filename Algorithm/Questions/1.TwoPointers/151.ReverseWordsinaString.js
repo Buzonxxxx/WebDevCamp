@@ -44,9 +44,9 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-  let arr = s.split(' ')
-  arr = arr.filter( ele => ele != "" )
+  let arr = s.split(' ') // => [ '', '', 'hello', '', '', 'world', '', '' ]
+  arr = arr.filter( ele => ele != "" ) // => ['hello', 'world']
   return arr.reverse().join(' ')
 };
 
-console.log(reverseWords("  hello   world  "))
+console.log(reverseWords("  hello   world  ")) // world hello

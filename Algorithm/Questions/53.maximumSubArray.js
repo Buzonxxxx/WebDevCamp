@@ -3,19 +3,21 @@
 // Given an integer array nums, find the contiguous subarray (containing at least one number)
 // which has the largest sum and return its sum.
 
-// Example:
-// Input: [-2,1,-3,4,-1,2,1,-5,4],
+// Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
 // Output: 6
-// Explanation: [4,-1,2,1] has the largest sum = 6.
+// Explanation: The subarray [4,-1,2,1] has the largest sum 6.
 
-// Follow up:
-// If you have figured out the O(n) solution, try coding another solution using the 
-// divide and conquer approach, which is more subtle.
-
-// if current sum + element < element, current sum = element
+// if nums is valid
+// init maxSum and curSum = nums[0]
+// loop array
+// if current sum + next element < next element
+// => current sum = next element
+// else current sum += next element
+// compare current sum and max sum and get the bugger one
 
 const maxSubArray = (nums) => {
 	if (nums.length === 0) return 0;
+	
 	let maxSum = nums[0];
 	let curSum = nums[0];
 	for (let i = 1; i < nums.length; i++) {

@@ -5,12 +5,19 @@
  * with O(1) extra memory
  */
 
+// if nums valid
+// loop nums
+// while current element === next element
+// remove the current element using splice()
+// decrease the iterator by 1
+// return nums length
+
 const removeDuplicates = (nums) => {
 	for (let i = 0; i < nums.length; i++) {
 		let currentVal = nums[i];
 		let nextVal = nums[i + 1];
 		if (currentVal === nextVal) {
-			nums.splice(i, 1);
+			nums.splice(i, 1); // 從 start 位置開始"移除"指定的元素個數
 			i--;
 		}
 	}

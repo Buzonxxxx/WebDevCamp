@@ -19,7 +19,7 @@ function vowels(str) {
   if (str.length === 0) return false
   let count = 0
   for (let char of str) {
-    if (table.includes(char)) count++
+    if (table.indexOf(char) !== -1) count++
   }
   return count
 }
