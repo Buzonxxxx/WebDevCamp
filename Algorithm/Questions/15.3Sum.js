@@ -15,7 +15,7 @@ const threeNumberSumZero = (arr) => {
         while (arr[left + 1] === arr[left]) left++ // skip dup
         while (arr[right - 1] === arr[right]) right-- // skip dup
         left++
-        right --
+        right--
       } else if (sum < 0) {
         left++
       } else {

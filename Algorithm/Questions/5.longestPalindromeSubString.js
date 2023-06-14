@@ -1,14 +1,15 @@
 // Given a string, find the longest substring which is a palindrome
 // input s = “aabbccdeedccbaa”  output - bccdeedccb
 
-// verify s
- // create a function that get string, start index, end index to check if it is a palindrome
- // init startingIndex = 0, maxLength = 0
- // loop s from i=0 to s.length
- //   loop from j=i to s.length
- //   if s,i,j is palindrome and the length is bigger than maxLength
- //   update start index and max length
- // return s.substring(startIndex, startIndex + maxLength)
+ // verify input
+ // create a function check verify palindrome with s, index i , index j
+ // init max length and starting index of palindrome substring
+ // loop i
+ //   loop j
+ // if s, i, j is palindrome
+ // check palindrome substring's length
+ // if length > max length => update max length, and starting index
+ // return s.substring(startingIndex, startingIndex + maxLen)
 
 
 const longestPalindrome = (s) => {
