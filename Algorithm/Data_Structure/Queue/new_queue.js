@@ -39,3 +39,5 @@ console.log(q.remove())
 console.log(q)
 
 console.log(q.peek())
+
+module.exports = Queue;

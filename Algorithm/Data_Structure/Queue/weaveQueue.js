@@ -22,6 +22,8 @@
 //    q.remove() // 2
 //    q.remove() // 'There'
 
+const Queue = require('./new_queue');
+
 function weave(sourceOne, sourceTwo) {
   const q = new Queue()
   while (sourceOne.peek() || sourceTwo.peek()) {
@@ -34,3 +36,17 @@ function weave(sourceOne, sourceTwo) {
   }
   return q
 }
+
+const one = new Queue();
+one.add(1);
+one.add(2);
+one.add(3);
+one.add(4);
+const two = new Queue();
+two.add('one');
+two.add('two');
+two.add('three');
+two.add('four');
+const result = weave(one, two);
+
+console.log(result)

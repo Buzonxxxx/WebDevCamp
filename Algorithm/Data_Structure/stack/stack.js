@@ -1,55 +1,40 @@
-/**
- *
- *
- * use array: push(), pop() or unshift(), shift()
- * 後進先出 FILO
- *
- */
+// --- Directions
+// Create a stack data structure.  The stack
+// should be a class with methods 'push', 'pop', and
+// 'peek'.  Adding an element to the stack should
+// store it until it is removed.
+// --- Examples
+//   const s = new Stack();
+//   s.push(1);
+//   s.push(2);
+//   s.pop(); // returns 2
+//   s.pop(); // returns 1
 
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
+// 後進先出 FILO
 
 class Stack {
   constructor() {
-    this.first = null;
-    this.last = null;
-    this.size = 0;
+    this.data = []
   }
 
-  // 從頭push進去
-  push(val) {
-    const newNode = new Node(val);
-    if (!this.first) {
-      this.first = newNode;
-      this.last = newNode;
-    } else {
-      const temp = this.first;
-      this.first = newNode;
-      this.first.next = temp;
-    }
-    return ++this.size;
+  push(record) {
+    this.data.push(record)
   }
 
-  // 從頭pop
-  pop() {
-    if (!this.first) return null;
-    const popedNode = this.first;
-    if (this.first == this.last) {
-      this.first = null;
-      this.last = null;
-    }
-    this.first = this.first.next;
-    this.size--;
-    return popedNode.value;
+  pop(){
+    return this.data.pop()
+  }
+
+  peek() {
+    return this.data[this.data.length - 1]
   }
 }
 
-const stack = new Stack();
-stack.push('hello');
-stack.push('world');
-//  console.log(stack)
-console.log(stack);
+  const s = new Stack();
+  s.push(1);
+  s.push(2);
+  console.log(s)
+  
+  console.log(s.pop()); // returns 2
+  console.log(s.pop()); // returns 1
+  console.log(s)
