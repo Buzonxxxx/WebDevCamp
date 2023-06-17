@@ -7,40 +7,41 @@
  * Output: 1->1->2->3->4->4
  */
 
-/*
+/**
  * Definition for singly-linked list.
- *
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
  * }
  */
 
-const mergeTwoLists = (l1, l2) => {
-  // 儲存結果的ListNode
-  const result = new ListNode(0);
-  // 目前Node位置
-  let c = result;
+// Input: list1 = [1,2,4], list2 = [1,3,4]
+// Output: [1,1,2,3,4,4]
 
-  while (l1 !== null && l2 !== null) {
-    // l1,l2較小的數加入result
-    if (l1.val > l2.val) {
-      c.next = l2;
-      l2 = l2.next;
+
+var mergeTwoLists = function(list1, list2) {
+  const result = new ListNode(0)
+  let current = result
+
+  while (list1 !== null && list2 !== null) {
+    if (list1.val > list2.val) {
+      current.next = list2
+      list2 = list2.next
     } else {
-      c.next = l1;
-      l1 = l1.next;
+      current.next = list1
+      list1 = list1.next
     }
-    c = c.next;
+    current = current.next
   }
 
-  // 將l1,l2剩下的Node加到result
-  if (l1 !== null) {
-    c.next = l1;
+  if (list1 !== null) {
+    current.next = list1
   }
 
-  if (l2 !== null) {
-    c.next = l2;
+  if (list2 !== null) {
+    current.next = list2
   }
-  return result.next;
+  // return result.next，因為一開始我們多弄了一個 value 為 0 的頭，不能把它傳回去，會報錯
+  return result.next
+
 };
