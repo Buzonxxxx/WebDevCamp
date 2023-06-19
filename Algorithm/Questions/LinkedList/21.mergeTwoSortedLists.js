@@ -20,7 +20,7 @@
 
 
 var mergeTwoLists = function(list1, list2) {
-  const result = new ListNode(0)
+  const result = new ListNode()
   let current = result
 
   while (list1 !== null && list2 !== null) {
