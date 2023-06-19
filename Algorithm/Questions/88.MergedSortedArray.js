@@ -17,7 +17,9 @@
 // compare nums1[index1], nums[index2] then update nums1[index3]
 
 var merge = function(nums1, m, nums2, n) {
-  let idx1 = m - 1, idx2 = n - 1, idx3 = m + n - 1;
+  let idx1 = m - 1
+  let idx2 = n - 1
+  let idx3 = m + n - 1
   while (idx2 >= 0) {
       if (nums1[idx1] > nums2[idx2]) {
           nums1[idx3] = nums1[idx1]
