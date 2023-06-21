@@ -13,99 +13,78 @@
 // T: hits
 // return (sunk ships),(ships that have been hit but not sunk)
 
+// countBattleships(4, "1B 2C,2D 4D", "2B 2D 3D 4D 4A") => 1,1
 
-// if S === "", set it as empty array
-// Create a parseShips function that get S and return array of sets, the set should include ship's cells
+// Get ships cells and hit cells
+// if ship cell in hits cell, hitCells++
+// if hitCells === ship cells size, sunkCount++
+//  else if hitCells > 0, hitCount++
 
-function countBattleships(N, S, T) {
+function countBattleShips(N, S, T) {
   const ships = S !== "" ? parseShips(S) : []
-  // ships = [ { cells: Set(4) { '1B', '1C', '2B', '2C' } }, { cells: Set(3) { '2D', '3D', '4D' } } ]
-  const hits = parseHits(T);
-  // hits: Set(5) { '2B', '2D', '3D', '4D', '4A' }
-  let sunkCount = 0;
-  let hitCount = 0;
+  const hits = parseHits(T)
+
+  let sunkCount = 0
+  let hitCount = 0
 
   for (const ship of ships) {
-    let hitCells = 0;
-
+    let hitCells = 0
     for (const cell of ship.cells) {
       if (hits.has(cell)) {
-        hitCells++;
+        hitCells++
       }
     }
-    
     if (hitCells === ship.cells.size) {
-      sunkCount++;
+      sunkCount++
     } else if (hitCells > 0) {
-      hitCount++;
+      hitCount++
     }
   }
-
-  return `${sunkCount},${hitCount}`;
+return `${sunkCount},${hitCount}`
 }
 
-function parseShips(S) {
-  const ships = [];
-  const shipPairs = S.split(','); // [ '1B 2C', '2D 4D' ]
+const parseShips = (S) => {
+  const ships = []
+  const shipPairs = S.split(',')
 
   for (const pair of shipPairs) {
-    const [topLeft, bottomRight] = pair.split(' ');
-    // topLeft = "1B", bottomRight = "2C"
+    const [topLeft, bottomRight] = pair.split(' ')
     
-    const [topRow, leftCol] = parsePosition(topLeft);
-    const [bottomRow, rightCol] = parsePosition(bottomRight);
-    // 1B => topRow: 1 leftCol: 2
-    // 2C => bottomRow: 2 rightCol: 3
-    
+    const [topRow, leftCol] = parsePosition(topLeft)
+    const [bottomRow, rightCol] = parsePosition(bottomRight)
 
-    const cells = new Set();
-    // get all cells of a ship
+    const cells = new Set()
     for (let i = topRow; i <= bottomRow; i++) {
       for (let j = leftCol; j <= rightCol; j++) {
-        // i,j: 1,2 1,3 2,2 2,3
-        cells.add(encodePosition(i, j));
+        cells.add(encodePosition(i, j))
       }
     }
-    // cells = Set(4) { '1B', '1C', '2B', '2C' }
-    ships.push({ cells });
+    ships.push({ cells: cells })
   }
-  // ships = [ { cells: Set(4) { '1B', '1C', '2B', '2C' } }, { cells: Set(3) { '2D', '3D', '4D' } } ]
-  return ships;
+  return ships
 }
 
-function parseHits(T) {
-  const hits = new Set();
-  const hitCells = T.split(' ');
-  // hitCells = [ '2B', '2D', '3D', '4D', '4A' ]
+const parseHits = (T) => {
+  const hits = new Set()
+  const hitCells = T.split(' ')
   for (const cell of hitCells) {
-    hits.add(cell);
+    hits.add(cell)
   }
-  // hits: Set(5) { '2B', '2D', '3D', '4D', '4A' }
-  return hits;
+  return hits
 }
 
-function parsePosition(position) { // 1B
-  // Get row
-  // convert str to int and remove the last char
-  const row = parseInt(position.slice(0, -1), 10); 
-  // row = 1
-
-  // Get Column
-  const col = position.charCodeAt(position.length - 1) - 'A'.charCodeAt(0) + 1; 
-  // '1B'.charCodeAt(1) - 'A'.charCodeAt(0) + 1
-  // 66 - 65 + 1 = 2
-  // col = 2
-  return [row, col]; // [1, 2]
+const parsePosition = (position) => {
+  const row = parseInt(position.slice(0, -1))
+  const col = position.charCodeAt(position.length - 1) - 'A'.charCodeAt(0) + 1
+  return [row, col]
 }
 
-function encodePosition(row, col) {
-  // convert unicode to char
-  const colChar = String.fromCharCode('A'.charCodeAt(0) + col - 1);
-  // colChar = 'B'
-  return `${row}${colChar}`; // '1B'
+const encodePosition = (row, col) => {
+  const colChar = String.fromCharCode('A'.charCodeAt(0) + col - 1)
+  return `${row}${colChar}`
 }
 
-console.log(countBattleships(4, "1B 2C,2D 4D", "2B 2D 3D 4D 4A"))
-console.log(countBattleships(3, "1A 1B,2C 2C", "1B"))
-// console.log(countBattleships(12, "1A 2A,12A 12A", "12A"))
-// console.log(countBattleships(2, "", "2A"))
+console.log(countBattleShips(4, "1B 2C,2D 4D", "2B 2D 3D 4D 4A")) // 1,1
+console.log(countBattleShips(3, "1A 1B,2C 2C", "1B")) // 0,1
+console.log(countBattleShips(12, "1A 2A,12A 12A", "12A")) // 1,0
+console.log(countBattleShips(2, "", "2A")) // 0,0
