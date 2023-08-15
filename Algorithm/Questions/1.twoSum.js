@@ -6,7 +6,7 @@
 // init a result object {}
 // loop nums
 // if target - num is not in the object
-//   => put the num in object and set value equal to its index
+//   => put num and its index in the result obj
 // else return [object[target - num], num's index]
 
  var twoSum = function(nums, target) {

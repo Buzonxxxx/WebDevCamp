@@ -28,23 +28,30 @@ Input: "{[]}"
 Output: true
 */
 
-// user array
+// verify s
+// loop s
+// if char = '(', push ')' to array
+// if char = '[', push '}' to array
+// if char = '{', push '}' to array
+// if array.length === 0 || array.pop() !== char -> return false
+
+// if array.length === 0 return true
+// return fasle
 
 const isValid = (s) => {
-	if (s.length <= 1) return false;
-	let arr = [];
+	if (s.length <= 1) return false
+	let arr = []
 	for (let i = 0; i < s.length; i++) {
-		const char = s[i];
-		if (char === '(') arr.push(')');
-		else if (char === '[') arr.push(']');
-		else if (char === '{') arr.push('}');
-		else if (arr.length === 0 || char !== arr.pop()) return false;
+		const char = s[i]
+		if (char === '(') arr.push(')')
+		else if (char === '[') arr.push(']')
+		else if (char === '{') arr.push ('}')
+		else if (arr.length === 0 || char !== arr.pop()) return false
 	}
-	if (arr.length === 0) return true;
-	return false;
+	if (arr.length === 0) return true
+	return false
 };
-
-console.log(isValid('{[]}'));
-console.log(isValid('(('));
-console.log(isValid('()'));
-console.log(isValid('[(])'));
+console.log(isValid('{[]}')); // true
+console.log(isValid('((')); // false
+console.log(isValid('()')); // true
+console.log(isValid('[(])')); // false

@@ -27,4 +27,4 @@ const threeNumberSumZero = (arr) => {
   return result
 }  
 
-console.log(threeNumberSumZero([-1,0,1,2,-1,-4,-2,1,1]))
+console.log(threeNumberSumZero([-1, 0, 1, 2, -1, -4, -2, 1, 1]))

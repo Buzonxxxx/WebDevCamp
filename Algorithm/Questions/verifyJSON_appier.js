@@ -1,10 +1,5 @@
-// Enjoy JavaScript with ES6 features :)
 
-// const getHelloWorldStr = () => "Hello, world!"
-
-// console.log(getHelloWorldStr());
-
-let jsondata = {
+let jsonData = {
   "email": "song1234@kimo.com",
   "keywords": [
     "dailymotion",
@@ -44,45 +39,53 @@ let jsondata = {
   }
 }
 
+// Get keywords
+// Get "keywords frequency", "keywords recency" and "Keyword Recency Date"
+// loop each key and verify its frequency, recency and recency Date
+// verify if frequency >= 0
+// verify if recency <= 12
+// verify if date < 6
 const isValidJson = (jsonData) => {
   let isValid = true
-  const keywords = jsonData.keywords
-  const keywordsFrequency = jsonData["keywords frequency"]
-  const keywordsRecency = jsonData["keywords recency"]
-  const KeywordRecencyDate = jsonData["Keyword Recency Date"]
-  for(let key of keywords) {
-    const frequency = keywordsFrequency[key]
-    const recency = keywordsRecency[key]
-    const recencyDate = KeywordRecencyDate[key]
+  const keyword = jsonData.keywords
+  const keywordFrequency = jsonData["keywords frequency"]
+  const keywordRecency = jsonData["keywords recency"]
+  const keywordRecencyDate = jsonData["Keyword Recency Date"]
+  for (let key of keyword) {
+    const frequency = keywordFrequency[key]
+    const recency = keywordRecency[key]
+    const recencyDate = keywordRecencyDate[key]
     const date = new Date(recencyDate)
-    const nowDate = new Date("2021-02-06")
-    const diff = (nowDate - date) / (24*60*60*1000) // 差幾天
+    const nowDate = new Date("2021-02-06") // mms
+    const diff = (nowDate - date) / (24*60*60*1000)
 
     if (frequency < 0) {
-      console.log(`The ${key}'s frequency: ${frequency} < 0`)
+      console.log(`The ${key}'s frequency: ${frequency} is invalid`)
       isValid = false
-    } else if(frequency === undefined) {
-      console.log(`Frequency ${key} is undefined`)
-      isValid = false
-    }
-    if(recency > 12) {
-      console.log(`The ${key}'s recency: ${recency} > 12`)
-      isValid = false
-    } else if(recency === undefined) {
-      console.log(`Recency ${key} is undefined`)
+    } else if (frequency === undefined) {
+      console.log(`The ${key}'s frequency: ${frequency} is invalid`)
       isValid = false
     }
+
+    if (recency > 12) {
+      console.log(`The ${key}'s recency: ${recency} is invalid`);
+      isValid = false
+    } else if (recency === undefined) {
+      console.log(`The ${key}'s recency: ${recency} is invalid`);
+      isValid = false
+    }
+
     if (diff >= 6) {
-      console.log(`The ${key}'s date: ${recencyDate} > 6`)
+      console.log(`The ${key}'s recency date: ${recency} is invalid`);
       isValid = false
     } else if (recencyDate === undefined) {
-      console.log(`RecencyDate ${key} is undefined`)
       isValid = false
+      console.log(`The ${key}'s recency date: ${recency} is invalid`);
     }
-
-    }
-    return isValid
+    
   }
 
+  return isValid
+}
 
-  console.log(isValidJson(jsondata))
+console.log(isValidJson(jsonData))

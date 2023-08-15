@@ -31,30 +31,26 @@ async function listAllFilms() {
   }
 
 async function overOneThousandSpeed() {
-  try {
-      const response = await axios.get('https://swapi.py4e.com/api/films/');
-      let films = response.data.results
-      let vehicleAPIs = []
-      for(let film of films) {
-        vehicleAPIs = vehicleAPIs.concat(film.vehicles)
-      }
-      
-      let uniqueVehicleAPIs = [...new Set(vehicleAPIs)]
-
-      for (let vehicleAPI of uniqueVehicleAPIs) {
-        const response = await axios.get(vehicleAPI)
-        
-        const max_atmosphering_speed = response.data.max_atmosphering_speed
-        const vehicleName = response.data.name
-        
-        if (max_atmosphering_speed && max_atmosphering_speed > 1000) {
-          console.log(`The ${vehicleName}'s speed is over 1000, it'is ${max_atmosphering_speed}`)
-        }
-      }
-    } catch(error){
-      console.log(error)
+  let results = []
+  let response = null
+  let page = 1
+  do {
+    try {
+      response = await axios.get(`https://swapi.py4e.com/api/vehicles/?page=${page}`);
+      results = results.concat(response.data.results)
+      page++
+    } catch (error) {
+      console.error('Error fetching data:', error);
+      break;
     }
-  }
+  } while (response && response.data.next !== null)
+  
+  for (let vehicle of results) {
+    if (vehicle.max_atmosphering_speed > 1000)
+      console.log(`The ${vehicle.name}'s speed is over 1000, it'is ${vehicle.max_atmosphering_speed}`)
+    }
+      
+}
 
   async function test() {
     await getSpecis()

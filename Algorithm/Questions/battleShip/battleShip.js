@@ -43,6 +43,9 @@ function countBattleShips(N, S, T) {
 return `${sunkCount},${hitCount}`
 }
 
+// Get all cells of ships
+// Input: "1B 2C,2D 4D"
+// Output: ships = [ { cells: Set(4) { '1B', '1C', '2B', '2C' } }, { cells: Set(3) { '2D', '3D', '4D' } } ]
 const parseShips = (S) => {
   const ships = []
   const shipPairs = S.split(',')
@@ -64,6 +67,9 @@ const parseShips = (S) => {
   return ships
 }
 
+// Get all cells of hits
+// Input: "2B 2D 3D 4D 4A"
+// hits: Set(5) { '2B', '2D', '3D', '4D', '4A' }
 const parseHits = (T) => {
   const hits = new Set()
   const hitCells = T.split(' ')

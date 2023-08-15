@@ -11,23 +11,27 @@
  * 
  */
 
-// const print = (str, n) => {
-//   let ans = '';
-//   for (let i = 0; i < n; i++) {
-//     ans += str[i]; // abcd
-//     if (i === n - 1) {
-//       i -= 1;
-//       while (i >= 0) {
-//         ans += str[i];
-//         i -= 1;
-//       }
-//       return ans;
-//     }
-//   }
-//   return undefined;
-// };
+const print1 = (str, n) => {
+  let ans = '';
+  for (let i = 0; i < n; i++) {
+    ans += str[i]; // abcd
+    if (i === n - 1) {
+      i -= 1;
+      while (i >= 0) {
+        ans += str[i];
+        i -= 1;
+      }
+      return ans;
+    }
+  }
+  return undefined;
+};
 
-const print = (str, n) => {
+// get 'abcd'
+// get 'abc'
+// get 'dcba'
+
+const print2 = (str, n) => {
   if (str.length === 0 || n > str.length) return false
   let result = str.slice(0, n) // abcd
   result = result.slice(0, result.length - 1) + result.split('').reverse().join('') // abc + dcba = abcdcba
@@ -35,7 +39,8 @@ const print = (str, n) => {
 };
 
 
-console.log(print('abcdefglkjhgfd', 4)); //abcdcba
+console.log(print1('abcdefglkjhgfd', 4)); //abcdcba
+console.log(print2('abcdefglkjhgfd', 4)); //abcdcba
 
 
 
