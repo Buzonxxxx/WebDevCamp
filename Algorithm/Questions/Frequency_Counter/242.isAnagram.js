@@ -14,10 +14,10 @@
 
 // use obj
 const isAnagram = (str1, str2) => {
-	if(str1.length !== str2.length) return false
-	const result = {}
+	if (str1.length !== str2.length) return false
+	const result  = {}
 	for (let char of str1) {
-		if(result[char]) {
+		if (result[char]) {
 			result[char]++
 		} else {
 			result[char] = 1
@@ -25,8 +25,8 @@ const isAnagram = (str1, str2) => {
 	}
 
 	for (let char of str2) {
-		if(!result[char]) return false
-		result[char] -= 1	
+		if (!result[char]) return false
+		result[char] -= 1
 	}
 	return true
 };

@@ -13,12 +13,12 @@
 	if (nums.length <= 1) return false
 	const result = {}
 	for (let i = 0; i < nums.length; i++) {
-			const num = nums[i]
-			if (result[target - num] === undefined) {
-					result[num] = i
-			} else {
-				return [result[target - num], i]
-			}
+		const num = nums[i]
+		if (result[target - num] === undefined) {
+			result[num] = i
+		} else {
+			return [result[target - num], i]
+		}
 	}
 	return undefined
 };
