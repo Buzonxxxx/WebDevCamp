@@ -7,37 +7,56 @@
 // The distinct triplets are [-1,0,1] and [-1,-1,2].
 // Notice that the order of the output and the order of the triplets does not matter.
 
- // verify input
- // sort array
- // 3 pointers: i = 0, i + 1, arr.length -1
+  // verify input
+ // sort array: nums.sort((a, b) => a - b)
+ // init result array
+ // loop nums using for loop
+ // get left point = i + 1
+ // get right point = nums.length -1
+ // let sum = 0
+ // use while loop
+ // while (left < right)
+  // get sum = nums[i] + nums[left] + nums[right] 
+  // if sum === 0, result.push([nums[i], nums[left], nums[right]])
+    // while(nums[left] === nums[left + 1]) left++
+    // while(nums[right] === nums[right - 1]) right--
+    // left++
+    // right--
+  // else if sum < 0
+    // left++
+  // else if sum > 0
+    // right-- 
+ // while nums[i] === nums[i++], i++
+ // return result
  
-const threeNumberSumZero = (arr) => {
-  if (arr.length === 0 || arr.length < 3) return false
-  const result = []
-  arr = arr.sort((a, b) => a - b)
+ var threeSum = function(nums) {
+  if (nums.length === 0 || nums.length < 3) return false
+  nums.sort((a,b) => a - b)
+  let result = []
 
-  for (let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < nums.length; i++) {
     let left = i + 1
-    let right = arr.length - 1
+    let right = nums.length - 1
     let sum = 0
 
     while (left < right) {
-      sum = arr[left] + arr[right] + arr[i]
+      sum = nums[i] + nums[left] + nums[right]
       if (sum === 0) {
-        result.push([arr[left], arr[right], arr[i]])
-        while (arr[left + 1] === arr[left]) left++ // skip dup
-        while (arr[right - 1] === arr[right]) right-- // skip dup
+        result.push([nums[i], nums[left], nums[right]])
+        while (nums[left] === nums[left + 1]) left++
+        while (nums[right] === nums[right - 1]) right--
         left++
         right--
       } else if (sum < 0) {
         left++
-      } else {
+      } else if (sum > 0) {
         right--
       }
     }
-    while (arr[i + 1] === arr[i]) i++ // skip dup
+    while (nums[i] === nums[i + 1]) i++
   }
   return result
-}  
+};
 
-console.log(threeNumberSumZero([-1, 0, 1, 2, -1, -4, -2, 1, 1]))
+console.log(threeSum([-1, 0, 1, 2, -1, -4, -2, 1, 1]))
+// [ [ -2, 0, 2 ], [ -2, 1, 1 ], [ -1, -1, 2 ], [ -1, 0, 1 ] ]

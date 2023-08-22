@@ -4,30 +4,39 @@
  * isAnagram('car', 'rca') // true
  * isAnagram('cat', 'acb') // false
  *
- *
- * check string length
- * put str1 char in obj and add count
- * loop str2 to get char
- * if char not in obj => false
- * if chat in obj => count - 1, if complete the loop, return true
  */
 
+ // verify input s.length !== t.length -> reutrn false
+ // init a result obj
+ // loop s
+ // if chat isn't in the result obj: !result[char]
+ // result[char] = 1
+ // else result[char]++   
+ // loop t
+ // if char isn't in the result obj: !result[char] -> return false
+ // else result[char]--
+ // return true
+
 // use obj
-const isAnagram = (str1, str2) => {
-	if (str1.length !== str2.length) return false
-	const result  = {}
-	for (let char of str1) {
-		if (result[char]) {
-			result[char]++
-		} else {
-			result[char] = 1
-		}
+const isAnagram = (s, t) => {
+	if (s.length !== t.length) return false
+	const result = {}
+	for (let char of s) {
+			if (!result[char]) {
+					result[char] = 1
+			} else {
+					result[char]++
+			}
 	}
 
-	for (let char of str2) {
-		if (!result[char]) return false
-		result[char] -= 1
+	for (let char of t) {
+			if (!result[char]) {
+					return false
+			} else {
+					result[char] -= 1
+			}        
 	}
+	
 	return true
 };
 
