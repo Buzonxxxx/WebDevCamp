@@ -4,30 +4,29 @@
 // Output: 3
 // Explanation: The answer is "abc", with the length of 3.
 
-// check if s is valid
-// init an array ot put each char
-// init max length = 0
-// loop s 
-// if char in array, update array (remove the previous same char in array)
-// else push char to array
-// compare array length and max length and get the bigger one
-// return max length
+// verify s, if s.length === 0 return false, if s.length === 1 return 1
+// init arr
+// init maxLength
+// loop s
+// if char in arr, slice the array from char + 1 to the end
+// push each char to array
+// update maxLength: compare array length and max length and get the bigger one
+// return maxLEngth
 
 var lengthOfLongestSubstring = function(s) {
-	if (s.length === 0) return 0
+    if (s.length === 0) return false
     if (s.length === 1) return 1
-
     let arr = []
-    let maxLen = 0
-    for (let i = 0; i < s.length; i++) {
-        const char = s[i]
-        if (arr.indexOf(char) !== -1) {  // if char in array
-            arr = arr.slice(arr.indexOf(char) + 1) //  // 從index取到最後
+    let maxLength = 0
+
+    for (let char of s) {
+        if (arr.indexOf(char) !== -1) {
+            arr = arr.slice(arr.indexOf(char) + 1)
         }
-        arr.push(char) // [a, b, c], a => [b, c, a]
-        maxLen = Math.max(maxLen, arr.length)
+        arr.push(char)
+        maxLength = Math.max(maxLength, arr.length)
     }
-    return maxLen
+    return maxLength
 };
 
 console.log(lengthOfLongestSubstring('abcabcbb')); // 3

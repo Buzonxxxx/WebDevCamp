@@ -24,7 +24,11 @@ const result = {
 result['a']--
 result['a']--
 
-console.log(result)
-console.log(result['a'])
-console.log(!result[char]);
-console.log(result['x']);
+// console.log(result)
+// console.log(result['a'])
+// console.log(!result[char]);
+// console.log(result['x']);
+
+var s = 'fooish.com';
+// 輸出 'foo'
+console.log(s.substring(0, 3));
