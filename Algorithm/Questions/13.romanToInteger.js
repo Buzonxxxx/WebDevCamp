@@ -26,8 +26,7 @@ var romanToInt = function(s) {
 	let total = 0
 	for (let i = 0; i < s.length; i++) {
 			if (table[s[i]] < table[s[i + 1]]) {
-					total = total + table[s[i + 1]] - table[s[i]]
-					i++
+					total = total - table[s[i]]
 			} else {
 					total += table[s[i]]
 			}

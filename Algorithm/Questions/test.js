@@ -13,7 +13,7 @@ a++
 let arr = [1,2,3,4,5]
 let char = 2
 arr = arr.slice(arr.indexOf(char) + 1)
-// console.log(arr);
+console.log(arr);
 
 const result = {
   'a': 1,
@@ -31,4 +31,4 @@ result['a']--
 
 var s = 'fooish.com';
 // 輸出 'foo'
-console.log(s.substring(0, 3));
+// console.log(s.substring(0, 3));
